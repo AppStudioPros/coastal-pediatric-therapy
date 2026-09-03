@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
@@ -21,9 +22,15 @@ export default function Nav() {
   return (
     <header className="bg-[#1AAFC9] text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-bold text-lg text-white">Coastal Pediatric</span>
-          <span className="text-sm text-white/80">Therapy Center</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Coastal Pediatric Therapy Center"
+            width={180}
+            height={37}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

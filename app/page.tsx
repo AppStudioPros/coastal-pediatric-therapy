@@ -64,13 +64,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <button
                 onClick={openModal}
-                className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition flex items-center gap-2 justify-center"
+                className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition flex items-center gap-2 justify-center"
               >
                 Book an Appointment <ArrowRight size={18} />
               </button>
               <a
                 href="tel:9043724070"
-                className="border border-[#cce8ef] text-[#1e3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#eaf7f9] transition flex items-center gap-2 justify-center"
+                className="border border-[#B8E4F0] text-[#1e3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#EAF6FB] transition flex items-center gap-2 justify-center"
               >
                 <Phone size={18} /> (904) 372-4070
               </a>
@@ -89,7 +89,7 @@ export default function Home() {
           {/* Right: image */}
           <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
+              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
               alt="Child receiving pediatric therapy at Coastal Pediatric Therapy Center"
               width={600}
               height={500}
@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* Trust bar */}
-      <section className="bg-[#eaf7f9] py-6 px-4">
+      <section className="bg-[#EAF6FB] py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {trustBar.map((label) => (
             <div key={label} className="text-center">
@@ -120,15 +120,15 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {services.map(({ icon: Icon, title, desc }) => (
-              <Link key={title} href="/services" className="bg-white border border-[#cce8ef] rounded-2xl p-6 hover:shadow-md transition block">
-                <Icon size={28} className="text-[#2fb8c6] mb-3" />
+              <Link key={title} href="/services" className="bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition block">
+                <Icon size={28} className="text-[#24B5D0] mb-3" />
                 <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
               </Link>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/services" className="text-[#2fb8c6] font-semibold hover:underline flex items-center gap-1 justify-center">
+            <Link href="/services" className="text-[#24B5D0] font-semibold hover:underline flex items-center gap-1 justify-center">
               Learn more about our services <ArrowRight size={16} />
             </Link>
           </div>
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* About strip */}
-      <section className="py-20 px-4 bg-[#eaf7f9]">
+      <section className="py-20 px-4 bg-[#EAF6FB]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">
             Jacksonville&apos;s Trusted Pediatric Therapy Experts
@@ -147,7 +147,7 @@ export default function Home() {
           <p className="text-[#4a7a8a] mb-8">
             We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#1e3a4a]">Jacksonville Beach</strong> and <strong className="text-[#1e3a4a]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
           </p>
-          <Link href="/about" className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2">
+          <Link href="/about" className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2">
             Our Story <ArrowRight size={18} />
           </Link>
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map(({ quote, name }) => (
-              <div key={name} className="bg-[#eaf7f9] rounded-2xl p-8">
+              <div key={name} className="bg-[#EAF6FB] rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#e8b830] text-[#e8b830]" />)}
                 </div>
@@ -177,19 +177,19 @@ export default function Home() {
       </section>
 
       {/* Insurance strip */}
-      <section className="py-16 px-4 bg-[#eaf7f9]">
+      <section className="py-16 px-4 bg-[#EAF6FB]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Accepted Insurance Plans</h2>
           <p className="text-[#4a7a8a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {insurance.map((plan) => (
-              <span key={plan} className="bg-white border border-[#cce8ef] rounded-full px-4 py-1.5 text-sm text-[#1e3a4a]">
+              <span key={plan} className="bg-white border border-[#B8E4F0] rounded-full px-4 py-1.5 text-sm text-[#1e3a4a]">
                 {plan}
               </span>
             ))}
           </div>
           <div className="mt-8">
-            <Link href="/insurance" className="text-[#2fb8c6] font-semibold hover:underline">
+            <Link href="/insurance" className="text-[#24B5D0] font-semibold hover:underline">
               Learn about insurance coverage
             </Link>
           </div>

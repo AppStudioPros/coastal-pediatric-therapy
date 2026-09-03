@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
+      <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <FileText size={32} className="text-[#2fb8c6]" />
+            <FileText size={32} className="text-[#24B5D0]" />
             <h1 className="text-4xl font-bold text-[#1e3a4a]">Terms of Service</h1>
           </div>
           <p className="text-[#4a7a8a] text-sm">Last Updated: September 2026</p>
@@ -102,7 +102,7 @@ export default function TermsPage() {
               <p>
                 For questions about these Terms of Service, please contact:
               </p>
-              <div className="mt-3 bg-[#eaf7f9] rounded-xl p-4 text-sm">
+              <div className="mt-3 bg-[#EAF6FB] rounded-xl p-4 text-sm">
                 <p className="font-semibold text-[#1e3a4a]">Coastal Pediatric Therapy Center</p>
                 <p>2730 Isabella Blvd, Suite 10, Jacksonville Beach, FL 32250</p>
                 <p>Phone: (904) 372-4070</p>

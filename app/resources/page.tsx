@@ -289,12 +289,12 @@ export default function ResourcesPage() {
   const renderMilestones = (milestones: typeof speechMilestones) => (
     <div className="space-y-6">
       {milestones.map((group) => (
-        <div key={group.age} className="bg-white border border-[#cce8ef] rounded-xl p-5">
-          <h3 className="font-bold text-[#2fb8c6] text-sm uppercase tracking-wide mb-3">{group.age}</h3>
+        <div key={group.age} className="bg-white border border-[#B8E4F0] rounded-xl p-5">
+          <h3 className="font-bold text-[#24B5D0] text-sm uppercase tracking-wide mb-3">{group.age}</h3>
           <ul className="space-y-2">
             {group.skills.map((skill) => (
               <li key={skill} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                <CheckCircle size={15} className="text-[#2fb8c6] mt-0.5 shrink-0" />
+                <CheckCircle size={15} className="text-[#24B5D0] mt-0.5 shrink-0" />
                 {skill}
               </li>
             ))}
@@ -309,7 +309,7 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
+      <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Resources for Families</h1>
           <p className="text-lg text-[#4a7a8a]">
@@ -319,7 +319,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Tabs */}
-      <section className="bg-white border-b border-[#cce8ef] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
         <div className="max-w-5xl mx-auto px-4 overflow-x-auto">
           <div className="flex gap-1 py-2 min-w-max">
             {tabs.map((t, i) => {
@@ -329,7 +329,7 @@ export default function ResourcesPage() {
                   key={t.id}
                   onClick={() => setActive(i)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition whitespace-nowrap ${
-                    active === i ? "bg-[#2fb8c6] text-white" : "text-[#4a7a8a] hover:bg-[#eaf7f9]"
+                    active === i ? "bg-[#24B5D0] text-white" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
                   }`}
                 >
                   <TabIcon size={15} />
@@ -372,7 +372,7 @@ export default function ResourcesPage() {
               </p>
               <div className="space-y-6">
                 {sensorySystems.map((sys) => (
-                  <div key={sys.name} className="bg-white border border-[#cce8ef] rounded-xl p-6">
+                  <div key={sys.name} className="bg-white border border-[#B8E4F0] rounded-xl p-6">
                     <h3 className="font-bold text-[#1e3a4a] text-lg mb-2">{sys.name}</h3>
                     <p className="text-[#4a7a8a] text-sm leading-relaxed mb-4">{sys.desc}</p>
                     <h4 className="font-semibold text-[#4a7a8a] text-sm mb-2">Signs to watch for:</h4>
@@ -395,10 +395,10 @@ export default function ResourcesPage() {
               <p className="text-[#4a7a8a] mb-8">
                 Interested in observing, volunteering, or completing a clinical placement at Coastal Pediatric Therapy Center?
               </p>
-              <div className="bg-[#eaf7f9] rounded-2xl p-8 max-w-xl">
+              <div className="bg-[#EAF6FB] rounded-2xl p-8 max-w-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                    <GraduationCap size={20} className="text-[#2fb8c6]" />
+                    <GraduationCap size={20} className="text-[#24B5D0]" />
                   </div>
                   <h3 className="font-bold text-[#1e3a4a]">Contact Our Clinic</h3>
                 </div>
@@ -410,7 +410,7 @@ export default function ResourcesPage() {
                 </p>
                 <a
                   href="mailto:info@coastaltherapy.net?subject=Student%20Observation%20Request"
-                  className="inline-flex items-center gap-2 bg-[#2fb8c6] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#2aa8b8] transition"
+                  className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1A9EC0] transition"
                 >
                   Email Us Your Request
                 </a>

@@ -142,7 +142,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
+      <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Pediatric Therapy Services</h1>
           <p className="text-lg text-[#4a7a8a]">
@@ -150,7 +150,7 @@ export default function ServicesPage() {
           </p>
           <button
             onClick={openModal}
-            className="mt-6 bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
+            className="mt-6 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
           >
             Book an Appointment <ArrowRight size={18} />
           </button>
@@ -158,7 +158,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Tab nav */}
-      <section className="bg-white border-b border-[#cce8ef] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
         <div className="max-w-5xl mx-auto px-4 overflow-x-auto">
           <div className="flex py-2 min-w-max">
             {tabs.map((t, i) => (
@@ -167,8 +167,8 @@ export default function ServicesPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#2fb8c6] text-[#2fb8c6]"
-                    : "border-transparent text-[#4a7a8a] hover:text-[#2fb8c6]"
+                    ? "border-[#24B5D0] text-[#24B5D0]"
+                    : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
                 }`}
               >
                 {t.label}
@@ -190,14 +190,14 @@ export default function ServicesPage() {
               ))}
               <button
                 onClick={openModal}
-                className="mt-4 bg-[#2fb8c6] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
+                className="mt-4 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
               >
                 Book an Appointment <ArrowRight size={18} />
               </button>
             </div>
 
             {/* Right: conditions list */}
-            <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-6">
+            <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
               <h3 className="font-bold text-[#1e3a4a] mb-4 text-lg">Conditions We Treat</h3>
               <ul className="space-y-3">
                 {tab.conditions.map((c) => (

@@ -51,21 +51,21 @@ export default function ContactPage() {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-[#1e3a4a]">Our Locations</h2>
             {locations.map((loc) => (
-              <div key={loc.name} className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-6">
+              <div key={loc.name} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
                 <h3 className="font-bold text-[#1e3a4a] text-lg mb-3">{loc.name}</h3>
                 <div className="space-y-1.5 text-sm text-[#4a7a8a]">
                   <p>{loc.address}</p>
                   <p>{loc.city}</p>
                   <p className="mt-2">
                     <span className="font-medium text-[#1e3a4a]">Phone: </span>
-                    <a href="tel:9043724070" className="text-[#2fb8c6] hover:underline">{loc.phone}</a>
+                    <a href="tel:9043724070" className="text-[#24B5D0] hover:underline">{loc.phone}</a>
                   </p>
                   <p>
                     <span className="font-medium text-[#1e3a4a]">Fax: </span>{loc.fax}
                   </p>
                   <p>
                     <span className="font-medium text-[#1e3a4a]">Email: </span>
-                    <a href="mailto:info@coastaltherapy.net" className="text-[#2fb8c6] hover:underline">{loc.email}</a>
+                    <a href="mailto:info@coastaltherapy.net" className="text-[#24B5D0] hover:underline">{loc.email}</a>
                   </p>
                   <p className="mt-2">
                     <span className="font-medium text-[#1e3a4a]">Hours: </span>{loc.hours}
@@ -73,12 +73,12 @@ export default function ContactPage() {
                 </div>
               </div>
             ))}
-            <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-6">
+            <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
               <h3 className="font-bold text-[#1e3a4a] mb-2">Prefer to call?</h3>
               <p className="text-[#4a7a8a] text-sm mb-3">Our friendly staff is available Monday through Friday during office hours.</p>
               <a
                 href="tel:9043724070"
-                className="inline-flex items-center gap-2 bg-[#2fb8c6] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#2aa8b8] transition"
+                className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
               >
                 (904) 372-4070
               </a>

@@ -30,7 +30,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
+      <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">About Coastal Pediatric Therapy Center</h1>
           <p className="text-lg text-[#4a7a8a]">
@@ -40,7 +40,7 @@ export default function AboutPage() {
       </section>
 
       {/* Tabs */}
-      <section className="bg-white border-b border-[#cce8ef] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex py-2 overflow-x-auto">
             {tabs.map((t, i) => (
@@ -49,8 +49,8 @@ export default function AboutPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#2fb8c6] text-[#2fb8c6]"
-                    : "border-transparent text-[#4a7a8a] hover:text-[#2fb8c6]"
+                    ? "border-[#24B5D0] text-[#24B5D0]"
+                    : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
                 }`}
               >
                 {t.label}
@@ -82,7 +82,7 @@ export default function AboutPage() {
 
             <div className="grid sm:grid-cols-3 gap-5 mt-10">
               {stats.map(({ stat, label }) => (
-                <div key={stat} className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-5 text-center">
+                <div key={stat} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5 text-center">
                   <p className="font-bold text-[#1e3a4a] text-lg mb-1">{stat}</p>
                   <p className="text-sm text-[#4a7a8a]">{label}</p>
                 </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
-                <div key={i} className="bg-white border border-[#cce8ef] rounded-2xl p-6 text-center">
+                <div key={i} className="bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center">
                   <div className="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-gray-400 font-bold text-xl">{member.initials}</span>
                   </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
             </div>
             <p className="text-center text-[#4a7a8a] text-sm mt-8">
               Full team bios coming soon. Contact us at{" "}
-              <a href="mailto:info@coastaltherapy.net" className="text-[#2fb8c6] hover:underline">
+              <a href="mailto:info@coastaltherapy.net" className="text-[#24B5D0] hover:underline">
                 info@coastaltherapy.net
               </a>{" "}
               to learn about our staff.
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   mapLink: "https://maps.google.com/?q=6100+Greenland+Rd+Suite+901+Jacksonville+FL+32258",
                 },
               ].map((loc) => (
-                <div key={loc.name} className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-8">
+                <div key={loc.name} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8">
                   <h3 className="text-xl font-bold text-[#1e3a4a] mb-3">{loc.name}</h3>
                   <p className="text-[#4a7a8a] text-sm mb-1">{loc.address}</p>
                   <p className="text-[#4a7a8a] text-sm mb-4">{loc.city}</p>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                     href={loc.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#2fb8c6] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#2aa8b8] transition"
+                    className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
                   >
                     Get Directions <ArrowRight size={14} />
                   </a>

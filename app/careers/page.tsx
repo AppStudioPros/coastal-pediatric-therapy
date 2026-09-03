@@ -27,7 +27,7 @@ const values = [
 export default function CareersPage() {
   return (
     <>
-      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
+      <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Join Our Team</h1>
           <p className="text-lg text-[#4a7a8a]">
@@ -45,9 +45,9 @@ export default function CareersPage() {
 
           <div className="grid md:grid-cols-3 gap-5 mb-12">
             {values.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-white border border-[#cce8ef] rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-full bg-[#eaf7f9] flex items-center justify-center mb-4">
-                  <Icon size={20} className="text-[#2fb8c6]" />
+              <div key={title} className="bg-white border border-[#B8E4F0] rounded-2xl p-6">
+                <div className="w-10 h-10 rounded-full bg-[#EAF6FB] flex items-center justify-center mb-4">
+                  <Icon size={20} className="text-[#24B5D0]" />
                 </div>
                 <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
@@ -56,7 +56,7 @@ export default function CareersPage() {
           </div>
 
           {/* Open positions */}
-          <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-8 text-center">
+          <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8 text-center">
             <Briefcase size={36} className="text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-[#1e3a4a] mb-2">No Open Positions Right Now</h3>
             <p className="text-[#4a7a8a] text-sm max-w-md mx-auto mb-6">
@@ -64,7 +64,7 @@ export default function CareersPage() {
             </p>
             <a
               href="mailto:info@coastaltherapy.net?subject=Career%20Inquiry%20—%20Coastal%20Pediatric%20Therapy"
-              className="inline-flex items-center gap-2 bg-[#2fb8c6] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition"
+              className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition"
             >
               <Mail size={16} />
               Send Your Resume

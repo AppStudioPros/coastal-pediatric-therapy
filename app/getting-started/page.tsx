@@ -64,7 +64,7 @@ export default function GettingStartedPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
+      <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Getting Started</h1>
           <p className="text-lg text-[#4a7a8a]">
@@ -74,7 +74,7 @@ export default function GettingStartedPage() {
       </section>
 
       {/* Tabs */}
-      <section className="bg-white border-b border-[#cce8ef] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex py-2 overflow-x-auto">
             {tabs.map((t, i) => (
@@ -83,8 +83,8 @@ export default function GettingStartedPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#2fb8c6] text-[#2fb8c6]"
-                    : "border-transparent text-[#4a7a8a] hover:text-[#2fb8c6]"
+                    ? "border-[#24B5D0] text-[#24B5D0]"
+                    : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
                 }`}
               >
                 {t.label}
@@ -101,9 +101,9 @@ export default function GettingStartedPage() {
             <h2 className="text-2xl font-bold text-[#1e3a4a] text-center mb-10 gold-underline">How It Works</h2>
             <div className="space-y-6 mt-10">
               {steps.map(({ number, title, desc }) => (
-                <div key={title} className="relative flex gap-6 items-start bg-white border border-[#cce8ef] rounded-2xl p-6 overflow-hidden">
+                <div key={title} className="relative flex gap-6 items-start bg-white border border-[#B8E4F0] rounded-2xl p-6 overflow-hidden">
                   {/* Decorative large number */}
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-7xl font-black text-[#cce8ef] select-none pointer-events-none leading-none">
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-7xl font-black text-[#B8E4F0] select-none pointer-events-none leading-none">
                     {number}
                   </span>
                   <div className="relative z-10">
@@ -116,7 +116,7 @@ export default function GettingStartedPage() {
             <div className="text-center mt-10">
               <button
                 onClick={openModal}
-                className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
+                className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
               >
                 Request an Appointment <ArrowRight size={18} />
               </button>
@@ -143,7 +143,7 @@ export default function GettingStartedPage() {
               Following the evaluation, a written report will be prepared with your child&apos;s scores, clinical impressions, and recommended therapy goals. This report will be shared with you and, with your permission, your child&apos;s pediatrician or school team.
             </p>
 
-            <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-6 mb-8">
+            <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6 mb-8">
               <h3 className="font-bold text-[#1e3a4a] mb-4">What the Evaluation Includes</h3>
               <ul className="space-y-2">
                 {[
@@ -164,7 +164,7 @@ export default function GettingStartedPage() {
 
             <button
               onClick={openModal}
-              className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
+              className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
             >
               Schedule an Evaluation <ArrowRight size={18} />
             </button>
@@ -179,10 +179,10 @@ export default function GettingStartedPage() {
             <h2 className="text-2xl font-bold text-[#1e3a4a] mb-8">Scheduling & Hours</h2>
 
             {/* Hours */}
-            <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-6 mb-8">
+            <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6 mb-8">
               <h3 className="font-bold text-[#1e3a4a] text-lg mb-4">Office Hours</h3>
               <div className="grid sm:grid-cols-2 gap-4 text-sm text-[#4a7a8a]">
-                <div className="flex justify-between border-b border-[#cce8ef] pb-2">
+                <div className="flex justify-between border-b border-[#B8E4F0] pb-2">
                   <span className="font-medium text-[#1e3a4a]">Monday – Friday</span>
                   <span>8:30 AM – 5:30 PM</span>
                 </div>
@@ -196,8 +196,8 @@ export default function GettingStartedPage() {
             <h3 className="font-bold text-[#1e3a4a] text-lg mb-4">Available Therapy Settings</h3>
             <div className="grid md:grid-cols-3 gap-5 mb-8">
               {settings.map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="bg-white border border-[#cce8ef] rounded-2xl p-5">
-                  <Icon size={20} className="text-[#2fb8c6] mb-3" />
+                <div key={title} className="bg-white border border-[#B8E4F0] rounded-2xl p-5">
+                  <Icon size={20} className="text-[#24B5D0] mb-3" />
                   <h4 className="font-bold text-[#1e3a4a] mb-2">{title}</h4>
                   <p className="text-sm text-[#4a7a8a] leading-relaxed">{desc}</p>
                 </div>
@@ -207,26 +207,26 @@ export default function GettingStartedPage() {
             {/* Locations */}
             <h3 className="font-bold text-[#1e3a4a] text-lg mb-4">Our Locations</h3>
             <div className="grid md:grid-cols-2 gap-5 mb-8">
-              <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-5">
+              <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5">
                 <h4 className="font-bold text-[#1e3a4a] mb-2">Jacksonville Beach</h4>
                 <p className="text-sm text-[#4a7a8a]">2730 Isabella Blvd, Suite 10<br />Jacksonville Beach, FL 32250</p>
                 <a
                   href="https://maps.google.com/?q=2730+Isabella+Blvd+Suite+10+Jacksonville+Beach+FL+32250"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-sm text-[#2fb8c6] font-semibold hover:underline"
+                  className="inline-flex items-center gap-1 mt-3 text-sm text-[#24B5D0] font-semibold hover:underline"
                 >
                   Get Directions <ArrowRight size={14} />
                 </a>
               </div>
-              <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-5">
+              <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5">
                 <h4 className="font-bold text-[#1e3a4a] mb-2">Mandarin</h4>
                 <p className="text-sm text-[#4a7a8a]">6100 Greenland Rd, Suite 901<br />Jacksonville, FL 32258</p>
                 <a
                   href="https://maps.google.com/?q=6100+Greenland+Rd+Suite+901+Jacksonville+FL+32258"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-sm text-[#2fb8c6] font-semibold hover:underline"
+                  className="inline-flex items-center gap-1 mt-3 text-sm text-[#24B5D0] font-semibold hover:underline"
                 >
                   Get Directions <ArrowRight size={14} />
                 </a>
@@ -235,7 +235,7 @@ export default function GettingStartedPage() {
 
             <button
               onClick={openModal}
-              className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
+              className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
             >
               Book an Appointment <ArrowRight size={18} />
             </button>

@@ -53,7 +53,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           <X size={22} />
         </button>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">
           Let&apos;s get your child scheduled
         </h2>
         <p className="text-gray-500 text-sm mb-6">

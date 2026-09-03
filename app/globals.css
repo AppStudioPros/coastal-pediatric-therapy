@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --brand-primary: #1a9cb5;
-  --brand-dark: #1a3a4a;
-  --brand-gold: #dba843;
-  --surface-tint: #f0f9fc;
-  --text-dark: #1a3a4a;
-  --text-muted: #4a6b7a;
-  --border-color: #d1e8ee;
+  --brand-primary: #3d82b8;
+  --brand-teal: #2fb8c6;
+  --brand-dark: #1e3a4a;
+  --brand-gold: #e8b830;
+  --surface-tint: #eaf7f9;
+  --text-dark: #1e3a4a;
+  --text-muted: #4a7a8a;
+  --border-color: #cce8ef;
 }
 
 .gold-underline {
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #dba843;
+  border-bottom: 3px solid #e8b830;
 }
 
 html {

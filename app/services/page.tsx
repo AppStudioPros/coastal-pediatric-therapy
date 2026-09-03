@@ -142,15 +142,15 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="bg-[#f0f9fc] py-14 px-4 text-center">
+      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#1a3a4a] mb-4">Pediatric Therapy Services</h1>
-          <p className="text-lg text-[#4a6b7a]">
+          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Pediatric Therapy Services</h1>
+          <p className="text-lg text-[#4a7a8a]">
             Comprehensive, play-based therapy for children — delivered one-on-one at our Jacksonville Beach and Mandarin locations.
           </p>
           <button
             onClick={openModal}
-            className="mt-6 bg-[#1a9cb5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition inline-flex items-center gap-2"
+            className="mt-6 bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
           >
             Book an Appointment <ArrowRight size={18} />
           </button>
@@ -158,7 +158,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Tab nav */}
-      <section className="bg-white border-b border-[#d1e8ee] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#cce8ef] sticky top-[64px] z-40">
         <div className="max-w-5xl mx-auto px-4 overflow-x-auto">
           <div className="flex py-2 min-w-max">
             {tabs.map((t, i) => (
@@ -167,8 +167,8 @@ export default function ServicesPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#1a9cb5] text-[#1a9cb5]"
-                    : "border-transparent text-[#4a6b7a] hover:text-[#1a9cb5]"
+                    ? "border-[#2fb8c6] text-[#2fb8c6]"
+                    : "border-transparent text-[#4a7a8a] hover:text-[#2fb8c6]"
                 }`}
               >
                 {t.label}
@@ -184,25 +184,25 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             {/* Left: content */}
             <div>
-              <h2 className="text-3xl font-bold text-[#1a3a4a] mb-5">{tab.title}</h2>
+              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5">{tab.title}</h2>
               {tab.paragraphs.map((p, i) => (
-                <p key={i} className="text-[#4a6b7a] leading-relaxed mb-4">{p}</p>
+                <p key={i} className="text-[#4a7a8a] leading-relaxed mb-4">{p}</p>
               ))}
               <button
                 onClick={openModal}
-                className="mt-4 bg-[#1a9cb5] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition inline-flex items-center gap-2"
+                className="mt-4 bg-[#2fb8c6] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2"
               >
                 Book an Appointment <ArrowRight size={18} />
               </button>
             </div>
 
             {/* Right: conditions list */}
-            <div className="bg-[#f0f9fc] border border-[#d1e8ee] rounded-2xl p-6">
-              <h3 className="font-bold text-[#1a3a4a] mb-4 text-lg">Conditions We Treat</h3>
+            <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-6">
+              <h3 className="font-bold text-[#1e3a4a] mb-4 text-lg">Conditions We Treat</h3>
               <ul className="space-y-3">
                 {tab.conditions.map((c) => (
-                  <li key={c} className="flex items-start gap-3 text-sm text-[#4a6b7a]">
-                    <span className="before:content-['▪'] text-[#dba843] shrink-0 mt-0.5">▪</span>
+                  <li key={c} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
+                    <span className="before:content-['▪'] text-[#e8b830] shrink-0 mt-0.5">▪</span>
                     {c}
                   </li>
                 ))}
@@ -213,7 +213,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 px-4 bg-[#1a3a4a] text-white text-center">
+      <section className="py-14 px-4 bg-[#1e3a4a] text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Your Child Started?</h2>
           <p className="text-white/70 mb-8">
@@ -221,7 +221,7 @@ export default function ServicesPage() {
           </p>
           <button
             onClick={openModal}
-            className="bg-[#dba843] text-[#1a3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#c49a35] transition inline-flex items-center gap-2"
+            className="bg-[#e8b830] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#d4a528] transition inline-flex items-center gap-2"
           >
             Book an Appointment <ArrowRight size={18} />
           </button>

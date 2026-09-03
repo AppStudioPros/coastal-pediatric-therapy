@@ -9,23 +9,23 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <section className="bg-[#f0f9fc] py-14 px-4 text-center">
+      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Shield size={32} className="text-[#1a9cb5]" />
-            <h1 className="text-4xl font-bold text-[#1a3a4a]">Privacy Policy</h1>
+            <Shield size={32} className="text-[#2fb8c6]" />
+            <h1 className="text-4xl font-bold text-[#1e3a4a]">Privacy Policy</h1>
           </div>
-          <p className="text-[#4a6b7a] text-sm">Last Updated: September 2026</p>
+          <p className="text-[#4a7a8a] text-sm">Last Updated: September 2026</p>
         </div>
       </section>
 
       <section className="py-14 px-4 bg-white">
         <div className="max-w-3xl mx-auto prose prose-gray max-w-none">
-          <div className="space-y-10 text-[#4a6b7a] leading-relaxed">
+          <div className="space-y-10 text-[#4a7a8a] leading-relaxed">
 
             {/* Intro */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Introduction</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Introduction</h2>
               <p>
                 Coastal Pediatric Therapy Center (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting the privacy of the families and individuals who use our website and services. This Privacy Policy explains how we collect, use, disclose, and protect information you provide when visiting coastaltherapy.net or contacting us through our online appointment request forms.
               </p>
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Data Collection */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Information We Collect</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Information We Collect</h2>
               <p>We collect information you voluntarily provide, including:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>First name and contact information (phone number, email address)</li>
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
 
             {/* HIPAA Notice */}
             <div id="hipaa">
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">HIPAA Notice of Privacy Practices</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">HIPAA Notice of Privacy Practices</h2>
               <p>
                 Coastal Pediatric Therapy Center is a HIPAA-covered entity. We are required by law to maintain the privacy of protected health information (PHI) and to provide you with notice of our legal duties and privacy practices with respect to your PHI.
               </p>
@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
 
             {/* COPPA */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Children&apos;s Privacy (COPPA)</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Children&apos;s Privacy (COPPA)</h2>
               <p>
                 Our website is directed at adults — specifically parents, guardians, and caregivers of children seeking therapy services. We do not knowingly collect personal information directly from children under the age of 13. All information submitted through our forms is presumed to be provided by a parent or legal guardian.
               </p>
@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Data Use */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">How We Use Your Information</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">How We Use Your Information</h2>
               <p>We use information collected through this website to:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>Respond to appointment requests and contact form submissions</li>
@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Third-Party Services */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Third-Party Services</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Third-Party Services</h2>
               <p>
                 Our online booking portal is powered by <strong>OceanFriends</strong> (oceanfriends.ai). When you click through to schedule an appointment, you will be redirected to OceanFriends&apos; platform, which is subject to their own privacy policy. We encourage you to review their privacy practices.
               </p>
@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Cookies */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Cookies</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Cookies</h2>
               <p>
                 Our website may use cookies — small text files stored on your device — to improve your browsing experience, remember preferences, and collect analytics data. You can control cookie settings through your browser preferences. Note that disabling cookies may affect the functionality of some features on our site.
               </p>
@@ -117,7 +117,7 @@ export default function PrivacyPolicyPage() {
 
             {/* User Rights */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Your Rights</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Your Rights</h2>
               <p>You have the right to:</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
                 <li>Request access to personal information we hold about you</li>
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
 
             {/* FL Telehealth */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Florida Telehealth Disclosure</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Florida Telehealth Disclosure</h2>
               <p>
                 Coastal Pediatric Therapy Center provides telehealth services in compliance with Florida Statute §456.47. Telehealth services are delivered through HIPAA-compliant platforms. Patients have the right to receive the same standard of care via telehealth as they would in person. Telehealth is not appropriate for all conditions or all patients, and therapists retain clinical discretion regarding appropriate service delivery methods.
               </p>
@@ -140,7 +140,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Good Faith Estimate */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Good Faith Estimate (No Surprises Act)</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Good Faith Estimate (No Surprises Act)</h2>
               <p>
                 Under the No Surprises Act (effective January 1, 2022), you have the right to receive a Good Faith Estimate explaining how much your medical and mental health care will cost. Under the law, healthcare providers need to give patients who don&apos;t have insurance — or who are not using insurance — an estimate of the expected charges for medical services, including psychotherapy services.
               </p>
@@ -151,12 +151,12 @@ export default function PrivacyPolicyPage() {
 
             {/* Contact */}
             <div>
-              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-3">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-[#1e3a4a] mb-3">Contact Us</h2>
               <p>
                 If you have any questions, concerns, or requests related to this Privacy Policy or our HIPAA practices, please contact us:
               </p>
-              <div className="mt-3 bg-[#f0f9fc] rounded-xl p-4 text-sm">
-                <p className="font-semibold text-[#1a3a4a]">Coastal Pediatric Therapy Center</p>
+              <div className="mt-3 bg-[#eaf7f9] rounded-xl p-4 text-sm">
+                <p className="font-semibold text-[#1e3a4a]">Coastal Pediatric Therapy Center</p>
                 <p>2730 Isabella Blvd, Suite 10, Jacksonville Beach, FL 32250</p>
                 <p>Phone: (904) 372-4070</p>
                 <p>Email: info@coastaltherapy.net</p>

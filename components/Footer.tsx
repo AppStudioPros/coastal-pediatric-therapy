@@ -34,7 +34,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1a3a4a] text-white mt-16">
+    <footer className="bg-[#1e3a4a] text-white mt-16">
       <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Column 1: Logo + tagline + Instagram */}
@@ -50,7 +50,7 @@ export default function Footer() {
             href="https://www.instagram.com/coastalpediatrictherapy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[#dba843] hover:text-[#c49a35] transition font-medium"
+            className="inline-flex items-center gap-2 text-sm text-[#e8b830] hover:text-[#d4a528] transition font-medium"
           >
             <ExternalLink size={15} />
             @coastalpediatrictherapy
@@ -107,7 +107,7 @@ export default function Footer() {
             Get therapy tips, milestone guides, and updates from our team — delivered to your inbox.
           </p>
           {subStatus === "sent" ? (
-            <p className="text-[#dba843] text-sm font-semibold">Thanks! You&apos;re subscribed. ✓</p>
+            <p className="text-[#e8b830] text-sm font-semibold">Thanks! You&apos;re subscribed. ✓</p>
           ) : (
             <form onSubmit={handleSubscribe} className="space-y-3">
               <input
@@ -116,11 +116,11 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#dba843] transition"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#e8b830] transition"
               />
               <button
                 type="submit"
-                className="w-full bg-[#dba843] text-[#1a3a4a] font-bold py-2.5 rounded-lg text-sm hover:bg-[#c49a35] transition"
+                className="w-full bg-[#e8b830] text-[#1e3a4a] font-bold py-2.5 rounded-lg text-sm hover:bg-[#d4a528] transition"
               >
                 Subscribe
               </button>

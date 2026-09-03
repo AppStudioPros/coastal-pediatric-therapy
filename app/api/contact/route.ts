@@ -6,27 +6,27 @@ export async function POST(req: NextRequest) {
 
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px;">
-        <h2 style="color: #1a9cb5; margin-bottom: 16px;">New Website Message</h2>
+        <h2 style="color: #2fb8c6; margin-bottom: 16px;">New Website Message</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1a3a4a; width: 40%;">Name</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a6b7a;">${name || "—"}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1e3a4a; width: 40%;">Name</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a7a8a;">${name || "—"}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1a3a4a;">Email</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a6b7a;">${email || "—"}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1e3a4a;">Email</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a7a8a;">${email || "—"}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1a3a4a;">Phone</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a6b7a;">${phone || "—"}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1e3a4a;">Phone</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a7a8a;">${phone || "—"}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1a3a4a;">SMS Consent</td>
-            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a6b7a;">${smsConsent ? "Yes" : "No"}</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #1e3a4a;">SMS Consent</td>
+            <td style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a7a8a;">${smsConsent ? "Yes" : "No"}</td>
           </tr>
           <tr>
-            <td style="padding: 10px 0; font-weight: bold; color: #1a3a4a; vertical-align: top;">Message</td>
-            <td style="padding: 10px 0; color: #4a6b7a; white-space: pre-wrap;">${message || "—"}</td>
+            <td style="padding: 10px 0; font-weight: bold; color: #1e3a4a; vertical-align: top;">Message</td>
+            <td style="padding: 10px 0; color: #4a7a8a; white-space: pre-wrap;">${message || "—"}</td>
           </tr>
         </table>
         <p style="margin-top: 24px; font-size: 13px; color: #9ca3af;">

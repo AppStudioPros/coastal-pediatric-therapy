@@ -19,7 +19,7 @@ export default function Nav() {
   const { openModal } = useBooking();
 
   return (
-    <header className="bg-[#1a3a4a] text-white sticky top-0 z-50 shadow-md">
+    <header className="bg-[#3d82b8] text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex flex-col leading-tight">
           <span className="font-bold text-lg text-white">Coastal Pediatric</span>
@@ -35,7 +35,7 @@ export default function Nav() {
           ))}
           <button
             onClick={openModal}
-            className="bg-[#dba843] text-[#1a3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#c49a35] transition ml-2"
+            className="bg-[#e8b830] text-[#1e3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#d4a528] transition ml-2"
           >
             Book an Appointment
           </button>
@@ -59,7 +59,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-[#1a2f3d] px-4 pb-4">
+        <div className="lg:hidden bg-[#2d6fa8] px-4 pb-4">
           <a href="tel:9043724070" className="flex items-center gap-2 py-3 text-sm font-semibold text-white/70 border-b border-white/20">
             <Phone size={15} />
             (904) 372-4070
@@ -76,7 +76,7 @@ export default function Nav() {
           ))}
           <button
             onClick={() => { setOpen(false); openModal(); }}
-            className="mt-4 w-full bg-[#dba843] text-[#1a3a4a] py-3 rounded-lg font-bold text-sm hover:bg-[#c49a35] transition"
+            className="mt-4 w-full bg-[#e8b830] text-[#1e3a4a] py-3 rounded-lg font-bold text-sm hover:bg-[#d4a528] transition"
           >
             Book an Appointment
           </button>

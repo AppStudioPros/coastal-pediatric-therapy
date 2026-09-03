@@ -41,20 +41,20 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="bg-[#f0f9fc] border border-[#d1e8ee] rounded-2xl p-10 text-center">
+      <div className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-10 text-center">
         <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-[#1a3a4a] mb-2">Message Sent!</h3>
-        <p className="text-[#4a6b7a]">Thank you for reaching out. Our team will be in touch with you shortly.</p>
+        <h3 className="text-xl font-bold text-[#1e3a4a] mb-2">Message Sent!</h3>
+        <p className="text-[#4a7a8a]">Thank you for reaching out. Our team will be in touch with you shortly.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-[#d1e8ee] rounded-2xl p-8 space-y-5">
-      <h2 className="text-xl font-bold text-[#1a3a4a] mb-2">Send Us a Message</h2>
+    <form onSubmit={handleSubmit} className="bg-white border border-[#cce8ef] rounded-2xl p-8 space-y-5">
+      <h2 className="text-xl font-bold text-[#1e3a4a] mb-2">Send Us a Message</h2>
 
       <div>
-        <label className="block text-sm font-medium text-[#1a3a4a] mb-1">
+        <label className="block text-sm font-medium text-[#1e3a4a] mb-1">
           Name <span className="text-red-500">*</span>
         </label>
         <input
@@ -64,12 +64,12 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Your full name"
-          className="w-full border border-[#d1e8ee] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1a9cb5] text-[#1a3a4a]"
+          className="w-full border border-[#cce8ef] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2fb8c6] text-[#1e3a4a]"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[#1a3a4a] mb-1">
+        <label className="block text-sm font-medium text-[#1e3a4a] mb-1">
           Email <span className="text-red-500">*</span>
         </label>
         <input
@@ -79,24 +79,24 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="your@email.com"
-          className="w-full border border-[#d1e8ee] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1a9cb5] text-[#1a3a4a]"
+          className="w-full border border-[#cce8ef] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2fb8c6] text-[#1e3a4a]"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[#1a3a4a] mb-1">Phone</label>
+        <label className="block text-sm font-medium text-[#1e3a4a] mb-1">Phone</label>
         <input
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
           placeholder="(904) 000-0000"
-          className="w-full border border-[#d1e8ee] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1a9cb5] text-[#1a3a4a]"
+          className="w-full border border-[#cce8ef] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2fb8c6] text-[#1e3a4a]"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[#1a3a4a] mb-1">
+        <label className="block text-sm font-medium text-[#1e3a4a] mb-1">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -106,7 +106,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Tell us about your child and how we can help..."
-          className="w-full border border-[#d1e8ee] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1a9cb5] text-[#1a3a4a] resize-none"
+          className="w-full border border-[#cce8ef] rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2fb8c6] text-[#1e3a4a] resize-none"
         />
       </div>
 
@@ -117,9 +117,9 @@ export default function ContactForm() {
           id="smsConsent"
           checked={formData.smsConsent}
           onChange={handleChange}
-          className="mt-0.5 accent-[#1a9cb5]"
+          className="mt-0.5 accent-[#2fb8c6]"
         />
-        <label htmlFor="smsConsent" className="text-xs text-[#4a6b7a] leading-relaxed cursor-pointer">
+        <label htmlFor="smsConsent" className="text-xs text-[#4a7a8a] leading-relaxed cursor-pointer">
           I agree to receive SMS/text messages from Coastal Pediatric Therapy Center. Message and data rates may apply. Reply STOP to opt out.
         </label>
       </div>
@@ -131,12 +131,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-[#1a9cb5] text-white py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition text-sm flex items-center justify-center gap-2 disabled:opacity-60"
+        className="w-full bg-[#2fb8c6] text-white py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition text-sm flex items-center justify-center gap-2 disabled:opacity-60"
       >
         {status === "sending" ? "Sending..." : <>Send Message <ArrowRight size={16} /></>}
       </button>
 
-      <p className="text-xs text-[#4a6b7a] text-center">Or call us directly at (904) 372-4070</p>
+      <p className="text-xs text-[#4a7a8a] text-center">Or call us directly at (904) 372-4070</p>
     </form>
   );
 }

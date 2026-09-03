@@ -30,17 +30,17 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="bg-[#f0f9fc] py-14 px-4 text-center">
+      <section className="bg-[#eaf7f9] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#1a3a4a] mb-4">About Coastal Pediatric Therapy Center</h1>
-          <p className="text-lg text-[#4a6b7a]">
+          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">About Coastal Pediatric Therapy Center</h1>
+          <p className="text-lg text-[#4a7a8a]">
             Serving Northeast Florida families since 1996 with compassionate, evidence-based pediatric therapy.
           </p>
         </div>
       </section>
 
       {/* Tabs */}
-      <section className="bg-white border-b border-[#d1e8ee] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#cce8ef] sticky top-[64px] z-40">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex py-2 overflow-x-auto">
             {tabs.map((t, i) => (
@@ -49,8 +49,8 @@ export default function AboutPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#1a9cb5] text-[#1a9cb5]"
-                    : "border-transparent text-[#4a6b7a] hover:text-[#1a9cb5]"
+                    ? "border-[#2fb8c6] text-[#2fb8c6]"
+                    : "border-transparent text-[#4a7a8a] hover:text-[#2fb8c6]"
                 }`}
               >
                 {t.label}
@@ -64,8 +64,8 @@ export default function AboutPage() {
       {active === 0 && (
         <section className="py-14 px-4 bg-white">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1a3a4a] mb-6 gold-underline">Our Story</h2>
-            <div className="mt-4 space-y-4 text-[#4a6b7a] leading-relaxed">
+            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-6 gold-underline">Our Story</h2>
+            <div className="mt-4 space-y-4 text-[#4a7a8a] leading-relaxed">
               <p>
                 Coastal Pediatric Therapy Center was founded in 1996 with a simple belief: every child deserves to reach their full potential. What began as a small, dedicated practice in Jacksonville Beach has grown into a trusted regional resource for families across Northeast Florida.
               </p>
@@ -82,9 +82,9 @@ export default function AboutPage() {
 
             <div className="grid sm:grid-cols-3 gap-5 mt-10">
               {stats.map(({ stat, label }) => (
-                <div key={stat} className="bg-[#f0f9fc] border border-[#d1e8ee] rounded-2xl p-5 text-center">
-                  <p className="font-bold text-[#1a3a4a] text-lg mb-1">{stat}</p>
-                  <p className="text-sm text-[#4a6b7a]">{label}</p>
+                <div key={stat} className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-5 text-center">
+                  <p className="font-bold text-[#1e3a4a] text-lg mb-1">{stat}</p>
+                  <p className="text-sm text-[#4a7a8a]">{label}</p>
                 </div>
               ))}
             </div>
@@ -96,24 +96,24 @@ export default function AboutPage() {
       {active === 1 && (
         <section className="py-14 px-4 bg-white">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">Meet the Team</h2>
-            <p className="text-[#4a6b7a] mt-4 mb-10">
+            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Meet the Team</h2>
+            <p className="text-[#4a7a8a] mt-4 mb-10">
               Our compassionate, highly skilled therapists are dedicated to helping every child succeed.
             </p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
-                <div key={i} className="bg-white border border-[#d1e8ee] rounded-2xl p-6 text-center">
+                <div key={i} className="bg-white border border-[#cce8ef] rounded-2xl p-6 text-center">
                   <div className="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-gray-400 font-bold text-xl">{member.initials}</span>
                   </div>
                   <div className="h-4 bg-gray-100 rounded-full w-3/4 mx-auto mb-2 animate-pulse" />
-                  <p className="text-sm text-[#4a6b7a]">{member.role}</p>
+                  <p className="text-sm text-[#4a7a8a]">{member.role}</p>
                 </div>
               ))}
             </div>
-            <p className="text-center text-[#4a6b7a] text-sm mt-8">
+            <p className="text-center text-[#4a7a8a] text-sm mt-8">
               Full team bios coming soon. Contact us at{" "}
-              <a href="mailto:info@coastaltherapy.net" className="text-[#1a9cb5] hover:underline">
+              <a href="mailto:info@coastaltherapy.net" className="text-[#2fb8c6] hover:underline">
                 info@coastaltherapy.net
               </a>{" "}
               to learn about our staff.
@@ -126,8 +126,8 @@ export default function AboutPage() {
       {active === 2 && (
         <section className="py-14 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">Our Locations</h2>
-            <p className="text-[#4a6b7a] mt-4 mb-10">
+            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Our Locations</h2>
+            <p className="text-[#4a7a8a] mt-4 mb-10">
               Two convenient locations serving Jacksonville Beach, Mandarin, and surrounding communities.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
@@ -145,20 +145,20 @@ export default function AboutPage() {
                   mapLink: "https://maps.google.com/?q=6100+Greenland+Rd+Suite+901+Jacksonville+FL+32258",
                 },
               ].map((loc) => (
-                <div key={loc.name} className="bg-[#f0f9fc] border border-[#d1e8ee] rounded-2xl p-8">
-                  <h3 className="text-xl font-bold text-[#1a3a4a] mb-3">{loc.name}</h3>
-                  <p className="text-[#4a6b7a] text-sm mb-1">{loc.address}</p>
-                  <p className="text-[#4a6b7a] text-sm mb-4">{loc.city}</p>
-                  <div className="text-sm text-[#4a6b7a] mb-5">
+                <div key={loc.name} className="bg-[#eaf7f9] border border-[#cce8ef] rounded-2xl p-8">
+                  <h3 className="text-xl font-bold text-[#1e3a4a] mb-3">{loc.name}</h3>
+                  <p className="text-[#4a7a8a] text-sm mb-1">{loc.address}</p>
+                  <p className="text-[#4a7a8a] text-sm mb-4">{loc.city}</p>
+                  <div className="text-sm text-[#4a7a8a] mb-5">
                     <p>(904) 372-4070</p>
                     <p>Fax: (904) 372-4075</p>
-                    <p className="mt-1"><span className="font-medium text-[#1a3a4a]">Mon–Fri:</span> 8:30 AM – 5:30 PM</p>
+                    <p className="mt-1"><span className="font-medium text-[#1e3a4a]">Mon–Fri:</span> 8:30 AM – 5:30 PM</p>
                   </div>
                   <a
                     href={loc.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#1a9cb5] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#147a8f] transition"
+                    className="inline-flex items-center gap-2 bg-[#2fb8c6] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#2aa8b8] transition"
                   >
                     Get Directions <ArrowRight size={14} />
                   </a>

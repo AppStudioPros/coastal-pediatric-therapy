@@ -52,25 +52,25 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: text */}
           <div className="max-w-lg">
-            <p className="text-[#dba843] font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-[#e8b830] font-semibold text-sm uppercase tracking-widest mb-4">
               Serving Northeast Florida Since 1996
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#1a3a4a] leading-tight mb-5">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#1e3a4a] leading-tight mb-5">
               Helping Children Reach Their Full Potential
             </h1>
-            <p className="text-lg text-[#4a6b7a] leading-relaxed mb-8">
+            <p className="text-lg text-[#4a7a8a] leading-relaxed mb-8">
               Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin. One-on-one care, tailored to your child.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <button
                 onClick={openModal}
-                className="bg-[#1a9cb5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition flex items-center gap-2 justify-center"
+                className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition flex items-center gap-2 justify-center"
               >
                 Book an Appointment <ArrowRight size={18} />
               </button>
               <a
                 href="tel:9043724070"
-                className="border border-[#d1e8ee] text-[#1a3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#f0f9fc] transition flex items-center gap-2 justify-center"
+                className="border border-[#cce8ef] text-[#1e3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#eaf7f9] transition flex items-center gap-2 justify-center"
               >
                 <Phone size={18} /> (904) 372-4070
               </a>
@@ -78,8 +78,8 @@ export default function Home() {
             {/* Trust chips */}
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {trustChips.map((chip) => (
-                <span key={chip} className="flex items-center gap-2 text-sm text-[#4a6b7a]">
-                  <span className="text-[#dba843] text-xs">⬤</span>
+                <span key={chip} className="flex items-center gap-2 text-sm text-[#4a7a8a]">
+                  <span className="text-[#e8b830] text-xs">⬤</span>
                   {chip}
                 </span>
               ))}
@@ -89,8 +89,8 @@ export default function Home() {
           {/* Right: image */}
           <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&q=80"
-              alt="Child in pediatric therapy session"
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
+              alt="Child receiving pediatric therapy at Coastal Pediatric Therapy Center"
               width={600}
               height={500}
               className="rounded-2xl object-cover w-full h-full"
@@ -101,11 +101,11 @@ export default function Home() {
       </section>
 
       {/* Trust bar */}
-      <section className="bg-[#f0f9fc] py-6 px-4">
+      <section className="bg-[#eaf7f9] py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {trustBar.map((label) => (
             <div key={label} className="text-center">
-              <p className="font-bold text-sm text-[#1a3a4a] gold-underline">{label}</p>
+              <p className="font-bold text-sm text-[#1e3a4a] gold-underline">{label}</p>
             </div>
           ))}
         </div>
@@ -115,20 +115,20 @@ export default function Home() {
       <section className="py-20 md:py-28 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">Our Therapy Services</h2>
-            <p className="text-[#4a6b7a] mt-4 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
+            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Our Therapy Services</h2>
+            <p className="text-[#4a7a8a] mt-4 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {services.map(({ icon: Icon, title, desc }) => (
-              <Link key={title} href="/services" className="bg-white border border-[#d1e8ee] rounded-2xl p-6 hover:shadow-md transition block">
-                <Icon size={28} className="text-[#1a9cb5] mb-3" />
-                <h3 className="font-bold text-[#1a3a4a] mb-2">{title}</h3>
-                <p className="text-[#4a6b7a] text-sm leading-relaxed">{desc}</p>
+              <Link key={title} href="/services" className="bg-white border border-[#cce8ef] rounded-2xl p-6 hover:shadow-md transition block">
+                <Icon size={28} className="text-[#2fb8c6] mb-3" />
+                <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
+                <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
               </Link>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/services" className="text-[#1a9cb5] font-semibold hover:underline flex items-center gap-1 justify-center">
+            <Link href="/services" className="text-[#2fb8c6] font-semibold hover:underline flex items-center gap-1 justify-center">
               Learn more about our services <ArrowRight size={16} />
             </Link>
           </div>
@@ -136,18 +136,18 @@ export default function Home() {
       </section>
 
       {/* About strip */}
-      <section className="py-20 px-4 bg-[#f0f9fc]">
+      <section className="py-20 px-4 bg-[#eaf7f9]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">
+          <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">
             Jacksonville&apos;s Trusted Pediatric Therapy Experts
           </h2>
-          <p className="text-[#4a6b7a] text-lg leading-relaxed mt-4 mb-4">
+          <p className="text-[#4a7a8a] text-lg leading-relaxed mt-4 mb-4">
             Our compassionate, highly skilled therapists work with each child one-on-one to develop a customized treatment plan designed to build confidence, improve developmental skills, and exceed therapeutic goals.
           </p>
-          <p className="text-[#4a6b7a] mb-8">
-            We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#1a3a4a]">Jacksonville Beach</strong> and <strong className="text-[#1a3a4a]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
+          <p className="text-[#4a7a8a] mb-8">
+            We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#1e3a4a]">Jacksonville Beach</strong> and <strong className="text-[#1e3a4a]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
           </p>
-          <Link href="/about" className="bg-[#1a9cb5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition inline-flex items-center gap-2">
+          <Link href="/about" className="bg-[#2fb8c6] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#2aa8b8] transition inline-flex items-center gap-2">
             Our Story <ArrowRight size={18} />
           </Link>
         </div>
@@ -157,18 +157,18 @@ export default function Home() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a3a4a] gold-underline">What Families Are Saying</h2>
+            <h2 className="text-3xl font-bold text-[#1e3a4a] gold-underline">What Families Are Saying</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map(({ quote, name }) => (
-              <div key={name} className="bg-[#f0f9fc] rounded-2xl p-8">
+              <div key={name} className="bg-[#eaf7f9] rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#dba843] text-[#dba843]" />)}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#e8b830] text-[#e8b830]" />)}
                 </div>
-                <p className="text-[#4a6b7a] text-sm leading-relaxed mb-5">&ldquo;{quote}&rdquo;</p>
+                <p className="text-[#4a7a8a] text-sm leading-relaxed mb-5">&ldquo;{quote}&rdquo;</p>
                 <div>
-                  <p className="font-semibold text-[#1a3a4a] text-sm">{name}</p>
-                  <p className="text-[#4a6b7a] text-xs">— Parent</p>
+                  <p className="font-semibold text-[#1e3a4a] text-sm">{name}</p>
+                  <p className="text-[#4a7a8a] text-xs">— Parent</p>
                 </div>
               </div>
             ))}
@@ -177,19 +177,19 @@ export default function Home() {
       </section>
 
       {/* Insurance strip */}
-      <section className="py-16 px-4 bg-[#f0f9fc]">
+      <section className="py-16 px-4 bg-[#eaf7f9]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">Accepted Insurance Plans</h2>
-          <p className="text-[#4a6b7a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
+          <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Accepted Insurance Plans</h2>
+          <p className="text-[#4a7a8a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {insurance.map((plan) => (
-              <span key={plan} className="bg-white border border-[#d1e8ee] rounded-full px-4 py-1.5 text-sm text-[#1a3a4a]">
+              <span key={plan} className="bg-white border border-[#cce8ef] rounded-full px-4 py-1.5 text-sm text-[#1e3a4a]">
                 {plan}
               </span>
             ))}
           </div>
           <div className="mt-8">
-            <Link href="/insurance" className="text-[#1a9cb5] font-semibold hover:underline">
+            <Link href="/insurance" className="text-[#2fb8c6] font-semibold hover:underline">
               Learn about insurance coverage
             </Link>
           </div>
@@ -197,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-[#1a3a4a] text-white text-center">
+      <section className="py-20 px-4 bg-[#1e3a4a] text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 gold-underline">Ready to Get Started?</h2>
           <p className="text-white/70 mb-8 text-lg mt-4">
@@ -206,7 +206,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={openModal}
-              className="bg-[#dba843] text-[#1a3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#c49a35] transition"
+              className="bg-[#e8b830] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#d4a528] transition"
             >
               Book an Appointment
             </button>

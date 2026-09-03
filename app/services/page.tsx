@@ -202,7 +202,7 @@ export default function ServicesPage() {
               <ul className="space-y-3">
                 {tab.conditions.map((c) => (
                   <li key={c} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                    <span className="before:content-['▪'] text-[#e8b830] shrink-0 mt-0.5">▪</span>
+                    <span className="before:content-['▪'] text-[#F5C518] shrink-0 mt-0.5">▪</span>
                     {c}
                   </li>
                 ))}
@@ -221,7 +221,7 @@ export default function ServicesPage() {
           </p>
           <button
             onClick={openModal}
-            className="bg-[#e8b830] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#d4a528] transition inline-flex items-center gap-2"
+            className="bg-[#F5C518] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#E0B210] transition inline-flex items-center gap-2"
           >
             Book an Appointment <ArrowRight size={18} />
           </button>

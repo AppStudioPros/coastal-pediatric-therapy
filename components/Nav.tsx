@@ -35,7 +35,7 @@ export default function Nav() {
           ))}
           <button
             onClick={openModal}
-            className="bg-[#e8b830] text-[#1e3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#d4a528] transition ml-2"
+            className="bg-[#F5C518] text-[#1e3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#E0B210] transition ml-2"
           >
             Book an Appointment
           </button>
@@ -76,7 +76,7 @@ export default function Nav() {
           ))}
           <button
             onClick={() => { setOpen(false); openModal(); }}
-            className="mt-4 w-full bg-[#e8b830] text-[#1e3a4a] py-3 rounded-lg font-bold text-sm hover:bg-[#d4a528] transition"
+            className="mt-4 w-full bg-[#F5C518] text-[#1e3a4a] py-3 rounded-lg font-bold text-sm hover:bg-[#E0B210] transition"
           >
             Book an Appointment
           </button>

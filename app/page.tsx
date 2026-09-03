@@ -1,96 +1,134 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import {
   MessageCircle, Hand, Activity, ArrowRight, Star, Phone,
-  Brain, Utensils, BookOpen, Shield, Award, Users
+  Brain, Utensils, BookOpen
 } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 
 const services = [
-  { icon: MessageCircle, title: "Speech & Language Therapy", href: "/services", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
-  { icon: Hand, title: "Occupational Therapy", href: "/services", desc: "Building fine motor skills, sensory processing, self-care, and school readiness so children can thrive in everyday life." },
-  { icon: Activity, title: "Physical Therapy", href: "/services", desc: "Improving strength, balance, coordination, and gross motor development to help children move and play with confidence." },
-  { icon: Brain, title: "Sensory Integration", href: "/services", desc: "Helping children who are over- or under-responsive to sensory information engage more comfortably with their environment." },
-  { icon: Utensils, title: "Feeding Therapy", href: "/services", desc: "Addressing sensory, motor, and behavioral components of eating to help children expand their diet and enjoy mealtimes." },
-  { icon: BookOpen, title: "Reading Intervention", href: "/services", desc: "Structured literacy support for children with dyslexia, language-based learning disabilities, or reading challenges." },
+  { icon: MessageCircle, title: "Speech & Language Therapy", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
+  { icon: Hand, title: "Occupational Therapy", desc: "Building fine motor skills, sensory processing, self-care, and school readiness so children can thrive in everyday life." },
+  { icon: Activity, title: "Physical Therapy", desc: "Improving strength, balance, coordination, and gross motor development to help children move and play with confidence." },
+  { icon: Brain, title: "Sensory Integration", desc: "Helping children who are over- or under-responsive to sensory information engage more comfortably with their environment." },
+  { icon: Utensils, title: "Feeding Therapy", desc: "Addressing sensory, motor, and behavioral components of eating to help children expand their diet and enjoy mealtimes." },
+  { icon: BookOpen, title: "Reading Intervention", desc: "Structured literacy support for children with dyslexia, language-based learning disabilities, or reading challenges." },
 ];
 
 const testimonials = [
-  { quote: "We have been coming to Coastal Pediatric Therapy Center for almost three years and have seen so much growth and improvement in our son's speech. Our SLP makes speech fun, so it's enjoyable to be there.", name: "Cheryl" },
-  { quote: "Coastal Therapy is a wonderful, positive, learning experience for the entire family! I have been impressed with the whole staff from the moment I made the first call.", name: "Karin" },
-  { quote: "We have seen a huge improvement in our child's speech since starting at Coastal Therapy. People are able to understand him so much more now!", name: "Elizabeth" },
+  {
+    quote: "We have been coming to Coastal Pediatric Therapy Center for almost three years and have seen so much growth and improvement in our son's speech. Our SLP makes speech fun and engaging, so it's always an enjoyable experience to be there. The whole staff is warm, professional, and truly invested in our child's progress.",
+    name: "Cheryl",
+  },
+  {
+    quote: "Coastal Therapy is a wonderful, positive, learning experience for the entire family! I have been impressed with the whole staff from the moment I made the first call. They were patient, thorough, and made us feel completely at ease. We couldn't be happier with the care our child receives here.",
+    name: "Karin",
+  },
+  {
+    quote: "We have seen a huge improvement in our child's speech since starting at Coastal Therapy. People are able to understand him so much more now! The therapists are kind, encouraging, and so creative in how they approach each session. We are so grateful for this team.",
+    name: "Elizabeth",
+  },
 ];
 
 const insurance = ["BCBS", "Medica (MMSI)", "CMS Medicaid", "Tricare Select", "Tricare Prime", "UMR", "United", "Step Up For Students", "DSAJ Scholarships", "SIS VPK Funding"];
 
-const trustItems = [
-  { icon: Award, label: "Serving Families Since 1996" },
-  { icon: Users, label: "Multidisciplinary Team" },
-  { icon: Shield, label: "HIPAA Compliant Practice" },
-  { icon: Star, label: "Play-Based Approach" },
+const trustBar = [
+  "Licensed & Certified Therapists",
+  "Play-Based Approach",
+  "HIPAA Compliant Practice",
+  "Individualized Treatment Plans",
 ];
+
+const trustChips = ["2 Locations", "Since 1996", "Most Insurance Accepted", "Telehealth Available"];
 
 export default function Home() {
   const { openModal } = useBooking();
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#e8f4f9] py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#1e7faa] font-semibold uppercase tracking-widest text-sm mb-3">Northeast Florida&apos;s Trusted Pediatric Therapy Center</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-5">
-            Helping Children Reach Their Full Potential
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin since 1996.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={openModal}
-              className="bg-[#e8734a] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#d4623b] transition flex items-center gap-2 justify-center"
-            >
-              Book an Appointment <ArrowRight size={18} />
-            </button>
-            <a href="tel:9043724070" className="border border-[#1e7faa] text-[#1e7faa] px-8 py-3 rounded-lg font-semibold hover:bg-[#e8f4f9] transition flex items-center gap-2 justify-center">
-              <Phone size={18} /> (904) 372-4070
-            </a>
+      {/* Hero — split layout */}
+      <section className="bg-white py-20 md:py-28 px-4">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          {/* Left: text */}
+          <div className="max-w-lg">
+            <p className="text-[#dba843] font-semibold text-sm uppercase tracking-widest mb-4">
+              Serving Northeast Florida Since 1996
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#1a3a4a] leading-tight mb-5">
+              Helping Children Reach Their Full Potential
+            </h1>
+            <p className="text-lg text-[#4a6b7a] leading-relaxed mb-8">
+              Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin. One-on-one care, tailored to your child.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <button
+                onClick={openModal}
+                className="bg-[#1a9cb5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition flex items-center gap-2 justify-center"
+              >
+                Book an Appointment <ArrowRight size={18} />
+              </button>
+              <a
+                href="tel:9043724070"
+                className="border border-[#d1e8ee] text-[#1a3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#f0f9fc] transition flex items-center gap-2 justify-center"
+              >
+                <Phone size={18} /> (904) 372-4070
+              </a>
+            </div>
+            {/* Trust chips */}
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {trustChips.map((chip) => (
+                <span key={chip} className="flex items-center gap-2 text-sm text-[#4a6b7a]">
+                  <span className="text-[#dba843] text-xs">⬤</span>
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: image */}
+          <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&q=80"
+              alt="Child in pediatric therapy session"
+              width={600}
+              height={500}
+              className="rounded-2xl object-cover w-full h-full"
+              priority
+            />
           </div>
         </div>
       </section>
 
       {/* Trust bar */}
-      <section className="bg-white border-y border-gray-200 py-5 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {trustItems.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3 justify-center">
-              <div className="w-9 h-9 rounded-full bg-[#e8f4f9] flex items-center justify-center shrink-0">
-                <Icon size={18} className="text-[#1e7faa]" />
-              </div>
-              <span className="text-sm font-semibold text-gray-700">{label}</span>
+      <section className="bg-[#f0f9fc] py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+          {trustBar.map((label) => (
+            <div key={label} className="text-center">
+              <p className="font-bold text-sm text-[#1a3a4a] gold-underline">{label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-20 md:py-28 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">Our Therapy Services</h2>
-          <p className="text-center text-gray-500 mb-10 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc, href }) => (
-              <Link key={title} href={href} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition block">
-                <div className="w-12 h-12 rounded-full bg-[#e8f4f9] flex items-center justify-center mb-4">
-                  <Icon size={24} className="text-[#1e7faa]" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">Our Therapy Services</h2>
+            <p className="text-[#4a6b7a] mt-4 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {services.map(({ icon: Icon, title, desc }) => (
+              <Link key={title} href="/services" className="bg-white border border-[#d1e8ee] rounded-2xl p-6 hover:shadow-md transition block">
+                <Icon size={28} className="text-[#1a9cb5] mb-3" />
+                <h3 className="font-bold text-[#1a3a4a] mb-2">{title}</h3>
+                <p className="text-[#4a6b7a] text-sm leading-relaxed">{desc}</p>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link href="/services" className="text-[#1e7faa] font-semibold hover:underline flex items-center gap-1 justify-center">
+          <div className="text-center mt-10">
+            <Link href="/services" className="text-[#1a9cb5] font-semibold hover:underline flex items-center gap-1 justify-center">
               Learn more about our services <ArrowRight size={16} />
             </Link>
           </div>
@@ -98,71 +136,81 @@ export default function Home() {
       </section>
 
       {/* About strip */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-[#f0f9fc]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Jacksonville&apos;s Pediatric Therapy Experts Since 1996</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Our compassionate, highly skilled therapists work with each child one-on-one to develop a customized treatment plan designed to build confidence, improve developmental skills, and exceed therapeutic goals. We work closely with families, teachers, and pediatricians to help every child succeed.
+          <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">
+            Jacksonville&apos;s Trusted Pediatric Therapy Experts
+          </h2>
+          <p className="text-[#4a6b7a] text-lg leading-relaxed mt-4 mb-4">
+            Our compassionate, highly skilled therapists work with each child one-on-one to develop a customized treatment plan designed to build confidence, improve developmental skills, and exceed therapeutic goals.
           </p>
-          <p className="text-gray-600 mb-6">Two convenient locations in <strong>Jacksonville Beach</strong> and <strong>Mandarin</strong>. Clinic, telehealth, and private school settings available.</p>
-          <Link href="/about" className="bg-[#1e7faa] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#155f82] transition inline-flex items-center gap-2">
+          <p className="text-[#4a6b7a] mb-8">
+            We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#1a3a4a]">Jacksonville Beach</strong> and <strong className="text-[#1a3a4a]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
+          </p>
+          <Link href="/about" className="bg-[#1a9cb5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition inline-flex items-center gap-2">
             Our Story <ArrowRight size={18} />
           </Link>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">What Families Are Saying</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#1a3a4a] gold-underline">What Families Are Saying</h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map(({ quote, name }) => (
-              <div key={name} className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />)}
+              <div key={name} className="bg-[#f0f9fc] rounded-2xl p-8">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#dba843] text-[#dba843]" />)}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">&ldquo;{quote}&rdquo;</p>
-                <p className="font-semibold text-gray-900 text-sm">— {name}</p>
+                <p className="text-[#4a6b7a] text-sm leading-relaxed mb-5">&ldquo;{quote}&rdquo;</p>
+                <div>
+                  <p className="font-semibold text-[#1a3a4a] text-sm">{name}</p>
+                  <p className="text-[#4a6b7a] text-xs">— Parent</p>
+                </div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link href="/about" className="text-[#1e7faa] font-semibold hover:underline flex items-center gap-1 justify-center">
-              Learn more about us <ArrowRight size={16} />
+        </div>
+      </section>
+
+      {/* Insurance strip */}
+      <section className="py-16 px-4 bg-[#f0f9fc]">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#1a3a4a] mb-3 gold-underline">Accepted Insurance Plans</h2>
+          <p className="text-[#4a6b7a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {insurance.map((plan) => (
+              <span key={plan} className="bg-white border border-[#d1e8ee] rounded-full px-4 py-1.5 text-sm text-[#1a3a4a]">
+                {plan}
+              </span>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link href="/insurance" className="text-[#1a9cb5] font-semibold hover:underline">
+              Learn about insurance coverage
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Insurance */}
-      <section className="py-16 px-4 bg-[#e8f4f9]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">Accepted Insurance Plans</h2>
-          <p className="text-gray-500 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {insurance.map((plan) => (
-              <span key={plan} className="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium text-gray-700">{plan}</span>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Link href="/insurance" className="text-[#1e7faa] font-semibold hover:underline">Learn about insurance coverage</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 px-4 bg-[#1e7faa] text-white text-center">
+      {/* Final CTA */}
+      <section className="py-20 px-4 bg-[#1a3a4a] text-white text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-white/90 mb-8 text-lg">Fill out a new patient request and our friendly staff will take care of the rest — from insurance verification to scheduling.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 gold-underline">Ready to Get Started?</h2>
+          <p className="text-white/70 mb-8 text-lg mt-4">
+            Fill out a new patient request and our friendly staff will take care of the rest — from insurance verification to scheduling.
+          </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={openModal}
-              className="bg-[#e8734a] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#d4623b] transition"
+              className="bg-[#dba843] text-[#1a3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#c49a35] transition"
             >
               Book an Appointment
             </button>
-            <a href="tel:9043724070" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#155f82] transition">
+            <a href="tel:9043724070" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition">
               Call (904) 372-4070
             </a>
           </div>
@@ -177,6 +225,7 @@ export default function Home() {
             "@type": "MedicalBusiness",
             "name": "Coastal Pediatric Therapy Center",
             "telephone": "(904) 372-4070",
+            "faxNumber": "(904) 372-4075",
             "email": "info@coastaltherapy.net",
             "url": "https://coastaltherapy.net",
             "foundingDate": "1996",
@@ -215,15 +264,9 @@ export default function Home() {
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-                "opens": "09:00",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:30",
                 "closes": "17:30"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Friday"],
-                "opens": "09:00",
-                "closes": "17:00"
               }
             ],
             "areaServed": "Northeast Florida"

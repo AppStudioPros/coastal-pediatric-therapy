@@ -289,12 +289,12 @@ export default function ResourcesPage() {
   const renderMilestones = (milestones: typeof speechMilestones) => (
     <div className="space-y-6">
       {milestones.map((group) => (
-        <div key={group.age} className="bg-white border border-gray-200 rounded-xl p-5">
-          <h3 className="font-bold text-[#1e7faa] text-sm uppercase tracking-wide mb-3">{group.age}</h3>
+        <div key={group.age} className="bg-white border border-[#d1e8ee] rounded-xl p-5">
+          <h3 className="font-bold text-[#1a9cb5] text-sm uppercase tracking-wide mb-3">{group.age}</h3>
           <ul className="space-y-2">
             {group.skills.map((skill) => (
-              <li key={skill} className="flex items-start gap-3 text-sm text-gray-700">
-                <CheckCircle size={15} className="text-[#1e7faa] mt-0.5 shrink-0" />
+              <li key={skill} className="flex items-start gap-3 text-sm text-[#4a6b7a]">
+                <CheckCircle size={15} className="text-[#1a9cb5] mt-0.5 shrink-0" />
                 {skill}
               </li>
             ))}
@@ -309,17 +309,17 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <section className="bg-[#e8f4f9] py-14 px-4 text-center">
+      <section className="bg-[#f0f9fc] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Resources for Families</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-[#1a3a4a] mb-4">Resources for Families</h1>
+          <p className="text-lg text-[#4a6b7a]">
             Developmental milestones, sensory guides, and information for students and volunteers.
           </p>
         </div>
       </section>
 
       {/* Tabs */}
-      <section className="bg-white border-b border-gray-200 sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#d1e8ee] sticky top-[64px] z-40">
         <div className="max-w-5xl mx-auto px-4 overflow-x-auto">
           <div className="flex gap-1 py-2 min-w-max">
             {tabs.map((t, i) => {
@@ -329,7 +329,7 @@ export default function ResourcesPage() {
                   key={t.id}
                   onClick={() => setActive(i)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition whitespace-nowrap ${
-                    active === i ? "bg-[#1e7faa] text-white" : "text-gray-600 hover:bg-gray-100"
+                    active === i ? "bg-[#1a9cb5] text-white" : "text-[#4a6b7a] hover:bg-[#f0f9fc]"
                   }`}
                 >
                   <TabIcon size={15} />
@@ -345,41 +345,41 @@ export default function ResourcesPage() {
         <div className="max-w-4xl mx-auto">
           {active === 0 && (
             <>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Speech & Language Milestones</h2>
-              <p className="text-gray-500 mb-8">A guide to typical communication development from birth through age 5.</p>
+              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-2">Speech & Language Milestones</h2>
+              <p className="text-[#4a6b7a] mb-8">A guide to typical communication development from birth through age 5.</p>
               {renderMilestones(speechMilestones)}
             </>
           )}
           {active === 1 && (
             <>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Gross Motor Milestones</h2>
-              <p className="text-gray-500 mb-8">Typical physical development milestones from birth through age 5.</p>
+              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-2">Gross Motor Milestones</h2>
+              <p className="text-[#4a6b7a] mb-8">Typical physical development milestones from birth through age 5.</p>
               {renderMilestones(grossMilestones)}
             </>
           )}
           {active === 2 && (
             <>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Fine Motor Milestones</h2>
-              <p className="text-gray-500 mb-8">Hand and finger skill development from birth through age 5.</p>
+              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-2">Fine Motor Milestones</h2>
+              <p className="text-[#4a6b7a] mb-8">Hand and finger skill development from birth through age 5.</p>
               {renderMilestones(fineMilestones)}
             </>
           )}
           {active === 3 && (
             <>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Sensory Processing Indicators</h2>
-              <p className="text-gray-500 mb-8">
+              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-2">Sensory Processing Indicators</h2>
+              <p className="text-[#4a6b7a] mb-8">
                 The 7 sensory systems and signs that may indicate a child could benefit from sensory integration therapy.
               </p>
               <div className="space-y-6">
                 {sensorySystems.map((sys) => (
-                  <div key={sys.name} className="bg-white border border-gray-200 rounded-xl p-6">
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">{sys.name}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{sys.desc}</p>
-                    <h4 className="font-semibold text-gray-700 text-sm mb-2">Signs to watch for:</h4>
+                  <div key={sys.name} className="bg-white border border-[#d1e8ee] rounded-xl p-6">
+                    <h3 className="font-bold text-[#1a3a4a] text-lg mb-2">{sys.name}</h3>
+                    <p className="text-[#4a6b7a] text-sm leading-relaxed mb-4">{sys.desc}</p>
+                    <h4 className="font-semibold text-[#4a6b7a] text-sm mb-2">Signs to watch for:</h4>
                     <ul className="space-y-2">
                       {sys.signs.map((sign) => (
-                        <li key={sign} className="flex items-start gap-3 text-sm text-gray-600">
-                          <CheckCircle size={15} className="text-[#e8734a] mt-0.5 shrink-0" />
+                        <li key={sign} className="flex items-start gap-3 text-sm text-[#4a6b7a]">
+                          <CheckCircle size={15} className="text-[#dba843] mt-0.5 shrink-0" />
                           {sign}
                         </li>
                       ))}
@@ -391,26 +391,26 @@ export default function ResourcesPage() {
           )}
           {active === 4 && (
             <>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Student & Volunteer Requests</h2>
-              <p className="text-gray-500 mb-8">
+              <h2 className="text-2xl font-bold text-[#1a3a4a] mb-2">Student & Volunteer Requests</h2>
+              <p className="text-[#4a6b7a] mb-8">
                 Interested in observing, volunteering, or completing a clinical placement at Coastal Pediatric Therapy Center?
               </p>
-              <div className="bg-[#e8f4f9] rounded-2xl p-8 max-w-xl">
+              <div className="bg-[#f0f9fc] rounded-2xl p-8 max-w-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                    <GraduationCap size={20} className="text-[#1e7faa]" />
+                    <GraduationCap size={20} className="text-[#1a9cb5]" />
                   </div>
-                  <h3 className="font-bold text-gray-900">Contact Our Clinic</h3>
+                  <h3 className="font-bold text-[#1a3a4a]">Contact Our Clinic</h3>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                <p className="text-[#4a6b7a] text-sm leading-relaxed mb-3">
                   We accept observation requests and student placement inquiries on a case-by-case basis. Please email us with your program, degree level, preferred discipline (Speech, OT, or PT), and desired dates.
                 </p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                <p className="text-[#4a6b7a] text-sm leading-relaxed mb-5">
                   All student observers and volunteers are required to complete a background check and agree to our HIPAA and confidentiality policies before beginning any observation or clinical hours.
                 </p>
                 <a
                   href="mailto:info@coastaltherapy.net?subject=Student%20Observation%20Request"
-                  className="inline-flex items-center gap-2 bg-[#1e7faa] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#155f82] transition"
+                  className="inline-flex items-center gap-2 bg-[#1a9cb5] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#147a8f] transition"
                 >
                   Email Us Your Request
                 </a>

@@ -30,10 +30,10 @@ const skeletonPosts = [
 export default function BlogPage() {
   return (
     <>
-      <section className="bg-[#e8f4f9] py-14 px-4 text-center">
+      <section className="bg-[#f0f9fc] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">The Coastal Therapy Blog</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-[#1a3a4a] mb-4">The Coastal Therapy Blog</h1>
+          <p className="text-lg text-[#4a6b7a]">
             Tips, guides, and insights from our pediatric therapy team — written for families, by therapists.
           </p>
         </div>
@@ -42,17 +42,17 @@ export default function BlogPage() {
       <section className="py-14 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           {/* Coming soon banner */}
-          <div className="bg-[#e8f4f9] border border-[#1e7faa]/20 rounded-2xl p-6 text-center mb-12">
-            <BookOpen size={32} className="text-[#1e7faa] mx-auto mb-3" />
-            <h2 className="text-xl font-bold text-gray-900 mb-2">Blog Coming Soon</h2>
-            <p className="text-gray-600 text-sm max-w-md mx-auto">
+          <div className="bg-[#f0f9fc] border border-[#1a9cb5]/20 rounded-2xl p-6 text-center mb-12">
+            <BookOpen size={32} className="text-[#1a9cb5] mx-auto mb-3" />
+            <h2 className="text-xl font-bold text-[#1a3a4a] mb-2">Blog Coming Soon</h2>
+            <p className="text-[#4a6b7a] text-sm max-w-md mx-auto">
               Our therapists are preparing helpful articles and resources. Check back soon, or follow us on Instagram for early tips and updates.
             </p>
             <a
               href="https://www.instagram.com/coastalpediatrictherapy/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-[#1e7faa] font-semibold text-sm hover:underline"
+              className="inline-flex items-center gap-2 mt-4 text-[#1a9cb5] font-semibold text-sm hover:underline"
             >
               Follow @coastalpediatrictherapy
             </a>
@@ -61,19 +61,19 @@ export default function BlogPage() {
           {/* Skeleton cards */}
           <div className="grid md:grid-cols-3 gap-6">
             {skeletonPosts.map((post, i) => (
-              <div key={i} className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                <div className="bg-gray-100 h-44 flex items-center justify-center">
+              <div key={i} className="bg-white border border-[#d1e8ee] rounded-2xl overflow-hidden">
+                <div className="bg-[#f0f9fc] h-44 flex items-center justify-center">
                   <BookOpen size={32} className="text-gray-300" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag size={13} className="text-[#1e7faa]" />
-                    <span className="text-xs font-semibold text-[#1e7faa] uppercase tracking-wide">{post.category}</span>
+                    <Tag size={13} className="text-[#1a9cb5]" />
+                    <span className="text-xs font-semibold text-[#1a9cb5] uppercase tracking-wide">{post.category}</span>
                   </div>
                   <div className="h-5 bg-gray-200 rounded-full w-3/4 mb-3 animate-pulse" />
                   <div className="space-y-2 mb-4">
-                    <div className="h-3 bg-gray-100 rounded-full w-full animate-pulse" />
-                    <div className="h-3 bg-gray-100 rounded-full w-5/6 animate-pulse" />
+                    <div className="h-3 bg-[#f0f9fc] rounded-full w-full animate-pulse" />
+                    <div className="h-3 bg-[#f0f9fc] rounded-full w-5/6 animate-pulse" />
                   </div>
                   <div className="flex items-center gap-1 text-xs text-gray-400">
                     <Clock size={12} />

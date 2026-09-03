@@ -19,23 +19,23 @@ export default function Nav() {
   const { openModal } = useBooking();
 
   return (
-    <header className="bg-[#1e7faa] text-white sticky top-0 z-50 shadow-md">
+    <header className="bg-[#1a3a4a] text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-bold text-lg">Coastal Pediatric</span>
-          <span className="text-sm opacity-90">Therapy Center</span>
+          <span className="font-bold text-lg text-white">Coastal Pediatric</span>
+          <span className="text-sm text-white/80">Therapy Center</span>
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-5 text-sm font-medium">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:opacity-80 transition">
+            <Link key={l.href} href={l.href} className="text-white/80 hover:text-white transition">
               {l.label}
             </Link>
           ))}
           <button
             onClick={openModal}
-            className="bg-[#e8734a] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-[#d4623b] transition ml-2"
+            className="bg-[#dba843] text-[#1a3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#c49a35] transition ml-2"
           >
             Book an Appointment
           </button>
@@ -43,15 +43,15 @@ export default function Nav() {
 
         {/* Phone + mobile toggle */}
         <div className="flex items-center gap-3">
-          <a href="tel:9043724070" className="hidden sm:flex lg:hidden items-center gap-1 text-sm font-semibold hover:opacity-80">
+          <a href="tel:9043724070" className="hidden sm:flex lg:hidden items-center gap-1 text-sm font-semibold text-white/70 hover:text-white transition">
             <Phone size={15} />
             (904) 372-4070
           </a>
-          <a href="tel:9043724070" className="hidden xl:flex items-center gap-1 text-sm font-semibold hover:opacity-80">
+          <a href="tel:9043724070" className="hidden xl:flex items-center gap-1 text-sm font-semibold text-white/70 hover:text-white transition">
             <Phone size={15} />
             (904) 372-4070
           </a>
-          <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <button className="lg:hidden text-white" onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -59,8 +59,8 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-[#155f82] px-4 pb-4">
-          <a href="tel:9043724070" className="flex items-center gap-2 py-3 text-sm font-semibold border-b border-white/20">
+        <div className="lg:hidden bg-[#1a2f3d] px-4 pb-4">
+          <a href="tel:9043724070" className="flex items-center gap-2 py-3 text-sm font-semibold text-white/70 border-b border-white/20">
             <Phone size={15} />
             (904) 372-4070
           </a>
@@ -68,7 +68,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="block py-3 text-sm border-b border-white/10 hover:opacity-80"
+              className="block py-3 text-sm text-white/80 border-b border-white/10 hover:text-white transition"
               onClick={() => setOpen(false)}
             >
               {l.label}
@@ -76,7 +76,7 @@ export default function Nav() {
           ))}
           <button
             onClick={() => { setOpen(false); openModal(); }}
-            className="mt-4 w-full bg-[#e8734a] text-white py-3 rounded-lg font-semibold text-sm hover:bg-[#d4623b] transition"
+            className="mt-4 w-full bg-[#dba843] text-[#1a3a4a] py-3 rounded-lg font-bold text-sm hover:bg-[#c49a35] transition"
           >
             Book an Appointment
           </button>

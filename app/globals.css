@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --brand: #1e7faa;
-  --brand-dark: #155f82;
-  --brand-light: #e8f4f9;
+  --brand-primary: #1a9cb5;
+  --brand-dark: #1a3a4a;
+  --brand-gold: #dba843;
+  --surface-tint: #f0f9fc;
+  --text-dark: #1a3a4a;
+  --text-muted: #4a6b7a;
+  --border-color: #d1e8ee;
+}
+
+.gold-underline {
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #dba843;
 }
 
 html {

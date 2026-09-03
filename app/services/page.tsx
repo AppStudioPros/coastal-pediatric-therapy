@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { MessageCircle, Hand, Activity, Brain, Utensils, BookOpen, ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 
 export const dynamic = "force-static";
@@ -9,7 +9,6 @@ const tabs = [
   {
     id: "speech",
     label: "Speech & Language",
-    icon: MessageCircle,
     title: "Speech & Language Therapy",
     paragraphs: [
       "Our speech-language pathologists work with children who have challenges with articulation, language development, fluency, voice, and social communication. Every child deserves to be heard — and our team is dedicated to helping each one find their voice through individualized, play-based treatment.",
@@ -31,7 +30,6 @@ const tabs = [
   {
     id: "ot",
     label: "Occupational Therapy",
-    icon: Hand,
     title: "Occupational Therapy",
     paragraphs: [
       "Our occupational therapists help children develop the skills they need to participate fully in school, home, and play. We specialize in sensory processing, fine motor development, self-care, handwriting, and emotional regulation — building the foundational skills children need to thrive in everyday life.",
@@ -53,7 +51,6 @@ const tabs = [
   {
     id: "pt",
     label: "Physical Therapy",
-    icon: Activity,
     title: "Physical Therapy",
     paragraphs: [
       "Our physical therapists focus on gross motor development, strength, balance, and coordination. We help children with conditions ranging from developmental delays and hypotonia to orthopedic injuries and neurological conditions — getting them moving, playing, and building confidence.",
@@ -75,7 +72,6 @@ const tabs = [
   {
     id: "sensory",
     label: "Sensory Integration",
-    icon: Brain,
     title: "Sensory Integration Therapy",
     paragraphs: [
       "Sensory Integration Therapy helps children who are over- or under-responsive to sensory information from their environment. Many children struggle with sounds, textures, movement, or touch in ways that interfere with learning, behavior, and daily activities — our therapists specialize in addressing these challenges at the root.",
@@ -97,7 +93,6 @@ const tabs = [
   {
     id: "feeding",
     label: "Feeding Therapy",
-    icon: Utensils,
     title: "Feeding Therapy",
     paragraphs: [
       "Feeding difficulties in children can cause significant stress for the whole family. Our feeding therapists — both speech-language pathologists and occupational therapists — work together to address the sensory, motor, and behavioral components of eating, helping children expand their diet and develop positive relationships with food.",
@@ -119,7 +114,6 @@ const tabs = [
   {
     id: "reading",
     label: "Reading Intervention",
-    icon: BookOpen,
     title: "Reading Intervention",
     paragraphs: [
       "Reading is foundational to academic success, and many children with language or learning challenges need targeted support to develop strong literacy skills. Our reading intervention services are delivered by speech-language pathologists who specialize in the language underpinnings of reading and spelling.",
@@ -144,41 +138,42 @@ export default function ServicesPage() {
   const [active, setActive] = useState(0);
   const { openModal } = useBooking();
   const tab = tabs[active];
-  const Icon = tab.icon;
 
   return (
     <>
       {/* Page hero */}
-      <section className="bg-[#e8f4f9] py-14 px-4 text-center">
+      <section className="bg-[#f0f9fc] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Pediatric Therapy Services</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-[#1a3a4a] mb-4">Pediatric Therapy Services</h1>
+          <p className="text-lg text-[#4a6b7a]">
             Comprehensive, play-based therapy for children — delivered one-on-one at our Jacksonville Beach and Mandarin locations.
           </p>
+          <button
+            onClick={openModal}
+            className="mt-6 bg-[#1a9cb5] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition inline-flex items-center gap-2"
+          >
+            Book an Appointment <ArrowRight size={18} />
+          </button>
         </div>
       </section>
 
       {/* Tab nav */}
-      <section className="bg-white border-b border-gray-200 sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#d1e8ee] sticky top-[64px] z-40">
         <div className="max-w-5xl mx-auto px-4 overflow-x-auto">
-          <div className="flex gap-1 py-2 min-w-max">
-            {tabs.map((t, i) => {
-              const TabIcon = t.icon;
-              return (
-                <button
-                  key={t.id}
-                  onClick={() => setActive(i)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition whitespace-nowrap ${
-                    active === i
-                      ? "bg-[#1e7faa] text-white"
-                      : "text-gray-600 hover:bg-gray-100"
-                  }`}
-                >
-                  <TabIcon size={16} />
-                  {t.label}
-                </button>
-              );
-            })}
+          <div className="flex py-2 min-w-max">
+            {tabs.map((t, i) => (
+              <button
+                key={t.id}
+                onClick={() => setActive(i)}
+                className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
+                  active === i
+                    ? "border-[#1a9cb5] text-[#1a9cb5]"
+                    : "border-transparent text-[#4a6b7a] hover:text-[#1a9cb5]"
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -189,30 +184,25 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 gap-10 items-start">
             {/* Left: content */}
             <div>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-12 h-12 rounded-full bg-[#e8f4f9] flex items-center justify-center shrink-0">
-                  <Icon size={24} className="text-[#1e7faa]" />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900">{tab.title}</h2>
-              </div>
+              <h2 className="text-3xl font-bold text-[#1a3a4a] mb-5">{tab.title}</h2>
               {tab.paragraphs.map((p, i) => (
-                <p key={i} className="text-gray-600 leading-relaxed mb-4">{p}</p>
+                <p key={i} className="text-[#4a6b7a] leading-relaxed mb-4">{p}</p>
               ))}
               <button
                 onClick={openModal}
-                className="mt-4 bg-[#e8734a] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d4623b] transition inline-flex items-center gap-2"
+                className="mt-4 bg-[#1a9cb5] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#147a8f] transition inline-flex items-center gap-2"
               >
                 Book an Appointment <ArrowRight size={18} />
               </button>
             </div>
 
             {/* Right: conditions list */}
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-              <h3 className="font-bold text-gray-900 mb-4 text-lg">Conditions We Treat</h3>
+            <div className="bg-[#f0f9fc] border border-[#d1e8ee] rounded-2xl p-6">
+              <h3 className="font-bold text-[#1a3a4a] mb-4 text-lg">Conditions We Treat</h3>
               <ul className="space-y-3">
                 {tab.conditions.map((c) => (
-                  <li key={c} className="flex items-start gap-3 text-sm text-gray-700">
-                    <CheckCircle size={16} className="text-[#1e7faa] mt-0.5 shrink-0" />
+                  <li key={c} className="flex items-start gap-3 text-sm text-[#4a6b7a]">
+                    <span className="before:content-['▪'] text-[#dba843] shrink-0 mt-0.5">▪</span>
                     {c}
                   </li>
                 ))}
@@ -223,15 +213,15 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-14 px-4 bg-[#1e7faa] text-white text-center">
+      <section className="py-14 px-4 bg-[#1a3a4a] text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Your Child Started?</h2>
-          <p className="text-white/90 mb-8">
+          <p className="text-white/70 mb-8">
             Our team handles insurance verification, prescription requests, and scheduling — all you need to do is reach out.
           </p>
           <button
             onClick={openModal}
-            className="bg-[#e8734a] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#d4623b] transition inline-flex items-center gap-2"
+            className="bg-[#dba843] text-[#1a3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#c49a35] transition inline-flex items-center gap-2"
           >
             Book an Appointment <ArrowRight size={18} />
           </button>

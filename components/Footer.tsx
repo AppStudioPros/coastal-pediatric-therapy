@@ -34,7 +34,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1e3a4a] text-white mt-16">
+    <footer className="bg-[#1e3a4a] text-white">
       <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Column 1: Logo + tagline + Instagram */}

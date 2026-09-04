@@ -123,23 +123,23 @@ html {
   box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
 
-/* === Fade Scroll Tab Bar (mobile only) === */
+/* === Fade Scroll Tab Bar === */
 .tab-fade-wrap {
   position: relative;
   overflow: hidden;
 }
-/* Right fade — pulses to hint scrollability */
+/* Right fade — more prominent, 88px wide */
 .tab-fade-wrap::after {
   content: '';
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 56px;
+  width: 88px;
   pointer-events: none;
-  background: linear-gradient(to right, transparent, #ffffff);
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.97));
   z-index: 2;
-  animation: tabRightPulse 2.2s ease-in-out infinite;
+  animation: tabRightPulse 2s ease-in-out infinite;
 }
 /* Left fade */
 .tab-fade-wrap::before {
@@ -148,17 +148,35 @@ html {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 40px;
+  width: 48px;
   pointer-events: none;
-  background: linear-gradient(to left, transparent, #ffffff);
+  background: linear-gradient(to left, transparent, rgba(255,255,255,0.97));
   z-index: 2;
 }
 @keyframes tabRightPulse {
-  0%, 100% { opacity: 0.65; }
-  50%       { opacity: 1; }
+  0%, 100% { opacity: 0.7; width: 88px; }
+  50%       { opacity: 1;   width: 100px; }
 }
 
-/* Hide scrollbar inside tab-fade-inner */
+/* Scroll chevron indicator */
+.tab-scroll-chevron {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  pointer-events: none;
+  color: #24B5D0;
+  font-size: 18px;
+  font-weight: bold;
+  animation: chevronPulse 2s ease-in-out infinite;
+}
+@keyframes chevronPulse {
+  0%, 100% { opacity: 0.5; transform: translateY(-50%) translateX(0px); }
+  50%       { opacity: 1;   transform: translateY(-50%) translateX(3px); }
+}
+
+/* Hide scrollbar */
 .tab-fade-inner {
   overflow-x: auto;
   scrollbar-width: none;

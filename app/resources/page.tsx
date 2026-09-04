@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { MessageCircle, Activity, Hand, Brain, GraduationCap, CheckCircle } from "lucide-react";
+import FadeTabs from "@/components/FadeTabs";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const dynamic = "force-static";
@@ -323,24 +324,8 @@ export default function ResourcesPage() {
 
       {/* Tabs */}
       <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
-        <div className="max-w-5xl mx-auto px-4 tab-fade-wrap">
-          <div className="tab-fade-inner"><div className="flex gap-1 py-2 min-w-max">
-            {tabs.map((t, i) => {
-              const TabIcon = t.icon;
-              return (
-                <button
-                  key={t.id}
-                  onClick={() => setActive(i)}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition whitespace-nowrap ${
-                    active === i ? i % 2 === 1 ? "bg-[#AF29BE] text-white" : "bg-[#24B5D0] text-white" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
-                  }`}
-                >
-                  <TabIcon size={14} />
-                  {t.label}
-                </button>
-              );
-            })}
-          </div></div>
+        <div className="max-w-5xl mx-auto px-4">
+          <FadeTabs tabs={tabs} active={active} onChange={setActive} />
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } from "lucide-react";
+import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -10,6 +11,7 @@ const tabs = [
   {
     id: "speech",
     label: "Speech & Language",
+    icon: MessageCircle,
     title: "Speech & Language Therapy",
     paragraphs: [
       "Our speech-language pathologists work with children who have challenges with articulation, language development, fluency, voice, and social communication. Every child deserves to be heard — and our team is dedicated to helping each one find their voice through individualized, play-based treatment.",
@@ -31,6 +33,7 @@ const tabs = [
   {
     id: "ot",
     label: "Occupational Therapy",
+    icon: Hand,
     title: "Occupational Therapy",
     paragraphs: [
       "Our occupational therapists help children develop the skills they need to participate fully in school, home, and play. We specialize in sensory processing, fine motor development, self-care, handwriting, and emotional regulation — building the foundational skills children need to thrive in everyday life.",
@@ -52,6 +55,7 @@ const tabs = [
   {
     id: "pt",
     label: "Physical Therapy",
+    icon: Activity,
     title: "Physical Therapy",
     paragraphs: [
       "Our physical therapists focus on gross motor development, strength, balance, and coordination. We help children with conditions ranging from developmental delays and hypotonia to orthopedic injuries and neurological conditions — getting them moving, playing, and building confidence.",
@@ -73,6 +77,7 @@ const tabs = [
   {
     id: "sensory",
     label: "Sensory Integration",
+    icon: Brain,
     title: "Sensory Integration Therapy",
     paragraphs: [
       "Sensory Integration Therapy helps children who are over- or under-responsive to sensory information from their environment. Many children struggle with sounds, textures, movement, or touch in ways that interfere with learning, behavior, and daily activities — our therapists specialize in addressing these challenges at the root.",
@@ -94,6 +99,7 @@ const tabs = [
   {
     id: "feeding",
     label: "Feeding Therapy",
+    icon: Utensils,
     title: "Feeding Therapy",
     paragraphs: [
       "Feeding difficulties in children can cause significant stress for the whole family. Our feeding therapists — both speech-language pathologists and occupational therapists — work together to address the sensory, motor, and behavioral components of eating, helping children expand their diet and develop positive relationships with food.",
@@ -115,6 +121,7 @@ const tabs = [
   {
     id: "reading",
     label: "Reading Intervention",
+    icon: BookOpen,
     title: "Reading Intervention",
     paragraphs: [
       "Reading is foundational to academic success, and many children with language or learning challenges need targeted support to develop strong literacy skills. Our reading intervention services are delivered by speech-language pathologists who specialize in the language underpinnings of reading and spelling.",
@@ -162,24 +169,8 @@ export default function ServicesPage() {
 
       {/* Tab nav */}
       <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
-        <div className="max-w-5xl mx-auto px-4 tab-fade-wrap">
-          <div className="tab-fade-inner">
-          <div className="flex py-2 min-w-max">
-            {tabs.map((t, i) => (
-              <button
-                key={t.id}
-                onClick={() => setActive(i)}
-                className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
-                  active === i
-                    ? i % 2 === 1 ? "border-[#AF29BE] text-[#AF29BE]" : "border-[#24B5D0] text-[#24B5D0]"
-                    : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-          </div>
+        <div className="max-w-5xl mx-auto px-4">
+          <FadeTabs tabs={tabs} active={active} onChange={setActive} />
         </div>
       </section>
 

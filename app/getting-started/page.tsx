@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
-import { MapPin, Monitor, School, ArrowRight } from "lucide-react";
+import { MapPin, Monitor, School, ArrowRight, ClipboardList, CheckCircle, Clock } from "lucide-react";
+import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const dynamic = "force-static";
 
 const tabs = [
-  { id: "process", label: "New Patient Process" },
-  { id: "expect", label: "What to Expect" },
-  { id: "scheduling", label: "Scheduling & Hours" },
+  { id: "process", label: "New Patient Process", icon: ClipboardList },
+  { id: "expect", label: "What to Expect", icon: CheckCircle },
+  { id: "scheduling", label: "Scheduling & Hours", icon: Clock },
 ];
 
 const steps = [
@@ -78,23 +79,8 @@ export default function GettingStartedPage() {
 
       {/* Tabs */}
       <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
-        <div className="max-w-4xl mx-auto px-4 tab-fade-wrap">
-          <div className="tab-fade-inner"><div className="flex py-2 min-w-max">
-            {tabs.map((t, i) => (
-              <button
-                key={t.id}
-                onClick={() => setActive(i)}
-                className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
-                  active === i
-                    ? i === 1 ? "border-[#AF29BE] text-[#AF29BE]" : "border-[#24B5D0] text-[#24B5D0]"
-                    : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
-                }`}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-          </div>
+        <div className="max-w-4xl mx-auto px-4">
+          <FadeTabs tabs={tabs} active={active} onChange={setActive} />
         </div>
       </section>
 

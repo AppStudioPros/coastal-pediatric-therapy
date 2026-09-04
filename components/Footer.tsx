@@ -57,6 +57,9 @@ export default function Footer() {
           </a>
         </div>
 
+        {/* Columns 2+3: Site Links + Our Locations — 2-col on mobile, dissolves on desktop */}
+        <div className="grid grid-cols-2 gap-4 md:contents">
+
         {/* Column 2: Site Links */}
         <div>
           <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Site Links</h4>
@@ -99,6 +102,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        </div>{/* end mobile 2-col wrapper */}
 
         {/* Column 4: Stay Connected — Newsletter */}
         <div>

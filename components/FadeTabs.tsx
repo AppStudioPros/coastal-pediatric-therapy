@@ -1,4 +1,5 @@
 "use client";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { useDragScroll } from "@/hooks/useDragScroll";
 
 interface Tab {
@@ -15,10 +16,68 @@ interface Props {
 
 export default function FadeTabs({ tabs, active, onChange }: Props) {
   const scrollRef = useDragScroll<HTMLDivElement>();
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(false);
+  const [needsScroll, setNeedsScroll] = useState(false);
+
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const overflows = el.scrollWidth > el.clientWidth + 2;
+    setNeedsScroll(overflows);
+    setShowLeft(overflows && el.scrollLeft > 4);
+    setShowRight(overflows && el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, [scrollRef]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    const ro = new ResizeObserver(checkScroll);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      ro.disconnect();
+    };
+  }, [checkScroll, scrollRef]);
 
   return (
-    <div className="tab-fade-wrap">
-      <span className="tab-scroll-chevron" aria-hidden="true">›</span>
+    <div className="relative overflow-hidden">
+      {/* Left fade + chevron */}
+      {needsScroll && showLeft && (
+        <>
+          <div
+            className="absolute left-0 top-0 bottom-0 w-20 pointer-events-none z-10"
+            style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.97))" }}
+          />
+          <span
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-[#24B5D0] font-bold text-lg"
+            style={{ animation: "chevronPulseLeft 2s ease-in-out infinite" }}
+            aria-hidden="true"
+          >‹</span>
+        </>
+      )}
+
+      {/* Right fade + chevron */}
+      {needsScroll && showRight && (
+        <>
+          <div
+            className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
+            style={{
+              width: "88px",
+              background: "linear-gradient(to right, transparent, rgba(255,255,255,0.97))",
+              animation: "tabRightPulse 2s ease-in-out infinite",
+            }}
+          />
+          <span
+            className="tab-scroll-chevron"
+            aria-hidden="true"
+          >›</span>
+        </>
+      )}
+
+      {/* Scrollable inner */}
       <div className="tab-fade-inner" ref={scrollRef}>
         <div className="flex gap-2 py-2.5 min-w-max px-1">
           {tabs.map((tab, i) => {

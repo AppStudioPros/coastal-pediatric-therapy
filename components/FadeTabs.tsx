@@ -113,7 +113,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
 
       {/* Scrollable inner */}
       <div className="tab-fade-inner" ref={scrollRef}>
-        <div className="flex gap-2 py-2.5 min-w-max px-1">
+        <div className="flex gap-2 py-2.5 min-w-max md:min-w-0 md:w-full px-1">
           {tabs.map((tab, i) => {
             const Icon = tab.icon;
             const isActive = active === i;
@@ -122,7 +122,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
               <button
                 key={tab.id}
                 onClick={() => onChange(i)}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${
+                className={`flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap md:flex-1 ${
                   isActive
                     ? isPurple
                       ? "bg-[#AF29BE] text-white shadow-sm"

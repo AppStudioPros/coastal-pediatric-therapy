@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useDragScroll } from "@/hooks/useDragScroll";
 
 interface Tab {
@@ -64,35 +65,39 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
       {/* Left fade + chevron — mobile only, hover-scroll enabled */}
       {needsScroll && showLeft && (
         <div
-          className="md:hidden absolute left-0 inset-y-0 w-16 z-10 flex items-center justify-start pl-1"
-          style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.97))" }}
+          className="md:hidden absolute left-0 top-2.5 bottom-2.5 w-20 z-10 flex items-center justify-start pl-0.5"
+          style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.95))" }}
           onMouseEnter={() => startHoverScroll("left")}
           onMouseLeave={stopHoverScroll}
         >
-          <span
-            className="text-[#24B5D0] font-bold text-2xl leading-none select-none"
+          <ChevronLeft
+            size={32}
+            strokeWidth={3}
+            className="text-[#24B5D0] opacity-70 select-none"
             style={{ animation: "chevronPulseLeft 2s ease-in-out infinite" }}
             aria-hidden="true"
-          >‹</span>
+          />
         </div>
       )}
 
       {/* Right fade + chevron — mobile only, hover-scroll enabled */}
       {needsScroll && showRight && (
         <div
-          className="md:hidden absolute right-0 inset-y-0 w-16 z-10 flex items-center justify-end pr-1"
+          className="md:hidden absolute right-0 top-2.5 bottom-2.5 w-20 z-10 flex items-center justify-end pr-0.5"
           style={{
-            background: "linear-gradient(to right, transparent, rgba(255,255,255,0.97))",
+            background: "linear-gradient(to right, transparent, rgba(255,255,255,0.95))",
             animation: "tabRightPulse 2s ease-in-out infinite",
           }}
           onMouseEnter={() => startHoverScroll("right")}
           onMouseLeave={stopHoverScroll}
         >
-          <span
-            className="text-[#24B5D0] font-bold text-2xl leading-none select-none"
+          <ChevronRight
+            size={32}
+            strokeWidth={3}
+            className="text-[#24B5D0] opacity-70 select-none"
             style={{ animation: "chevronPulse 2s ease-in-out infinite" }}
             aria-hidden="true"
-          >›</span>
+          />
         </div>
       )}
 

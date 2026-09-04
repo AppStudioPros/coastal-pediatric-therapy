@@ -1,4 +1,5 @@
 "use client";
+import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
@@ -247,6 +248,7 @@ export default function ServicesPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

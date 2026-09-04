@@ -1,3 +1,5 @@
+"use client";
+import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import { FileText } from "lucide-react";
 
@@ -131,6 +133,7 @@ export default function TermsPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

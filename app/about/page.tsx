@@ -1,4 +1,5 @@
 "use client";
+import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { ArrowRight, Heart, Users, MapPin } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
@@ -215,6 +216,7 @@ export default function AboutPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

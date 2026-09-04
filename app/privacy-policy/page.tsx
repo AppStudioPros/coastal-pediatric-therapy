@@ -1,3 +1,5 @@
+"use client";
+import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import { Shield } from "lucide-react";
 
@@ -184,6 +186,7 @@ export default function PrivacyPolicyPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

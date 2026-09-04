@@ -1,4 +1,5 @@
 "use client";
+import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { MapPin, Monitor, School, ArrowRight, ClipboardList, CheckCircle, Clock } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
@@ -264,6 +265,7 @@ export default function GettingStartedPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

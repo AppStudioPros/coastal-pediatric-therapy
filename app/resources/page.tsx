@@ -1,4 +1,5 @@
 "use client";
+import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { MessageCircle, Activity, Hand, Brain, GraduationCap, CheckCircle } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
@@ -425,6 +426,7 @@ export default function ResourcesPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import { BookOpen, Clock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -108,6 +110,7 @@ export default function BlogPage() {
           })
         }}
       />
+      <CTASection />
     </>
   );
 }

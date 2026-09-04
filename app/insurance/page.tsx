@@ -1,3 +1,5 @@
+"use client";
+import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import InsurancePlans from "@/components/InsurancePlans";
@@ -48,6 +50,7 @@ export default function InsurancePage() {
           </AnimatedSection>
         </div>
       </section>
+      <CTASection />
     </>
   );
 }

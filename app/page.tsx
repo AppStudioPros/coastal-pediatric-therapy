@@ -196,13 +196,13 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-[#1e3a4a] gold-underline">What Families Are Saying</h2>
             </div>
           </AnimatedSection>
-          <StaggeredGrid className="grid md:grid-cols-3 gap-6">
+          <StaggeredGrid className="grid md:grid-cols-3 gap-6 items-stretch">
             {testimonials.map(({ quote, name }) => (
-              <div key={name} className="card-hover bg-[#EAF6FB] rounded-2xl p-8">
+              <div key={name} className="card-hover bg-[#EAF6FB] rounded-2xl p-8 h-full flex flex-col">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#FFD940] text-[#FFD940]" />)}
                 </div>
-                <p className="text-[#4a7a8a] text-sm leading-relaxed mb-5">&ldquo;{quote}&rdquo;</p>
+                <p className="text-[#4a7a8a] text-sm leading-relaxed mb-5 flex-1">&ldquo;{quote}&rdquo;</p>
                 <div>
                   <p className="font-semibold text-[#1e3a4a] text-sm">{name}</p>
                   <p className="text-[#4a7a8a] text-xs">— Parent</p>

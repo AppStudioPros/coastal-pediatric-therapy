@@ -44,26 +44,26 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
 
   return (
     <div className="relative overflow-hidden">
-      {/* Left fade + chevron */}
+      {/* Left fade + chevron — mobile only */}
       {needsScroll && showLeft && (
         <>
           <div
-            className="absolute left-0 top-0 bottom-0 w-20 pointer-events-none z-10"
+            className="md:hidden absolute left-0 top-0 bottom-0 w-20 pointer-events-none z-10"
             style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.97))" }}
           />
           <span
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-[#24B5D0] font-bold text-lg"
+            className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-[#24B5D0] font-bold text-xl leading-none"
             style={{ animation: "chevronPulseLeft 2s ease-in-out infinite" }}
             aria-hidden="true"
           >‹</span>
         </>
       )}
 
-      {/* Right fade + chevron */}
+      {/* Right fade + chevron — mobile only */}
       {needsScroll && showRight && (
         <>
           <div
-            className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
+            className="md:hidden absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
             style={{
               width: "88px",
               background: "linear-gradient(to right, transparent, rgba(255,255,255,0.97))",
@@ -71,7 +71,8 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
             }}
           />
           <span
-            className="tab-scroll-chevron"
+            className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-[#24B5D0] font-bold text-xl leading-none"
+            style={{ animation: "chevronPulse 2s ease-in-out infinite" }}
             aria-hidden="true"
           >›</span>
         </>

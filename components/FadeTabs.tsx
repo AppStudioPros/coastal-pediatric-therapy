@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useDragScroll } from "@/hooks/useDragScroll";
 
 interface Tab {
@@ -19,6 +19,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
   const [needsScroll, setNeedsScroll] = useState(false);
+  const hoverScrollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -42,40 +43,57 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
     };
   }, [checkScroll, scrollRef]);
 
+  const startHoverScroll = (dir: "left" | "right") => {
+    if (hoverScrollRef.current) return;
+    hoverScrollRef.current = setInterval(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollLeft += dir === "right" ? 4 : -4;
+    }, 16);
+  };
+
+  const stopHoverScroll = () => {
+    if (hoverScrollRef.current) {
+      clearInterval(hoverScrollRef.current);
+      hoverScrollRef.current = null;
+    }
+  };
+
   return (
     <div className="relative overflow-hidden">
-      {/* Left fade + chevron — mobile only */}
+
+      {/* Left fade + chevron — mobile only, hover-scroll enabled */}
       {needsScroll && showLeft && (
-        <>
-          <div
-            className="md:hidden absolute left-0 top-0 bottom-0 w-20 pointer-events-none z-10"
-            style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.97))" }}
-          />
+        <div
+          className="md:hidden absolute left-0 inset-y-0 w-16 z-10 flex items-center justify-start pl-1"
+          style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.97))" }}
+          onMouseEnter={() => startHoverScroll("left")}
+          onMouseLeave={stopHoverScroll}
+        >
           <span
-            className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-[#24B5D0] font-bold text-xl leading-none"
+            className="text-[#24B5D0] font-bold text-2xl leading-none select-none"
             style={{ animation: "chevronPulseLeft 2s ease-in-out infinite" }}
             aria-hidden="true"
           >‹</span>
-        </>
+        </div>
       )}
 
-      {/* Right fade + chevron — mobile only */}
+      {/* Right fade + chevron — mobile only, hover-scroll enabled */}
       {needsScroll && showRight && (
-        <>
-          <div
-            className="md:hidden absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
-            style={{
-              width: "88px",
-              background: "linear-gradient(to right, transparent, rgba(255,255,255,0.97))",
-              animation: "tabRightPulse 2s ease-in-out infinite",
-            }}
-          />
+        <div
+          className="md:hidden absolute right-0 inset-y-0 w-16 z-10 flex items-center justify-end pr-1"
+          style={{
+            background: "linear-gradient(to right, transparent, rgba(255,255,255,0.97))",
+            animation: "tabRightPulse 2s ease-in-out infinite",
+          }}
+          onMouseEnter={() => startHoverScroll("right")}
+          onMouseLeave={stopHoverScroll}
+        >
           <span
-            className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-[#24B5D0] font-bold text-xl leading-none"
+            className="text-[#24B5D0] font-bold text-2xl leading-none select-none"
             style={{ animation: "chevronPulse 2s ease-in-out infinite" }}
             aria-hidden="true"
           >›</span>
-        </>
+        </div>
       )}
 
       {/* Scrollable inner */}

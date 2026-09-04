@@ -201,7 +201,7 @@ export default function Home() {
       <section className="relative py-24 px-4 text-white text-center overflow-hidden">
         {/* Background image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80')" }}
         />
         {/* Dark blue overlay */}

@@ -80,7 +80,7 @@ export default function GettingStartedPage() {
 
       {/* Tabs */}
       <section className="bg-white border-b border-[#B8E4F0]">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="w-full px-4">
           <FadeTabs tabs={tabs} active={active} onChange={setActive} />
         </div>
       </section>

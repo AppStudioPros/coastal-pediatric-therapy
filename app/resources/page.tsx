@@ -323,8 +323,8 @@ export default function ResourcesPage() {
 
       {/* Tabs */}
       <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex flex-wrap gap-1 py-2">
+        <div className="max-w-5xl mx-auto px-4 tab-fade-wrap">
+          <div className="tab-fade-inner"><div className="flex gap-1 py-2 min-w-max">
             {tabs.map((t, i) => {
               const TabIcon = t.icon;
               return (
@@ -340,7 +340,7 @@ export default function ResourcesPage() {
                 </button>
               );
             })}
-          </div>
+          </div></div>
         </div>
       </section>
 

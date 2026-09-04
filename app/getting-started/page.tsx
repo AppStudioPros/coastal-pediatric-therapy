@@ -78,8 +78,8 @@ export default function GettingStartedPage() {
 
       {/* Tabs */}
       <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex py-2 overflow-x-auto">
+        <div className="max-w-4xl mx-auto px-4 tab-fade-wrap">
+          <div className="tab-fade-inner"><div className="flex py-2 min-w-max">
             {tabs.map((t, i) => (
               <button
                 key={t.id}
@@ -93,6 +93,7 @@ export default function GettingStartedPage() {
                 {t.label}
               </button>
             ))}
+          </div>
           </div>
         </div>
       </section>

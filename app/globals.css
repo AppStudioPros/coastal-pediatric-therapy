@@ -122,3 +122,48 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
+
+/* === Fade Scroll Tab Bar (mobile only) === */
+.tab-fade-wrap {
+  position: relative;
+  overflow: hidden;
+}
+/* Right fade — pulses to hint scrollability */
+.tab-fade-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, #ffffff);
+  z-index: 2;
+  animation: tabRightPulse 2.2s ease-in-out infinite;
+}
+/* Left fade */
+.tab-fade-wrap::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  background: linear-gradient(to left, transparent, #ffffff);
+  z-index: 2;
+}
+@keyframes tabRightPulse {
+  0%, 100% { opacity: 0.65; }
+  50%       { opacity: 1; }
+}
+
+/* Hide scrollbar inside tab-fade-inner */
+.tab-fade-inner {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tab-fade-inner::-webkit-scrollbar {
+  display: none;
+}

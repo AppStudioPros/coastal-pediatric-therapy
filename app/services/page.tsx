@@ -169,7 +169,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Tab nav */}
-      <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
+      <section className="bg-white border-b border-[#B8E4F0]">
         <div className="max-w-5xl mx-auto px-4">
           <FadeTabs tabs={tabs} active={active} onChange={setActive} />
         </div>

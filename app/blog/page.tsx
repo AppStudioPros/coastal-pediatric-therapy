@@ -1,4 +1,3 @@
-"use client";
 import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import { BookOpen, Clock } from "lucide-react";

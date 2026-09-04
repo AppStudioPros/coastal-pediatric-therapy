@@ -111,8 +111,8 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
         </div>
       )}
 
-      {/* Scrollable inner */}
-      <div className="tab-fade-inner" ref={scrollRef}>
+      {/* Scrollable inner — scroll on mobile, hidden on desktop */}
+      <div className="tab-fade-inner md:overflow-x-hidden" ref={scrollRef}>
         <div className="flex gap-2 py-2.5 min-w-max md:min-w-0 md:w-full px-1">
           {tabs.map((tab, i) => {
             const Icon = tab.icon;

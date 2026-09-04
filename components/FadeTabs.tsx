@@ -62,10 +62,10 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
   return (
     <div className="relative overflow-hidden">
 
-      {/* Left fade + chevron — mobile only, hover-scroll enabled */}
+      {/* Left fade — mobile only, hover-scroll enabled */}
       {needsScroll && showLeft && (
         <div
-          className="md:hidden absolute left-0 top-2.5 bottom-2.5 w-20 z-10 flex items-center justify-start pl-0.5"
+          className="md:hidden absolute left-0 top-0 bottom-0 w-20 z-10"
           style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.95))" }}
           onMouseEnter={() => startHoverScroll("left")}
           onMouseLeave={stopHoverScroll}
@@ -73,17 +73,22 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
           <ChevronLeft
             size={32}
             strokeWidth={3}
-            className="text-[#24B5D0] opacity-70 select-none"
-            style={{ animation: "chevronPulseLeft 2s ease-in-out infinite" }}
+            className="absolute text-[#24B5D0] opacity-70 select-none"
+            style={{
+              left: 2,
+              top: "50%",
+              transform: "translateY(-50%)",
+              animation: "chevronPulseLeft 2s ease-in-out infinite",
+            }}
             aria-hidden="true"
           />
         </div>
       )}
 
-      {/* Right fade + chevron — mobile only, hover-scroll enabled */}
+      {/* Right fade — mobile only, hover-scroll enabled */}
       {needsScroll && showRight && (
         <div
-          className="md:hidden absolute right-0 top-2.5 bottom-2.5 w-20 z-10 flex items-center justify-end pr-0.5"
+          className="md:hidden absolute right-0 top-0 bottom-0 w-20 z-10"
           style={{
             background: "linear-gradient(to right, transparent, rgba(255,255,255,0.95))",
             animation: "tabRightPulse 2s ease-in-out infinite",
@@ -94,8 +99,13 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
           <ChevronRight
             size={32}
             strokeWidth={3}
-            className="text-[#24B5D0] opacity-70 select-none"
-            style={{ animation: "chevronPulse 2s ease-in-out infinite" }}
+            className="absolute text-[#24B5D0] opacity-70 select-none"
+            style={{
+              right: 2,
+              top: "50%",
+              transform: "translateY(-50%)",
+              animation: "chevronPulse 2s ease-in-out infinite",
+            }}
             aria-hidden="true"
           />
         </div>

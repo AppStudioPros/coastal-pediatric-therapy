@@ -290,7 +290,7 @@ export default function ResourcesPage() {
   const renderMilestones = (milestones: typeof speechMilestones) => (
     <div className="space-y-6">
       {milestones.map((group) => (
-        <div key={group.age} className="bg-white border border-[#B8E4F0] rounded-xl p-5">
+        <div key={group.age} className="card-hover bg-white border border-[#B8E4F0] rounded-xl p-5">
           <h3 className="font-bold text-[#24B5D0] text-sm uppercase tracking-wide mb-3">{group.age}</h3>
           <ul className="space-y-2">
             {group.skills.map((skill) => (
@@ -323,19 +323,19 @@ export default function ResourcesPage() {
 
       {/* Tabs */}
       <section className="bg-white border-b border-[#B8E4F0] sticky top-[64px] z-40">
-        <div className="max-w-5xl mx-auto px-4 overflow-x-auto">
-          <div className="flex gap-1 py-2 min-w-max">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="flex flex-wrap gap-1 py-2">
             {tabs.map((t, i) => {
               const TabIcon = t.icon;
               return (
                 <button
                   key={t.id}
                   onClick={() => setActive(i)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition whitespace-nowrap ${
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition whitespace-nowrap ${
                     active === i ? i % 2 === 1 ? "bg-[#AF29BE] text-white" : "bg-[#24B5D0] text-white" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
                   }`}
                 >
-                  <TabIcon size={15} />
+                  <TabIcon size={14} />
                   {t.label}
                 </button>
               );
@@ -375,7 +375,7 @@ export default function ResourcesPage() {
               </p>
               <div className="space-y-6">
                 {sensorySystems.map((sys, si) => (
-                  <div key={sys.name} className="bg-white border border-[#B8E4F0] rounded-xl p-6">
+                  <div key={sys.name} className="card-hover bg-white border border-[#B8E4F0] rounded-xl p-6">
                     <h3 className={`font-bold text-lg mb-2 ${si % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#1e3a4a]'}`}>{sys.name}</h3>
                     <p className="text-[#4a7a8a] text-sm leading-relaxed mb-4">{sys.desc}</p>
                     <h4 className="font-semibold text-[#4a7a8a] text-sm mb-2">Signs to watch for:</h4>
@@ -413,7 +413,7 @@ export default function ResourcesPage() {
                 </p>
                 <a
                   href="mailto:info@coastaltherapy.net?subject=Student%20Observation%20Request"
-                  className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1A9EC0] transition"
+                  className="cta-blue-4 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1A9EC0] transition"
                 >
                   Email Us Your Request
                 </a>

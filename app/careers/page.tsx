@@ -52,7 +52,7 @@ export default function CareersPage() {
 
           <StaggeredGrid className="grid md:grid-cols-3 gap-5 mb-12">
             {values.map(({ icon: Icon, title, desc }, vi) => (
-              <div key={title} className="bg-white border border-[#B8E4F0] rounded-2xl p-6">
+              <div key={title} className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6">
                 <div className="w-10 h-10 rounded-full bg-[#EAF6FB] flex items-center justify-center mb-4">
                   <Icon size={20} className={vi === 2 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} />
                 </div>
@@ -64,7 +64,7 @@ export default function CareersPage() {
 
           {/* Open positions */}
           <AnimatedSection delay={0.2}>
-            <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8 text-center">
+            <div className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8 text-center">
               <Briefcase size={36} className="text-gray-300 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-[#1e3a4a] mb-2">No Open Positions Right Now</h3>
               <p className="text-[#4a7a8a] text-sm max-w-md mx-auto mb-6">
@@ -72,7 +72,7 @@ export default function CareersPage() {
               </p>
               <a
                 href="mailto:info@coastaltherapy.net?subject=Career%20Inquiry%20—%20Coastal%20Pediatric%20Therapy"
-                className="cta-pulse inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition"
+                className="cta-blue-2 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition"
               >
                 <Mail size={16} />
                 Send Your Resume

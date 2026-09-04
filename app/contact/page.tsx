@@ -56,7 +56,7 @@ export default function ContactPage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#1e3a4a]">Our Locations</h2>
               {locations.map((loc) => (
-                <div key={loc.name} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
+                <div key={loc.name} className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
                   <h3 className="font-bold text-[#1e3a4a] text-lg mb-3">{loc.name}</h3>
                   <div className="space-y-1.5 text-sm text-[#4a7a8a]">
                     <p>{loc.address}</p>
@@ -78,12 +78,12 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
-              <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
+              <div className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
                 <h3 className="font-bold text-[#1e3a4a] mb-2">Prefer to call?</h3>
                 <p className="text-[#4a7a8a] text-sm mb-3">Our friendly staff is available Monday through Friday during office hours.</p>
                 <a
                   href="tel:9043724070"
-                  className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
+                  className="cta-blue-2 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
                 >
                   (904) 372-4070
                 </a>

@@ -67,7 +67,7 @@ export default function BlogPage() {
           {/* Skeleton cards */}
           <StaggeredGrid className="grid md:grid-cols-3 gap-6">
             {skeletonPosts.map((post, i) => (
-              <div key={i} className="bg-white border border-[#B8E4F0] rounded-2xl overflow-hidden">
+              <div key={i} className="card-hover bg-white border border-[#B8E4F0] rounded-2xl overflow-hidden">
                 <div className="bg-[#EAF6FB] h-44 flex items-center justify-center">
                   <BookOpen size={32} className="text-gray-300" />
                 </div>

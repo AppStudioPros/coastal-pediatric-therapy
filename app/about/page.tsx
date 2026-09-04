@@ -95,7 +95,7 @@ export default function AboutPage() {
             <AnimatedSection delay={0.3}>
               <div className="grid sm:grid-cols-3 gap-5 mt-10">
                 {stats.map(({ stat, label }) => (
-                  <div key={stat} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5 text-center">
+                  <div key={stat} className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5 text-center">
                     <p className="font-bold text-[#1e3a4a] text-lg mb-1">{stat}</p>
                     <p className="text-sm text-[#4a7a8a]">{label}</p>
                   </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </AnimatedSection>
             <StaggeredGrid className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
-                <div key={i} className={`bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
+                <div key={i} className={`card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
                   <div className="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-gray-400 font-bold text-xl">{member.initials}</span>
                   </div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 },
               ].map((loc, li) => (
                 <AnimatedSection key={loc.name} direction={li === 0 ? "left" : "right"} delay={li * 0.1}>
-                  <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8">
+                  <div className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8">
                     <h3 className="text-xl font-bold text-[#1e3a4a] mb-3">{loc.name}</h3>
                     <p className="text-[#4a7a8a] text-sm mb-1">{loc.address}</p>
                     <p className="text-[#4a7a8a] text-sm mb-4">{loc.city}</p>
@@ -177,7 +177,7 @@ export default function AboutPage() {
                       href={loc.mapLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
+                      className="cta-blue-2 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
                     >
                       Get Directions <ArrowRight size={14} />
                     </a>

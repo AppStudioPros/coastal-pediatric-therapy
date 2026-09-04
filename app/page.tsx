@@ -50,7 +50,30 @@ export default function Home() {
   return (
     <>
       {/* Hero — split layout */}
-      <section className="bg-white py-20 md:py-28 px-4">
+      <section className="bg-white py-20 md:py-28 px-4 relative overflow-hidden">
+        {/* Watercolor background blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="watercolor-blob" style={{
+            width: '45%', height: '70%', top: '-15%', left: '-8%',
+            background: 'rgba(26, 175, 201, 0.09)',
+            animation: 'blobMorph1 12s ease-in-out infinite'
+          }} />
+          <div className="watercolor-blob" style={{
+            width: '38%', height: '55%', top: '10%', right: '5%',
+            background: 'rgba(175, 41, 190, 0.07)',
+            animation: 'blobMorph2 16s ease-in-out infinite'
+          }} />
+          <div className="watercolor-blob" style={{
+            width: '32%', height: '45%', bottom: '-10%', left: '35%',
+            background: 'rgba(102, 230, 223, 0.08)',
+            animation: 'blobMorph3 11s ease-in-out infinite'
+          }} />
+          <div className="watercolor-blob" style={{
+            width: '28%', height: '40%', top: '50%', left: '55%',
+            background: 'rgba(255, 217, 64, 0.05)',
+            animation: 'blobMorph4 19s ease-in-out infinite'
+          }} />
+        </div>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: text */}
           <AnimatedSection direction="left">
@@ -67,7 +90,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button
                   onClick={openModal}
-                  className="cta-pulse bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition flex items-center gap-2 justify-center"
+                  className="cta-blue-1 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition flex items-center gap-2 justify-center"
                 >
                   Book an Appointment <ArrowRight size={18} className="arrow-nudge" />
                 </button>
@@ -92,7 +115,7 @@ export default function Home() {
 
           {/* Right: image */}
           <AnimatedSection direction="right" delay={0.15}>
-            <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg gentle-float">
+            <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
                 alt="Child receiving pediatric therapy at Coastal Pediatric Therapy Center"
@@ -130,7 +153,7 @@ export default function Home() {
           </AnimatedSection>
           <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
             {services.map(({ icon: Icon, title, desc }, i) => (
-              <Link key={title} href="/services" className="bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition block">
+              <Link key={title} href="/services" className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition block">
                 <Icon size={28} className={`${i % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} mb-3`} />
                 <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
@@ -158,7 +181,7 @@ export default function Home() {
             <p className="text-[#4a7a8a] mb-8">
               We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#AF29BE]">Jacksonville Beach</strong> and <strong className="text-[#AF29BE]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
             </p>
-            <Link href="/about" className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2">
+            <Link href="/about" className="cta-blue-2 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2">
               Our Story <ArrowRight size={18} />
             </Link>
           </div>
@@ -175,7 +198,7 @@ export default function Home() {
           </AnimatedSection>
           <StaggeredGrid className="grid md:grid-cols-3 gap-6">
             {testimonials.map(({ quote, name }) => (
-              <div key={name} className="bg-[#EAF6FB] rounded-2xl p-8">
+              <div key={name} className="card-hover bg-[#EAF6FB] rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#FFD940] text-[#FFD940]" />)}
                 </div>
@@ -232,7 +255,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={openModal}
-              className="cta-pulse bg-[#FFD940] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFEB70] transition"
+              className="cta-pulse-y1 bg-[#FFD940] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFEB70] transition"
             >
               Book an Appointment
             </button>

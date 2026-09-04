@@ -152,7 +152,7 @@ export default function ServicesPage() {
             </p>
             <button
               onClick={openModal}
-              className="cta-pulse mt-6 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+              className="cta-blue-2 mt-6 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
             >
               Book an Appointment <ArrowRight size={18} />
             </button>
@@ -194,14 +194,14 @@ export default function ServicesPage() {
                 ))}
                 <button
                   onClick={openModal}
-                  className="cta-pulse mt-4 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+                  className="cta-blue-3 mt-4 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
                 >
                   Book an Appointment <ArrowRight size={18} />
                 </button>
               </div>
 
               {/* Right: conditions list */}
-              <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
+              <div className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
                 <h3 className="font-bold text-[#1e3a4a] mb-4 text-lg">Conditions We Treat</h3>
                 <ul className="space-y-3">
                   {tab.conditions.map((c, ci) => (
@@ -227,7 +227,7 @@ export default function ServicesPage() {
             </p>
             <button
               onClick={openModal}
-              className="cta-pulse bg-[#FFEB70] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFD940] transition inline-flex items-center gap-2"
+              className="cta-pulse-y2 bg-[#FFEB70] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFD940] transition inline-flex items-center gap-2"
             >
               Book an Appointment <ArrowRight size={18} />
             </button>

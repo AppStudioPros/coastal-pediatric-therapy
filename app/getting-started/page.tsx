@@ -107,7 +107,7 @@ export default function GettingStartedPage() {
             <div className="space-y-6 mt-10">
               {steps.map(({ number, title, desc }, si) => (
                 <AnimatedSection key={title} delay={si * 0.1}>
-                  <div className="relative flex gap-6 items-start bg-white border border-[#B8E4F0] rounded-2xl p-6 overflow-hidden">
+                  <div className="relative flex gap-6 items-start card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 overflow-hidden">
                     {/* Decorative large number */}
                     <span className={`absolute right-4 top-1/2 -translate-y-1/2 text-7xl font-black select-none pointer-events-none leading-none ${si % 2 === 0 ? 'text-[#AF29BE]/20' : 'text-[#B8E4F0]'}`}>
                       {number}
@@ -124,7 +124,7 @@ export default function GettingStartedPage() {
               <div className="text-center mt-10">
                 <button
                   onClick={openModal}
-                  className="cta-pulse bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+                  className="cta-blue-2 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
                 >
                   Request an Appointment <ArrowRight size={18} />
                 </button>
@@ -174,7 +174,7 @@ export default function GettingStartedPage() {
 
               <button
                 onClick={openModal}
-                className="cta-pulse bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+                className="cta-blue-3 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
               >
                 Schedule an Evaluation <ArrowRight size={18} />
               </button>
@@ -208,7 +208,7 @@ export default function GettingStartedPage() {
               <h3 className="font-bold text-[#1e3a4a] text-lg mb-4">Available Therapy Settings</h3>
               <div className="grid md:grid-cols-3 gap-5 mb-8">
                 {settings.map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="bg-white border border-[#B8E4F0] rounded-2xl p-5">
+                  <div key={title} className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-5">
                     <Icon size={20} className="text-[#24B5D0] mb-3" />
                     <h4 className="font-bold text-[#1e3a4a] mb-2">{title}</h4>
                     <p className="text-sm text-[#4a7a8a] leading-relaxed">{desc}</p>
@@ -247,7 +247,7 @@ export default function GettingStartedPage() {
 
               <button
                 onClick={openModal}
-                className="cta-pulse bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+                className="cta-blue-4 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
               >
                 Book an Appointment <ArrowRight size={18} />
               </button>

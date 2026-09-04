@@ -50,7 +50,7 @@ export default function Footer() {
             href="https://www.instagram.com/coastalpediatrictherapy/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[#F5C518] hover:text-[#E0B210] transition font-medium"
+            className="inline-flex items-center gap-2 text-sm text-[#FAFCAA] hover:text-[#E8EA90] transition font-medium"
           >
             <ExternalLink size={15} />
             @coastalpediatrictherapy
@@ -107,7 +107,7 @@ export default function Footer() {
             Get therapy tips, milestone guides, and updates from our team — delivered to your inbox.
           </p>
           {subStatus === "sent" ? (
-            <p className="text-[#F5C518] text-sm font-semibold">Thanks! You&apos;re subscribed. ✓</p>
+            <p className="text-[#FAFCAA] text-sm font-semibold">Thanks! You&apos;re subscribed. ✓</p>
           ) : (
             <form onSubmit={handleSubscribe} className="space-y-3">
               <input
@@ -116,11 +116,11 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#F5C518] transition"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/40 focus:outline-none focus:border-[#FAFCAA] transition"
               />
               <button
                 type="submit"
-                className="w-full bg-[#F5C518] text-[#1e3a4a] font-bold py-2.5 rounded-lg text-sm hover:bg-[#E0B210] transition"
+                className="w-full bg-[#FAFCAA] text-[#1e3a4a] font-bold py-2.5 rounded-lg text-sm hover:bg-[#E8EA90] transition"
               >
                 Subscribe
               </button>

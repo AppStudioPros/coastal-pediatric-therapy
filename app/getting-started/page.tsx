@@ -155,7 +155,7 @@ export default function GettingStartedPage() {
                   "Individualized therapy goal development",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                    <span className="text-[#F5C518] shrink-0 mt-0.5">▪</span>
+                    <span className="text-[#FAFCAA] shrink-0 mt-0.5">▪</span>
                     {item}
                   </li>
                 ))}

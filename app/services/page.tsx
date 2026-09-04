@@ -211,24 +211,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-14 px-4 bg-[#1e3a4a] text-white text-center">
-        <AnimatedSection>
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Your Child Started?</h2>
-            <p className="text-white/70 mb-8">
-              Our team handles insurance verification, prescription requests, and scheduling — all you need to do is reach out.
-            </p>
-            <button
-              onClick={openModal}
-              className="cta-pulse-y2 bg-[#FFEB70] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFD940] transition inline-flex items-center gap-2"
-            >
-              Book an Appointment <ArrowRight size={18} />
-            </button>
-          </div>
-        </AnimatedSection>
-      </section>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

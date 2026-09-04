@@ -329,7 +329,7 @@ export default function ResourcesPage() {
                   key={t.id}
                   onClick={() => setActive(i)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition whitespace-nowrap ${
-                    active === i ? "bg-[#24B5D0] text-white" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
+                    active === i ? i % 2 === 1 ? "bg-[#AF29BE] text-white" : "bg-[#24B5D0] text-white" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
                   }`}
                 >
                   <TabIcon size={15} />
@@ -371,9 +371,9 @@ export default function ResourcesPage() {
                 The 7 sensory systems and signs that may indicate a child could benefit from sensory integration therapy.
               </p>
               <div className="space-y-6">
-                {sensorySystems.map((sys) => (
+                {sensorySystems.map((sys, si) => (
                   <div key={sys.name} className="bg-white border border-[#B8E4F0] rounded-xl p-6">
-                    <h3 className="font-bold text-[#1e3a4a] text-lg mb-2">{sys.name}</h3>
+                    <h3 className={`font-bold text-lg mb-2 ${si % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#1e3a4a]'}`}>{sys.name}</h3>
                     <p className="text-[#4a7a8a] text-sm leading-relaxed mb-4">{sys.desc}</p>
                     <h4 className="font-semibold text-[#4a7a8a] text-sm mb-2">Signs to watch for:</h4>
                     <ul className="space-y-2">

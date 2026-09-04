@@ -167,7 +167,7 @@ export default function ServicesPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#24B5D0] text-[#24B5D0]"
+                    ? i % 2 === 1 ? "border-[#AF29BE] text-[#AF29BE]" : "border-[#24B5D0] text-[#24B5D0]"
                     : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
                 }`}
               >
@@ -200,9 +200,9 @@ export default function ServicesPage() {
             <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
               <h3 className="font-bold text-[#1e3a4a] mb-4 text-lg">Conditions We Treat</h3>
               <ul className="space-y-3">
-                {tab.conditions.map((c) => (
+                {tab.conditions.map((c, ci) => (
                   <li key={c} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                    <span className="before:content-['▪'] text-[#53A0DA] shrink-0 mt-0.5">▪</span>
+                    <span className={`before:content-['▪'] shrink-0 mt-0.5 ${ci % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#53A0DA]'}`}>▪</span>
                     {c}
                   </li>
                 ))}

@@ -23,9 +23,9 @@ export default function InsurancePage() {
           <div>
             <h2 className="text-2xl font-bold text-[#1e3a4a] mb-6">Accepted Insurance Plans</h2>
             <ul className="space-y-3">
-              {plans.map((plan) => (
+              {plans.map((plan, pi) => (
                 <li key={plan} className="flex items-center gap-3 bg-[#EAF6FB] border border-[#B8E4F0] rounded-lg px-4 py-3 text-[#4a7a8a]">
-                  <ShieldCheck size={18} className="text-[#24B5D0] shrink-0" />
+                  <ShieldCheck size={18} className={`shrink-0 ${pi % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'}`} />
                   {plan}
                 </li>
               ))}

@@ -83,7 +83,7 @@ export default function GettingStartedPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#24B5D0] text-[#24B5D0]"
+                    ? i === 1 ? "border-[#AF29BE] text-[#AF29BE]" : "border-[#24B5D0] text-[#24B5D0]"
                     : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
                 }`}
               >
@@ -100,10 +100,10 @@ export default function GettingStartedPage() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold text-[#1e3a4a] text-center mb-10 gold-underline">How It Works</h2>
             <div className="space-y-6 mt-10">
-              {steps.map(({ number, title, desc }) => (
+              {steps.map(({ number, title, desc }, si) => (
                 <div key={title} className="relative flex gap-6 items-start bg-white border border-[#B8E4F0] rounded-2xl p-6 overflow-hidden">
                   {/* Decorative large number */}
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-7xl font-black text-[#B8E4F0] select-none pointer-events-none leading-none">
+                  <span className={`absolute right-4 top-1/2 -translate-y-1/2 text-7xl font-black select-none pointer-events-none leading-none ${si % 2 === 0 ? 'text-[#AF29BE]/20' : 'text-[#B8E4F0]'}`}>
                     {number}
                   </span>
                   <div className="relative z-10">

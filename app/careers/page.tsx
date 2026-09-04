@@ -29,7 +29,8 @@ export default function CareersPage() {
     <>
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Join Our Team</h1>
+          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-2">Join Our Team</h1>
+          <div className="w-12 h-1 bg-[#AF29BE] rounded-full mx-auto mb-4" />
           <p className="text-lg text-[#4a7a8a]">
             We&apos;re always looking for passionate, skilled therapists who want to make a lasting difference in children&apos;s lives.
           </p>
@@ -44,10 +45,10 @@ export default function CareersPage() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-5 mb-12">
-            {values.map(({ icon: Icon, title, desc }) => (
+            {values.map(({ icon: Icon, title, desc }, vi) => (
               <div key={title} className="bg-white border border-[#B8E4F0] rounded-2xl p-6">
                 <div className="w-10 h-10 rounded-full bg-[#EAF6FB] flex items-center justify-center mb-4">
-                  <Icon size={20} className="text-[#24B5D0]" />
+                  <Icon size={20} className={vi === 2 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} />
                 </div>
                 <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>

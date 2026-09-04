@@ -49,7 +49,7 @@ export default function AboutPage() {
                 onClick={() => setActive(i)}
                 className={`px-5 py-3 text-sm font-semibold transition whitespace-nowrap border-b-2 ${
                   active === i
-                    ? "border-[#24B5D0] text-[#24B5D0]"
+                    ? i === 1 ? "border-[#AF29BE] text-[#AF29BE]" : "border-[#24B5D0] text-[#24B5D0]"
                     : "border-transparent text-[#4a7a8a] hover:text-[#24B5D0]"
                 }`}
               >
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
-                <div key={i} className="bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center">
+                <div key={i} className={`bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
                   <div className="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
                     <span className="text-gray-400 font-bold text-xl">{member.initials}</span>
                   </div>

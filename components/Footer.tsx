@@ -59,7 +59,7 @@ export default function Footer() {
 
         {/* Column 2: Site Links */}
         <div>
-          <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Site Links</h4>
+          <h4 className="text-white font-semibold mb-3 pb-2 text-sm uppercase tracking-wider border-b border-[#AF29BE]">Site Links</h4>
           <ul className="space-y-2.5 text-sm">
             {quickLinks.map(([label, href]) => (
               <li key={href}>

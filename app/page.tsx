@@ -103,9 +103,9 @@ export default function Home() {
       {/* Trust bar */}
       <section className="bg-[#EAF6FB] py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          {trustBar.map((label) => (
+          {trustBar.map((label, i) => (
             <div key={label} className="text-center">
-              <p className="font-bold text-sm text-[#1e3a4a] gold-underline">{label}</p>
+              <p className={`font-bold text-sm gold-underline ${i === 1 || i === 3 ? 'text-[#AF29BE]' : 'text-[#1e3a4a]'}`}>{label}</p>
             </div>
           ))}
         </div>
@@ -119,9 +119,9 @@ export default function Home() {
             <p className="text-[#4a7a8a] mt-4 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc }) => (
+            {services.map(({ icon: Icon, title, desc }, i) => (
               <Link key={title} href="/services" className="bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition block">
-                <Icon size={28} className="text-[#24B5D0] mb-3" />
+                <Icon size={28} className={`${i % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} mb-3`} />
                 <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
               </Link>
@@ -145,7 +145,7 @@ export default function Home() {
             Our compassionate, highly skilled therapists work with each child one-on-one to develop a customized treatment plan designed to build confidence, improve developmental skills, and exceed therapeutic goals.
           </p>
           <p className="text-[#4a7a8a] mb-8">
-            We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#1e3a4a]">Jacksonville Beach</strong> and <strong className="text-[#1e3a4a]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
+            We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#1e3a4a]">Jacksonville Beach</strong> and <strong className="text-[#AF29BE]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
           </p>
           <Link href="/about" className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2">
             Our Story <ArrowRight size={18} />

@@ -33,7 +33,8 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="bg-[#1e3a4a] py-16 px-4 text-center text-white">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <h1 className="text-4xl font-bold mb-2">Contact Us</h1>
+          <div className="w-12 h-1 bg-[#AF29BE] rounded-full mx-auto mb-4" />
           <p className="text-white/70 text-lg">
             We would love to hear from you. Reach out by phone, email, or use the form below and we will get back to you promptly.
           </p>

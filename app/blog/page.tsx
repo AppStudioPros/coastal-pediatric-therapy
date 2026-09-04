@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BookOpen, Clock, Tag } from "lucide-react";
+import { BookOpen, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog | Coastal Pediatric Therapy Center",
@@ -67,8 +67,7 @@ export default function BlogPage() {
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag size={13} className="text-[#24B5D0]" />
-                    <span className="text-xs font-semibold text-[#24B5D0] uppercase tracking-wide">{post.category}</span>
+                    <span className="bg-[#AF29BE] text-white rounded-full px-3 py-1 text-xs font-semibold">{post.category}</span>
                   </div>
                   <div className="h-5 bg-gray-200 rounded-full w-3/4 mb-3 animate-pulse" />
                   <div className="space-y-2 mb-4">

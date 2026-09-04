@@ -379,7 +379,7 @@ export default function ResourcesPage() {
                     <ul className="space-y-2">
                       {sys.signs.map((sign) => (
                         <li key={sign} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                          <CheckCircle size={15} className="text-[#FAFCAA] mt-0.5 shrink-0" />
+                          <CheckCircle size={15} className="text-[#FEEC6C] mt-0.5 shrink-0" />
                           {sign}
                         </li>
                       ))}

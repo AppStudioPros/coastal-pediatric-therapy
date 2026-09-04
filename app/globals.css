@@ -4,7 +4,10 @@
   --brand-primary: #3d82b8;
   --brand-teal: #2fb8c6;
   --brand-dark: #1e3a4a;
-  --brand-gold: #e8b830;
+  --brand-gold: #FFEB70;
+  --brand-blue-accent: #53A0DA;
+  --brand-teal-light: #66E6DF;
+  --brand-blue: #51B7E2;
   --surface-tint: #eaf7f9;
   --text-dark: #1e3a4a;
   --text-muted: #4a7a8a;
@@ -14,7 +17,7 @@
 .gold-underline {
   display: inline-block;
   padding-bottom: 10px;
-  border-bottom: 3px solid #e8b830;
+  border-bottom: 3px solid #53A0DA;
 }
 
 html {

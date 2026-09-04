@@ -52,7 +52,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: text */}
           <div className="max-w-lg">
-            <p className="text-[#FEEC6C] font-semibold text-sm uppercase tracking-widest mb-4">
+            <p className="text-[#53A0DA] font-semibold text-sm uppercase tracking-widest mb-4">
               Serving Northeast Florida Since 1996
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#1e3a4a] leading-tight mb-5">
@@ -79,7 +79,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               {trustChips.map((chip) => (
                 <span key={chip} className="flex items-center gap-2 text-sm text-[#4a7a8a]">
-                  <span className="text-[#FEEC6C] text-xs">⬤</span>
+                  <span className="text-[#53A0DA] text-xs">⬤</span>
                   {chip}
                 </span>
               ))}
@@ -163,7 +163,7 @@ export default function Home() {
             {testimonials.map(({ quote, name }) => (
               <div key={name} className="bg-[#EAF6FB] rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#FEEC6C] text-[#FEEC6C]" />)}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-[#FFEB70] text-[#FFEB70]" />)}
                 </div>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed mb-5">&ldquo;{quote}&rdquo;</p>
                 <div>
@@ -206,7 +206,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={openModal}
-              className="bg-[#FEEC6C] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#EED850] transition"
+              className="bg-[#FFEB70] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFD940] transition"
             >
               Book an Appointment
             </button>

@@ -197,10 +197,19 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-[#1e3a4a] text-white text-center">
-        <div className="max-w-2xl mx-auto">
+      {/* Final CTA — image background with dark overlay */}
+      <section className="relative py-24 px-4 text-white text-center overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1400&q=80')" }}
+        />
+        {/* Dark blue overlay */}
+        <div className="absolute inset-0 bg-[#1a3a4a]/85" />
+        {/* Content */}
+        <div className="relative z-10 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 gold-underline">Ready to Get Started?</h2>
-          <p className="text-white/70 mb-8 text-lg mt-4">
+          <p className="text-white/80 mb-8 text-lg mt-4">
             Fill out a new patient request and our friendly staff will take care of the rest — from insurance verification to scheduling.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

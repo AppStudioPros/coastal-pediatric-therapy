@@ -131,7 +131,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-[#24B5D0] text-white py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition text-sm flex items-center justify-center gap-2 disabled:opacity-60"
+        className="cta-pulse w-full bg-[#24B5D0] text-white py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition text-sm flex items-center justify-center gap-2 disabled:opacity-60"
       >
         {status === "sending" ? "Sending..." : <>Send Message <ArrowRight size={16} /></>}
       </button>

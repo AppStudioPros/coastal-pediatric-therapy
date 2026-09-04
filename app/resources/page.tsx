@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { MessageCircle, Activity, Hand, Brain, GraduationCap, CheckCircle } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export const dynamic = "force-static";
 
@@ -310,12 +311,14 @@ export default function ResourcesPage() {
   return (
     <>
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Resources for Families</h1>
-          <p className="text-lg text-[#4a7a8a]">
-            Developmental milestones, sensory guides, and information for students and volunteers.
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Resources for Families</h1>
+            <p className="text-lg text-[#4a7a8a]">
+              Developmental milestones, sensory guides, and information for students and volunteers.
+            </p>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Tabs */}
@@ -344,28 +347,28 @@ export default function ResourcesPage() {
       <section className="py-14 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           {active === 0 && (
-            <>
+            <AnimatedSection key="speech">
               <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">Speech & Language Milestones</h2>
               <p className="text-[#4a7a8a] mb-8">A guide to typical communication development from birth through age 5.</p>
               {renderMilestones(speechMilestones)}
-            </>
+            </AnimatedSection>
           )}
           {active === 1 && (
-            <>
+            <AnimatedSection key="gross">
               <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">Gross Motor Milestones</h2>
               <p className="text-[#4a7a8a] mb-8">Typical physical development milestones from birth through age 5.</p>
               {renderMilestones(grossMilestones)}
-            </>
+            </AnimatedSection>
           )}
           {active === 2 && (
-            <>
+            <AnimatedSection key="fine">
               <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">Fine Motor Milestones</h2>
               <p className="text-[#4a7a8a] mb-8">Hand and finger skill development from birth through age 5.</p>
               {renderMilestones(fineMilestones)}
-            </>
+            </AnimatedSection>
           )}
           {active === 3 && (
-            <>
+            <AnimatedSection key="sensory">
               <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">Sensory Processing Indicators</h2>
               <p className="text-[#4a7a8a] mb-8">
                 The 7 sensory systems and signs that may indicate a child could benefit from sensory integration therapy.
@@ -387,10 +390,10 @@ export default function ResourcesPage() {
                   </div>
                 ))}
               </div>
-            </>
+            </AnimatedSection>
           )}
           {active === 4 && (
-            <>
+            <AnimatedSection key="volunteer">
               <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">Student & Volunteer Requests</h2>
               <p className="text-[#4a7a8a] mb-8">
                 Interested in observing, volunteering, or completing a clinical placement at Coastal Pediatric Therapy Center?
@@ -415,7 +418,7 @@ export default function ResourcesPage() {
                   Email Us Your Request
                 </a>
               </div>
-            </>
+            </AnimatedSection>
           )}
         </div>
       </section>

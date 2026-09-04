@@ -42,7 +42,7 @@ export default function Nav() {
           ))}
           <button
             onClick={openModal}
-            className="bg-[#FFD940] text-[#1e3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#FFEB70] transition ml-2"
+            className="cta-pulse bg-[#FFD940] text-[#1e3a4a] font-bold px-5 py-2 rounded-lg hover:bg-[#FFEB70] transition ml-2"
           >
             Book an Appointment
           </button>

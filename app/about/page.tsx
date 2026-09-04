@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
+import StaggeredGrid from "@/components/StaggeredGrid";
 
 export const dynamic = "force-static";
 
@@ -31,12 +33,14 @@ export default function AboutPage() {
   return (
     <>
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">About Coastal Pediatric Therapy Center</h1>
-          <p className="text-lg text-[#4a7a8a]">
-            Serving Northeast Florida families since 1996 with compassionate, evidence-based pediatric therapy.
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">About Coastal Pediatric Therapy Center</h1>
+            <p className="text-lg text-[#4a7a8a]">
+              Serving Northeast Florida families since 1996 with compassionate, evidence-based pediatric therapy.
+            </p>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Tabs */}
@@ -64,30 +68,40 @@ export default function AboutPage() {
       {active === 0 && (
         <section className="py-14 px-4 bg-white">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-6 gold-underline">Our Story</h2>
-            <div className="mt-4 space-y-4 text-[#4a7a8a] leading-relaxed">
-              <p>
+            <AnimatedSection>
+              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-6 gold-underline">Our Story</h2>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <p className="mt-4 text-[#4a7a8a] leading-relaxed">
                 Coastal Pediatric Therapy Center was founded in 1996 with a simple belief: every child deserves to reach their full potential. What began as a small, dedicated practice in Jacksonville Beach has grown into a trusted regional resource for families across Northeast Florida.
               </p>
-              <p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.15}>
+              <p className="mt-4 text-[#4a7a8a] leading-relaxed">
                 Over nearly three decades, we&apos;ve helped thousands of children develop the communication, motor, and daily living skills they need to thrive at home, at school, and in life. Our approach has always been play-based — we believe children learn best when therapy feels like fun.
               </p>
-              <p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <p className="mt-4 text-[#4a7a8a] leading-relaxed">
                 We are a multidisciplinary team of speech-language pathologists, occupational therapists, and physical therapists who collaborate to provide whole-child care. Rather than treating symptoms in isolation, we look at each child as a whole person and work together to develop coordinated treatment plans that address their unique strengths and challenges.
               </p>
-              <p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.25}>
+              <p className="mt-4 text-[#4a7a8a] leading-relaxed">
                 Family involvement is at the heart of everything we do. We partner with parents, caregivers, teachers, and pediatricians to ensure progress extends far beyond the therapy room. When families are engaged and informed, children succeed faster and maintain their gains longer.
               </p>
-            </div>
+            </AnimatedSection>
 
-            <div className="grid sm:grid-cols-3 gap-5 mt-10">
-              {stats.map(({ stat, label }) => (
-                <div key={stat} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5 text-center">
-                  <p className="font-bold text-[#1e3a4a] text-lg mb-1">{stat}</p>
-                  <p className="text-sm text-[#4a7a8a]">{label}</p>
-                </div>
-              ))}
-            </div>
+            <AnimatedSection delay={0.3}>
+              <div className="grid sm:grid-cols-3 gap-5 mt-10">
+                {stats.map(({ stat, label }) => (
+                  <div key={stat} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5 text-center">
+                    <p className="font-bold text-[#1e3a4a] text-lg mb-1">{stat}</p>
+                    <p className="text-sm text-[#4a7a8a]">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </section>
       )}
@@ -96,11 +110,13 @@ export default function AboutPage() {
       {active === 1 && (
         <section className="py-14 px-4 bg-white">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Meet the Team</h2>
-            <p className="text-[#4a7a8a] mt-4 mb-10">
-              Our compassionate, highly skilled therapists are dedicated to helping every child succeed.
-            </p>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <AnimatedSection>
+              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Meet the Team</h2>
+              <p className="text-[#4a7a8a] mt-4 mb-10">
+                Our compassionate, highly skilled therapists are dedicated to helping every child succeed.
+              </p>
+            </AnimatedSection>
+            <StaggeredGrid className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
                 <div key={i} className={`bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
                   <div className="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
@@ -110,7 +126,7 @@ export default function AboutPage() {
                   <p className="text-sm text-[#4a7a8a]">{member.role}</p>
                 </div>
               ))}
-            </div>
+            </StaggeredGrid>
             <p className="text-center text-[#4a7a8a] text-sm mt-8">
               Full team bios coming soon. Contact us at{" "}
               <a href="mailto:info@coastaltherapy.net" className="text-[#24B5D0] hover:underline">
@@ -126,10 +142,12 @@ export default function AboutPage() {
       {active === 2 && (
         <section className="py-14 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Our Locations</h2>
-            <p className="text-[#4a7a8a] mt-4 mb-10">
-              Two convenient locations serving Jacksonville Beach, Mandarin, and surrounding communities.
-            </p>
+            <AnimatedSection>
+              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Our Locations</h2>
+              <p className="text-[#4a7a8a] mt-4 mb-10">
+                Two convenient locations serving Jacksonville Beach, Mandarin, and surrounding communities.
+              </p>
+            </AnimatedSection>
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
@@ -144,25 +162,27 @@ export default function AboutPage() {
                   city: "Jacksonville, FL 32258",
                   mapLink: "https://maps.google.com/?q=6100+Greenland+Rd+Suite+901+Jacksonville+FL+32258",
                 },
-              ].map((loc) => (
-                <div key={loc.name} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8">
-                  <h3 className="text-xl font-bold text-[#1e3a4a] mb-3">{loc.name}</h3>
-                  <p className="text-[#4a7a8a] text-sm mb-1">{loc.address}</p>
-                  <p className="text-[#4a7a8a] text-sm mb-4">{loc.city}</p>
-                  <div className="text-sm text-[#4a7a8a] mb-5">
-                    <p>(904) 372-4070</p>
-                    <p>Fax: (904) 372-4075</p>
-                    <p className="mt-1"><span className="font-medium text-[#1e3a4a]">Mon–Fri:</span> 8:30 AM – 5:30 PM</p>
+              ].map((loc, li) => (
+                <AnimatedSection key={loc.name} direction={li === 0 ? "left" : "right"} delay={li * 0.1}>
+                  <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8">
+                    <h3 className="text-xl font-bold text-[#1e3a4a] mb-3">{loc.name}</h3>
+                    <p className="text-[#4a7a8a] text-sm mb-1">{loc.address}</p>
+                    <p className="text-[#4a7a8a] text-sm mb-4">{loc.city}</p>
+                    <div className="text-sm text-[#4a7a8a] mb-5">
+                      <p>(904) 372-4070</p>
+                      <p>Fax: (904) 372-4075</p>
+                      <p className="mt-1"><span className="font-medium text-[#1e3a4a]">Mon–Fri:</span> 8:30 AM – 5:30 PM</p>
+                    </div>
+                    <a
+                      href={loc.mapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
+                    >
+                      Get Directions <ArrowRight size={14} />
+                    </a>
                   </div>
-                  <a
-                    href={loc.mapLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#24B5D0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#1A9EC0] transition"
-                  >
-                    Get Directions <ArrowRight size={14} />
-                  </a>
-                </div>
+                </AnimatedSection>
               ))}
             </div>
           </div>

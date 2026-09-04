@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export const dynamic = "force-static";
 
@@ -143,18 +144,20 @@ export default function ServicesPage() {
     <>
       {/* Page hero */}
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Pediatric Therapy Services</h1>
-          <p className="text-lg text-[#4a7a8a]">
-            Comprehensive, play-based therapy for children — delivered one-on-one at our Jacksonville Beach and Mandarin locations.
-          </p>
-          <button
-            onClick={openModal}
-            className="mt-6 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
-          >
-            Book an Appointment <ArrowRight size={18} />
-          </button>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Pediatric Therapy Services</h1>
+            <p className="text-lg text-[#4a7a8a]">
+              Comprehensive, play-based therapy for children — delivered one-on-one at our Jacksonville Beach and Mandarin locations.
+            </p>
+            <button
+              onClick={openModal}
+              className="cta-pulse mt-6 bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+            >
+              Book an Appointment <ArrowRight size={18} />
+            </button>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Tab nav */}
@@ -181,51 +184,55 @@ export default function ServicesPage() {
       {/* Tab content */}
       <section className="py-14 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10 items-start">
-            {/* Left: content */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5">{tab.title}</h2>
-              {tab.paragraphs.map((p, i) => (
-                <p key={i} className="text-[#4a7a8a] leading-relaxed mb-4">{p}</p>
-              ))}
-              <button
-                onClick={openModal}
-                className="mt-4 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
-              >
-                Book an Appointment <ArrowRight size={18} />
-              </button>
-            </div>
-
-            {/* Right: conditions list */}
-            <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
-              <h3 className="font-bold text-[#1e3a4a] mb-4 text-lg">Conditions We Treat</h3>
-              <ul className="space-y-3">
-                {tab.conditions.map((c, ci) => (
-                  <li key={c} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                    <span className={`before:content-['▪'] shrink-0 mt-0.5 ${ci % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#53A0DA]'}`}>▪</span>
-                    {c}
-                  </li>
+          <AnimatedSection key={tab.id}>
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              {/* Left: content */}
+              <div>
+                <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5">{tab.title}</h2>
+                {tab.paragraphs.map((p, i) => (
+                  <p key={i} className="text-[#4a7a8a] leading-relaxed mb-4">{p}</p>
                 ))}
-              </ul>
+                <button
+                  onClick={openModal}
+                  className="cta-pulse mt-4 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2"
+                >
+                  Book an Appointment <ArrowRight size={18} />
+                </button>
+              </div>
+
+              {/* Right: conditions list */}
+              <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-6">
+                <h3 className="font-bold text-[#1e3a4a] mb-4 text-lg">Conditions We Treat</h3>
+                <ul className="space-y-3">
+                  {tab.conditions.map((c, ci) => (
+                    <li key={c} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
+                      <span className={`before:content-['▪'] shrink-0 mt-0.5 ${ci % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#53A0DA]'}`}>▪</span>
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-14 px-4 bg-[#1e3a4a] text-white text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Your Child Started?</h2>
-          <p className="text-white/70 mb-8">
-            Our team handles insurance verification, prescription requests, and scheduling — all you need to do is reach out.
-          </p>
-          <button
-            onClick={openModal}
-            className="bg-[#FFEB70] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFD940] transition inline-flex items-center gap-2"
-          >
-            Book an Appointment <ArrowRight size={18} />
-          </button>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Ready to Get Your Child Started?</h2>
+            <p className="text-white/70 mb-8">
+              Our team handles insurance verification, prescription requests, and scheduling — all you need to do is reach out.
+            </p>
+            <button
+              onClick={openModal}
+              className="cta-pulse bg-[#FFEB70] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFD940] transition inline-flex items-center gap-2"
+            >
+              Book an Appointment <ArrowRight size={18} />
+            </button>
+          </div>
+        </AnimatedSection>
       </section>
 
       <script

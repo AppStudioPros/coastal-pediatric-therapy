@@ -6,6 +6,8 @@ import {
   Brain, Utensils, BookOpen
 } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
+import AnimatedSection from "@/components/AnimatedSection";
+import StaggeredGrid from "@/components/StaggeredGrid";
 
 const services = [
   { icon: MessageCircle, title: "Speech & Language Therapy", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
@@ -51,74 +53,82 @@ export default function Home() {
       <section className="bg-white py-20 md:py-28 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Left: text */}
-          <div className="max-w-lg">
-            <p className="text-[#53A0DA] font-semibold text-sm uppercase tracking-widest mb-4">
-              Serving Northeast Florida Since 1996
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#1e3a4a] leading-tight mb-5">
-              Helping Children Reach Their Full Potential
-            </h1>
-            <p className="text-lg text-[#4a7a8a] leading-relaxed mb-8">
-              Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin. One-on-one care, tailored to your child.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <button
-                onClick={openModal}
-                className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition flex items-center gap-2 justify-center"
-              >
-                Book an Appointment <ArrowRight size={18} />
-              </button>
-              <a
-                href="tel:9043724070"
-                className="border border-[#B8E4F0] text-[#1e3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#EAF6FB] transition flex items-center gap-2 justify-center"
-              >
-                <Phone size={18} /> (904) 372-4070
-              </a>
+          <AnimatedSection direction="left">
+            <div className="max-w-lg">
+              <p className="text-[#53A0DA] font-semibold text-sm uppercase tracking-widest mb-4">
+                Serving Northeast Florida Since 1996
+              </p>
+              <h1 className="text-4xl md:text-5xl font-bold text-[#1e3a4a] leading-tight mb-5">
+                Helping Children Reach Their Full Potential
+              </h1>
+              <p className="text-lg text-[#4a7a8a] leading-relaxed mb-8">
+                Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin. One-on-one care, tailored to your child.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <button
+                  onClick={openModal}
+                  className="cta-pulse bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition flex items-center gap-2 justify-center"
+                >
+                  Book an Appointment <ArrowRight size={18} className="arrow-nudge" />
+                </button>
+                <a
+                  href="tel:9043724070"
+                  className="border border-[#B8E4F0] text-[#1e3a4a] px-8 py-3 rounded-lg font-semibold hover:bg-[#EAF6FB] transition flex items-center gap-2 justify-center"
+                >
+                  <Phone size={18} /> (904) 372-4070
+                </a>
+              </div>
+              {/* Trust chips */}
+              <div className="flex flex-wrap gap-x-5 gap-y-2">
+                {trustChips.map((chip) => (
+                  <span key={chip} className="flex items-center gap-2 text-sm text-[#4a7a8a]">
+                    <span className="text-[#53A0DA] text-xs">⬤</span>
+                    {chip}
+                  </span>
+                ))}
+              </div>
             </div>
-            {/* Trust chips */}
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {trustChips.map((chip) => (
-                <span key={chip} className="flex items-center gap-2 text-sm text-[#4a7a8a]">
-                  <span className="text-[#53A0DA] text-xs">⬤</span>
-                  {chip}
-                </span>
-              ))}
-            </div>
-          </div>
+          </AnimatedSection>
 
           {/* Right: image */}
-          <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
-              alt="Child receiving pediatric therapy at Coastal Pediatric Therapy Center"
-              width={600}
-              height={500}
-              className="rounded-2xl object-cover w-full h-full"
-              priority
-            />
-          </div>
+          <AnimatedSection direction="right" delay={0.15}>
+            <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg gentle-float">
+              <Image
+                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
+                alt="Child receiving pediatric therapy at Coastal Pediatric Therapy Center"
+                width={600}
+                height={500}
+                className="rounded-2xl object-cover w-full h-full"
+                priority
+              />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Trust bar */}
-      <section className="bg-[#EAF6FB] py-6 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          {trustBar.map((label) => (
-            <div key={label} className="text-center">
-              <p className="font-bold text-sm gold-underline text-[#AF29BE] transition-colors duration-300 hover:text-[#1e3a4a] cursor-default">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <AnimatedSection>
+        <section className="bg-[#EAF6FB] py-6 px-4">
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+            {trustBar.map((label) => (
+              <div key={label} className="text-center">
+                <p className="font-bold text-sm gold-underline text-[#AF29BE] transition-colors duration-300 hover:text-[#1e3a4a] cursor-default">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
 
       {/* Services */}
       <section className="py-20 md:py-28 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Our Therapy Services</h2>
-            <p className="text-[#4a7a8a] mt-4 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <AnimatedSection>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Our Therapy Services</h2>
+              <p className="text-[#4a7a8a] mt-4 max-w-xl mx-auto">One-on-one, play-based therapy tailored to each child&apos;s unique needs and goals.</p>
+            </div>
+          </AnimatedSection>
+          <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
             {services.map(({ icon: Icon, title, desc }, i) => (
               <Link key={title} href="/services" className="bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition block">
                 <Icon size={28} className={`${i % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} mb-3`} />
@@ -126,7 +136,7 @@ export default function Home() {
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
               </Link>
             ))}
-          </div>
+          </StaggeredGrid>
           <div className="text-center mt-10">
             <Link href="/services" className="text-[#24B5D0] font-semibold hover:underline flex items-center gap-1 justify-center">
               Learn more about our services <ArrowRight size={16} />
@@ -137,29 +147,33 @@ export default function Home() {
 
       {/* About strip */}
       <section className="py-20 px-4 bg-[#EAF6FB]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">
-            Jacksonville&apos;s Trusted Pediatric Therapy Experts
-          </h2>
-          <p className="text-[#4a7a8a] text-lg leading-relaxed mt-4 mb-4">
-            Our compassionate, highly skilled therapists work with each child one-on-one to develop a customized treatment plan designed to build confidence, improve developmental skills, and exceed therapeutic goals.
-          </p>
-          <p className="text-[#4a7a8a] mb-8">
-            We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#AF29BE]">Jacksonville Beach</strong> and <strong className="text-[#AF29BE]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
-          </p>
-          <Link href="/about" className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2">
-            Our Story <ArrowRight size={18} />
-          </Link>
-        </div>
+        <AnimatedSection direction="left">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">
+              Jacksonville&apos;s Trusted Pediatric Therapy Experts
+            </h2>
+            <p className="text-[#4a7a8a] text-lg leading-relaxed mt-4 mb-4">
+              Our compassionate, highly skilled therapists work with each child one-on-one to develop a customized treatment plan designed to build confidence, improve developmental skills, and exceed therapeutic goals.
+            </p>
+            <p className="text-[#4a7a8a] mb-8">
+              We work closely with families, teachers, and pediatricians to ensure progress extends far beyond the therapy room. Two convenient locations in <strong className="text-[#AF29BE]">Jacksonville Beach</strong> and <strong className="text-[#AF29BE]">Mandarin</strong>. Clinic, telehealth, and private school settings available.
+            </p>
+            <Link href="/about" className="bg-[#24B5D0] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition inline-flex items-center gap-2">
+              Our Story <ArrowRight size={18} />
+            </Link>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* Testimonials */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1e3a4a] gold-underline">What Families Are Saying</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <AnimatedSection>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-[#1e3a4a] gold-underline">What Families Are Saying</h2>
+            </div>
+          </AnimatedSection>
+          <StaggeredGrid className="grid md:grid-cols-3 gap-6">
             {testimonials.map(({ quote, name }) => (
               <div key={name} className="bg-[#EAF6FB] rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
@@ -172,22 +186,26 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggeredGrid>
         </div>
       </section>
 
       {/* Insurance strip */}
       <section className="py-16 px-4 bg-[#EAF6FB]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Accepted Insurance Plans</h2>
-          <p className="text-[#4a7a8a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {insurance.map((plan) => (
-              <span key={plan} className="bg-white border border-[#B8E4F0] rounded-full px-4 py-1.5 text-sm text-[#1e3a4a]">
-                {plan}
-              </span>
-            ))}
-          </div>
+          <AnimatedSection>
+            <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">Accepted Insurance Plans</h2>
+            <p className="text-[#4a7a8a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
+            <div className="flex flex-wrap justify-center gap-3">
+              {insurance.map((plan) => (
+                <span key={plan} className="bg-white border border-[#B8E4F0] rounded-full px-4 py-1.5 text-sm text-[#1e3a4a]">
+                  {plan}
+                </span>
+              ))}
+            </div>
+          </AnimatedSection>
           <div className="mt-8">
             <Link href="/insurance" className="text-[#24B5D0] font-semibold hover:underline">
               Learn about insurance coverage
@@ -196,7 +214,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
       {/* Final CTA — image background with dark overlay */}
       <section className="relative py-24 px-4 text-white text-center overflow-hidden">
         {/* Background image */}
@@ -207,7 +224,7 @@ export default function Home() {
         {/* Dark blue overlay */}
         <div className="absolute inset-0 bg-[#1a3a4a]/85" />
         {/* Content */}
-        <div className="relative z-10 max-w-2xl mx-auto">
+        <AnimatedSection className="relative z-10 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 gold-underline">Ready to Get Started?</h2>
           <p className="text-white/80 mb-8 text-lg mt-4">
             Fill out a new patient request and our friendly staff will take care of the rest — from insurance verification to scheduling.
@@ -215,7 +232,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={openModal}
-              className="bg-[#FFD940] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFEB70] transition"
+              className="cta-pulse bg-[#FFD940] text-[#1e3a4a] font-bold px-8 py-3 rounded-lg hover:bg-[#FFEB70] transition"
             >
               Book an Appointment
             </button>
@@ -223,7 +240,7 @@ export default function Home() {
               Call (904) 372-4070
             </a>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <script

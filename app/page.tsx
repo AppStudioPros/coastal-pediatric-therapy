@@ -202,7 +202,7 @@ export default function Home() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=1400&q=80')" }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80')" }}
         />
         {/* Dark blue overlay */}
         <div className="absolute inset-0 bg-[#1a3a4a]/85" />

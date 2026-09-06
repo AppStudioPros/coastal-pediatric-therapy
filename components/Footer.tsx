@@ -10,6 +10,8 @@ const quickLinks = [
   ["Insurance", "/insurance"],
   ["About", "/about"],
   ["Resources", "/resources"],
+  ["Physician Resources", "/physician-resources"],
+  ["Make a Payment", "/make-a-payment"],
   ["Blog", "/blog"],
   ["Careers", "/careers"],
   ["Contact", "/contact"],

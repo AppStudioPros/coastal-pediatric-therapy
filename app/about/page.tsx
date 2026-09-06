@@ -1,7 +1,7 @@
 "use client";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
-import { ArrowRight, Heart, Users, MapPin } from "lucide-react";
+import { ArrowRight, Heart, Users, MapPin, Star } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
 import AnimatedSection from "@/components/AnimatedSection";
 import StaggeredGrid from "@/components/StaggeredGrid";
@@ -12,6 +12,40 @@ const tabs = [
   { id: "story", label: "Our Story", icon: Heart },
   { id: "team", label: "Meet the Team", icon: Users },
   { id: "locations", label: "Our Locations", icon: MapPin },
+  { id: "reviews", label: "What Parents Say", icon: Star },
+];
+
+const testimonials = [
+  {
+    name: "Christina M.",
+    quote:
+      "Coastal Pediatric has been a blessing for our family. My daughter has made more progress in 6 months than in the previous two years combined. The therapists genuinely care about each child as an individual.",
+  },
+  {
+    name: "James T.",
+    quote:
+      "The team at Coastal is incredibly knowledgeable and warm. From the front desk to the therapists, everyone goes out of their way to make my son feel comfortable and excited to come to therapy.",
+  },
+  {
+    name: "Priya S.",
+    quote:
+      "We drive 45 minutes to get here and it is absolutely worth it. The occupational therapy has transformed our son's ability to participate in everyday activities. Can't thank them enough.",
+  },
+  {
+    name: "Rachel K.",
+    quote:
+      "My daughter was terrified of speech therapy after a bad experience elsewhere. Within two sessions at Coastal she was asking when she could come back. That says everything.",
+  },
+  {
+    name: "David L.",
+    quote:
+      "Outstanding practice. The therapists communicate clearly with parents, set realistic goals, and celebrate every milestone. We feel like partners in our child's progress.",
+  },
+  {
+    name: "Michelle B.",
+    quote:
+      "We started with one child for speech therapy and now have two kids receiving OT and PT here. The entire team is exceptional. I recommend Coastal Pediatric to every parent I know.",
+  },
 ];
 
 const teamMembers = [
@@ -173,6 +207,41 @@ export default function AboutPage() {
                 </AnimatedSection>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* What Parents Say */}
+      {active === 3 && (
+        <section className="py-14 px-4 bg-white">
+          <div className="max-w-5xl mx-auto">
+            <AnimatedSection>
+              <h2 className="text-3xl font-bold text-[#1e3a4a] mb-3 gold-underline">What Parents Say</h2>
+              <p className="text-[#4a7a8a] mt-4 mb-10">
+                Hear from the families who trust us with their children&apos;s care.
+              </p>
+            </AnimatedSection>
+            <StaggeredGrid className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {testimonials.map((t) => (
+                <div
+                  key={t.name}
+                  className="card-hover bg-[#EAF6FB] rounded-2xl p-8 h-full flex flex-col"
+                >
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={16} className="fill-[#FFD940] text-[#FFD940]" />
+                    ))}
+                  </div>
+                  <p className="text-[#4a7a8a] text-sm leading-relaxed flex-1 mb-5">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div>
+                    <p className="font-semibold text-[#1e3a4a] text-sm">{t.name}</p>
+                    <p className="text-[#4a7a8a] text-xs">— Parent</p>
+                  </div>
+                </div>
+              ))}
+            </StaggeredGrid>
           </div>
         </section>
       )}

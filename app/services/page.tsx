@@ -15,8 +15,8 @@ const tabs = [
     icon: MessageCircle,
     title: "Speech & Language Therapy",
     paragraphs: [
-      "Our speech-language pathologists work with children who have challenges with articulation, language development, fluency, voice, and social communication. Every child deserves to be heard — and our team is dedicated to helping each one find their voice through individualized, play-based treatment.",
-      "Whether your child has been diagnosed with a speech delay, apraxia of speech, stuttering, or autism spectrum disorder, our SLPs develop a customized plan tailored to your child's unique strengths and goals. We collaborate closely with families, teachers, and pediatricians throughout the process.",
+      "Our speech-language pathologists work with children who have challenges with articulation, language development, fluency, voice, and social communication. Every child deserves to be heard, and our team is dedicated to helping each one find their voice through individualized, play-based treatment.",
+      "Whether your child has been diagnosed with a speech delay, apraxia of speech, stuttering, or autism spectrum disorder, our SLPs develop a customized plan built around your child's unique strengths and goals. We collaborate closely with families, teachers, and pediatricians throughout the process.",
       "From first words to complex conversational skills, our therapists use evidence-based strategies to build communication confidence in a warm, encouraging environment. We serve children from infancy through school age across our Jacksonville Beach and Mandarin locations.",
     ],
     conditions: [
@@ -37,8 +37,8 @@ const tabs = [
     icon: Hand,
     title: "Occupational Therapy",
     paragraphs: [
-      "Our occupational therapists help children develop the skills they need to participate fully in school, home, and play. We specialize in sensory processing, fine motor development, self-care, handwriting, and emotional regulation — building the foundational skills children need to thrive in everyday life.",
-      "OT at Coastal Pediatric Therapy Center is hands-on, motivating, and tailored to each child's sensory and developmental profile. Our therapists use a combination of structured activities and child-led play to make therapy engaging and effective.",
+      "Our occupational therapists help children develop the skills they need to participate fully in school, home, and play. We specialize in sensory processing, fine motor development, self-care, handwriting, and emotional regulation. We build the foundational skills children need to thrive in everyday life.",
+      "OT at Coastal Pediatric Therapy Center is hands-on, motivating, and matched to each child's sensory and developmental profile. Our therapists use a combination of structured activities and child-led play to make therapy engaging and effective.",
       "We work closely with parents to provide home strategies and carry-over activities so progress continues beyond the clinic. School-based consultations and telehealth options are also available.",
     ],
     conditions: [
@@ -59,9 +59,9 @@ const tabs = [
     icon: Activity,
     title: "Physical Therapy",
     paragraphs: [
-      "Our physical therapists focus on gross motor development, strength, balance, and coordination. We help children with conditions ranging from developmental delays and hypotonia to orthopedic injuries and neurological conditions — getting them moving, playing, and building confidence.",
+      "Our physical therapists focus on gross motor development, strength, balance, and coordination. We help children with conditions ranging from developmental delays and hypotonia to orthopedic injuries and neurological conditions, getting them moving, playing, and building confidence.",
       "Every child's physical therapy plan is individualized and goal-driven, designed to improve mobility, strength, and independence in a safe and supportive environment. Our PTs use functional activities and age-appropriate play to motivate children throughout their treatment.",
-      "We work alongside families, schools, and other healthcare providers to ensure a comprehensive approach. Progress is tracked regularly and goals are adjusted to meet each child's evolving needs.",
+      "We work alongside families, schools, and other healthcare providers so the whole team stays connected on your child's progress. Progress is tracked regularly and goals are adjusted to meet each child's evolving needs.",
     ],
     conditions: [
       "Gross Motor Developmental Delays",
@@ -81,7 +81,7 @@ const tabs = [
     icon: Brain,
     title: "Sensory Integration Therapy",
     paragraphs: [
-      "Sensory Integration Therapy helps children who are over- or under-responsive to sensory information from their environment. Many children struggle with sounds, textures, movement, or touch in ways that interfere with learning, behavior, and daily activities — our therapists specialize in addressing these challenges at the root.",
+      "Sensory Integration Therapy helps children who are over- or under-responsive to sensory information from their environment. Many children struggle with sounds, textures, movement, or touch in ways that interfere with learning, behavior, and daily activities. Our therapists specialize in addressing these challenges at the root.",
       "Using structured sensory experiences and specialized equipment in our sensory-rich gym environments, our occupational therapists guide children through activities that gradually improve how their nervous systems process and respond to sensory input. The goal is a more regulated, adaptable child who can engage confidently with the world around them.",
       "Sensory integration therapy is integrated into our OT sessions and can benefit children across a wide range of diagnoses. Parents receive coaching on sensory strategies to use at home, school, and in the community.",
     ],
@@ -103,7 +103,7 @@ const tabs = [
     icon: Utensils,
     title: "Feeding Therapy",
     paragraphs: [
-      "Feeding difficulties in children can cause significant stress for the whole family. Our feeding therapists — both speech-language pathologists and occupational therapists — work together to address the sensory, motor, and behavioral components of eating, helping children expand their diet and develop positive relationships with food.",
+      "Feeding difficulties in children can cause significant stress for the whole family. Our feeding therapists (speech-language pathologists and occupational therapists working together) to address the sensory, motor, and behavioral components of eating, helping children expand their diet and develop positive relationships with food.",
       "We use evidence-based approaches including SOS (Sequential Oral Sensory) Feeding Therapy to gradually introduce new foods, textures, and flavors in a low-pressure, playful environment. Treatment is individualized based on your child's specific feeding profile and challenges.",
       "Collaboration with families is central to our approach. We provide parent coaching, mealtime strategies, and carry-over activities to support progress at home. We also coordinate with dietitians and other medical professionals as needed.",
     ],
@@ -126,7 +126,7 @@ const tabs = [
     title: "Reading Intervention",
     paragraphs: [
       "Reading is foundational to academic success, and many children with language or learning challenges need targeted support to develop strong literacy skills. Our reading intervention services are delivered by speech-language pathologists who specialize in the language underpinnings of reading and spelling.",
-      "We use structured literacy approaches grounded in the science of reading — including phonological awareness training, phonics instruction, and comprehension strategies — to help children decode, fluency read, and understand what they read. Intervention is tailored to each child's specific literacy profile.",
+      "We use structured literacy approaches grounded in the science of reading , including phonological awareness training, phonics instruction, and comprehension strategies, to help children decode, fluency read, and understand what they read. Intervention is matched to each child's specific literacy profile.",
       "Reading intervention at Coastal Pediatric Therapy Center is often provided alongside speech-language therapy, creating a seamless, integrated approach to building communication and literacy skills together.",
     ],
     conditions: [
@@ -156,7 +156,7 @@ export default function ServicesPage() {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Pediatric Therapy Services</h1>
             <p className="text-lg text-[#4a7a8a]">
-              Comprehensive, play-based therapy for children — delivered one-on-one at our Jacksonville Beach and Mandarin locations.
+              Play-based therapy for children, delivered one-on-one at our Jacksonville Beach and Mandarin locations.
             </p>
             <button
               onClick={openModal}

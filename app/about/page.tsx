@@ -100,7 +100,7 @@ export default function AboutPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.15}>
               <p className="mt-4 text-[#4a7a8a] leading-relaxed">
-                Over nearly three decades, we&apos;ve helped thousands of children develop the communication, motor, and daily living skills they need to thrive at home, at school, and in life. Our approach has always been play-based — we believe children learn best when therapy feels like fun.
+                Over nearly three decades, we&apos;ve helped thousands of children develop the communication, motor, and daily living skills they need to thrive at home, at school, and in life. Our approach has always been play-based. We believe children learn best when therapy feels like fun.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -110,7 +110,7 @@ export default function AboutPage() {
             </AnimatedSection>
             <AnimatedSection delay={0.25}>
               <p className="mt-4 text-[#4a7a8a] leading-relaxed">
-                Family involvement is at the heart of everything we do. We partner with parents, caregivers, teachers, and pediatricians to ensure progress extends far beyond the therapy room. When families are engaged and informed, children succeed faster and maintain their gains longer.
+                Family involvement is at the heart of everything we do. We partner with parents, caregivers, teachers, and pediatricians so progress carries beyond the therapy room. When families are engaged and informed, children succeed faster and maintain their gains longer.
               </p>
             </AnimatedSection>
 

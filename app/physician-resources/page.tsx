@@ -80,7 +80,7 @@ export default function PhysicianResourcesPage() {
         </div>
       </section>
 
-      {/* Section 1 — Why Refer */}
+      {/* Section 1 - Why Refer */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
@@ -108,7 +108,7 @@ export default function PhysicianResourcesPage() {
         </div>
       </section>
 
-      {/* Section 2 — How to Refer */}
+      {/* Section 2 - How to Refer */}
       <section className="py-16 px-4 bg-[#EAF6FB]">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
@@ -133,7 +133,7 @@ export default function PhysicianResourcesPage() {
         </div>
       </section>
 
-      {/* Section 3 — What We Treat */}
+      {/* Section 3 - What We Treat */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
@@ -154,7 +154,7 @@ export default function PhysicianResourcesPage() {
         </div>
       </section>
 
-      {/* Section 4 — Contact Referral Team */}
+      {/* Section 4 - Contact Referral Team */}
       <section className="py-16 px-4 bg-[#EAF6FB]">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
@@ -163,7 +163,7 @@ export default function PhysicianResourcesPage() {
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            {/* Left — contact info card */}
+            {/* Left - contact info card */}
             <AnimatedSection direction="left">
               <div className="bg-white border border-[#B8E4F0] rounded-2xl p-6">
                 <h3 className="font-bold text-[#1e3a4a] text-lg mb-5">Referral Contact Information</h3>
@@ -202,7 +202,7 @@ export default function PhysicianResourcesPage() {
               </div>
             </AnimatedSection>
 
-            {/* Right — CTA buttons */}
+            {/* Right - CTA buttons */}
             <AnimatedSection direction="right">
               <div className="flex flex-col gap-4">
                 <a
@@ -237,7 +237,7 @@ export default function PhysicianResourcesPage() {
             "faxNumber": "(904) 372-4075",
             "email": "info@coastaltherapy.net",
             "description":
-              "Coastal Pediatric Therapy Center offers comprehensive pediatric speech, occupational, and physical therapy services in Jacksonville Beach and Mandarin, FL. Physician referrals welcome.",
+              "Coastal Pediatric Therapy Center provides pediatric speech, occupational, and physical therapy services in Jacksonville Beach and Mandarin, FL. Physician referrals welcome.",
             "medicalSpecialty": [
               "Speech-Language Pathology",
               "Occupational Therapy",

@@ -23,7 +23,7 @@ const steps = [
   {
     number: "02",
     title: "Complete the Patient Packet",
-    desc: "The packet is user-friendly and can be completed electronically through our secure, HIPAA-compliant patient portal — at your convenience, from home. It covers medical history, developmental milestones, and insurance information.",
+    desc: "The packet is user-friendly and can be completed electronically through our secure, HIPAA-compliant patient portal, at your convenience, from home. It covers medical history, developmental milestones, and insurance information.",
   },
   {
     number: "03",
@@ -51,7 +51,7 @@ const settings = [
   {
     icon: Monitor,
     title: "Telehealth",
-    desc: "Virtual therapy sessions available for many of our services — convenient for families balancing busy schedules or located further from our clinics.",
+    desc: "Virtual therapy sessions available for many of our services, convenient for families balancing busy schedules or located further from our clinics.",
   },
   {
     icon: School,
@@ -132,7 +132,7 @@ export default function GettingStartedPage() {
                 Your child&apos;s first visit is a formal evaluation designed to understand their current level of function and establish effective, measurable therapy goals. The evaluation typically takes between 30 minutes and one hour, depending on the discipline and your child&apos;s needs.
               </p>
               <p className="text-[#4a7a8a] leading-relaxed mb-4">
-                The evaluation includes standardized testing, clinical observation, and a detailed parent interview. We want to hear from you — you know your child best, and your observations are a critical part of the assessment process.
+                The evaluation includes standardized testing, clinical observation, and a detailed parent interview. We want to hear from you. You know your child best, and your observations are a critical part of the assessment process.
               </p>
               <p className="text-[#4a7a8a] leading-relaxed mb-4">
                 Parents are welcome to accompany their child during the evaluation, though many children actually perform better with their parent waiting nearby rather than in the room. Our therapists are experienced in making children feel comfortable and at ease from the very first visit.

@@ -216,7 +216,7 @@ const fineMilestones = [
 const sensorySystems = [
   {
     name: "Tactile (Touch)",
-    desc: "Processes information from skin receptors — texture, temperature, pressure, and pain. Children who are over-responsive may avoid certain textures in clothing or food; under-responsive children may seek intense tactile input.",
+    desc: "Processes information from skin receptors: texture, temperature, pressure, and pain. Children who are over-responsive may avoid certain textures in clothing or food; under-responsive children may seek intense tactile input.",
     signs: [
       "Dislikes being touched or groomed (haircuts, nail trimming)",
       "Avoids certain textures in food or clothing",
@@ -246,7 +246,7 @@ const sensorySystems = [
   },
   {
     name: "Visual (Sight)",
-    desc: "Processes what the eyes see — not just acuity, but visual-spatial processing, tracking, and figure-ground discrimination. Visual processing issues can significantly impact reading and daily navigation.",
+    desc: "Processes what the eyes see: visual acuity, visual-spatial processing, tracking, and figure-ground discrimination. Visual processing issues can significantly impact reading and daily navigation.",
     signs: [
       "Difficulty tracking moving objects or reading lines of text",
       "Sensitive to bright lights or visual clutter",
@@ -256,7 +256,7 @@ const sensorySystems = [
   },
   {
     name: "Auditory (Hearing)",
-    desc: "Processes sound — volume, pitch, and the meaning of language. Auditory processing issues affect attention, communication, and learning in noisy environments.",
+    desc: "Processes sound: volume, pitch, and the meaning of language. Auditory processing issues affect attention, communication, and learning in noisy environments.",
     signs: [
       "Covers ears at loud or unexpected sounds",
       "Difficulty following verbal instructions in noisy settings",
@@ -276,7 +276,7 @@ const sensorySystems = [
   },
   {
     name: "Interoception (Internal Body Signals)",
-    desc: "The sense that tells us what's happening inside our bodies — hunger, thirst, temperature, heartbeat, and emotions. Difficulties here affect self-regulation and emotional awareness.",
+    desc: "The sense that tells us what's happening inside our bodies: hunger, thirst, temperature, heartbeat, and emotions. Difficulties here affect self-regulation and emotional awareness.",
     signs: [
       "Doesn't recognize hunger or thirst cues",
       "Has difficulty identifying their own emotional state",

@@ -1,6 +1,6 @@
 import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
-import { Shield } from "lucide-react";
+
 
 export const metadata: Metadata = {
   title: "Privacy Policy & HIPAA Notice | Coastal Pediatric Therapy Center",
@@ -13,7 +13,6 @@ export default function PrivacyPolicyPage() {
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Shield size={32} className="text-[#24B5D0]" />
             <h1 className="text-4xl font-bold text-[#1e3a4a]">Privacy Policy</h1>
           </div>
           <p className="text-[#4a7a8a] text-sm">Last Updated: September 2026</p>

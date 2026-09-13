@@ -1,6 +1,6 @@
 import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
-import { Heart, Users, Star, Briefcase, Mail } from "lucide-react";
+import { Briefcase, Mail } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import StaggeredGrid from "@/components/StaggeredGrid";
 
@@ -11,17 +11,14 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Heart,
     title: "Child-Centered Care",
     desc: "Every decision we make starts with the child. We create an environment where kids feel safe, seen, and motivated.",
   },
   {
-    icon: Users,
     title: "Collaborative Team",
-    desc: "Our SLPs, OTs, and PTs work together — sharing knowledge, consulting on complex cases, and celebrating wins as a team.",
+    desc: "Our SLPs, OTs, and PTs work together: sharing knowledge, consulting on complex cases, and celebrating wins as a team.",
   },
   {
-    icon: Star,
     title: "Clinical Excellence",
     desc: "We invest in our therapists through continuing education, mentorship, and access to evidence-based resources.",
   },
@@ -47,16 +44,15 @@ export default function CareersPage() {
           <AnimatedSection>
             <h2 className="text-2xl font-bold text-[#1e3a4a] mb-4">Why Work at Coastal?</h2>
             <p className="text-[#4a7a8a] leading-relaxed mb-8">
-              Since 1996, Coastal Pediatric Therapy Center has built a reputation not just for clinical excellence, but for a workplace culture where therapists thrive. We&apos;re a small, close-knit team that genuinely supports each other — and we believe happy therapists create better outcomes for the children and families we serve.
+              Since 1996, Coastal Pediatric Therapy Center has built a reputation for clinical excellence and a workplace culture where therapists thrive. We&apos;re a small, close-knit team that genuinely supports each other. Happy therapists create better outcomes for the children and families we serve.
             </p>
           </AnimatedSection>
 
           <StaggeredGrid className="grid md:grid-cols-3 gap-5 mb-12">
-            {values.map(({ icon: Icon, title, desc }, vi) => (
+            {values.map(({ title, desc }, vi) => (
               <div key={title} className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6">
                 <div className="w-10 h-10 rounded-full bg-[#EAF6FB] flex items-center justify-center mb-4">
-                  <Icon size={20} className={vi === 2 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} />
-                </div>
+                  </div>
                 <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
               </div>
@@ -72,7 +68,7 @@ export default function CareersPage() {
                 We don&apos;t have any open roles at this time, but we&apos;re always happy to hear from talented therapists. Send us your resume and we&apos;ll keep you in mind for future opportunities.
               </p>
               <a
-                href="mailto:info@coastaltherapy.net?subject=Career%20Inquiry%20—%20Coastal%20Pediatric%20Therapy"
+                href="mailto:info@coastaltherapy.net?subject=Career%20Inquiry%20-%20Coastal%20Pediatric%20Therapy"
                 className="cta-blue-2 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition"
               >
                 <Mail size={16} />

@@ -85,7 +85,7 @@ export default function Home() {
                 Helping Children Reach Their Full Potential
               </h1>
               <p className="text-lg text-[#4a7a8a] leading-relaxed mb-8">
-                Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin. One-on-one care, tailored to your child.
+                Coastal Pediatric Therapy Center provides quality play-based Speech, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin. One-on-one care, built around your child.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <button
@@ -250,7 +250,7 @@ export default function Home() {
         <AnimatedSection className="relative z-10 max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 gold-underline">Ready to Get Started?</h2>
           <p className="text-white/80 mb-8 text-lg mt-4">
-            Fill out a new patient request and our friendly staff will take care of the rest — from insurance verification to scheduling.
+            Fill out a new patient request and our friendly staff handles the rest: insurance verification, scheduling, and any questions along the way.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button

@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Coastal Therapy Website <noreply@webdesignpros365.com>",
+        from: "Coastal Pediatric Therapy Center <noreply@mail.coastaltherapy.net>",
         to: "info@coastaltherapy.net",
         subject: `New Website Message — ${name || "Website Visitor"}`,
         html,

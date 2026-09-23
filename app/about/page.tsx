@@ -144,12 +144,12 @@ export default function AboutPage() {
             <StaggeredGrid className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
                 <div key={i} className={`card-hover bg-white border border-[#B8E4F0] rounded-2xl overflow-hidden text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
-                  <div className="relative w-full h-52 bg-[#e8f4f8]">
+                  <div className="relative w-full h-64 bg-[#e8f4f8]">
                     <Image
                       src={member.photo}
                       alt={`${member.name} — ${member.role} at Coastal Pediatric Therapy Center`}
                       fill
-                      style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                      style={{ objectFit: 'cover', objectPosition: '50% 20%' }}
                     />
                   </div>
                   <div className="p-4">

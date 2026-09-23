@@ -271,54 +271,113 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "name": "Coastal Pediatric Therapy Center",
-            "telephone": "(904) 372-4070",
-            "faxNumber": "(904) 372-4075",
-            "email": "info@coastaltherapy.net",
-            "url": "https://coastaltherapy.net",
-            "foundingDate": "1996",
-            "sameAs": ["https://www.instagram.com/coastalpediatrictherapy/"],
-            "medicalSpecialty": [
-              "Speech-Language Pathology",
-              "Occupational Therapy",
-              "Physical Therapy"
-            ],
-            "location": [
+            "@graph": [
               {
-                "@type": "Place",
-                "name": "Jacksonville Beach",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "2730 Isabella Blvd, Suite 10",
-                  "addressLocality": "Jacksonville Beach",
-                  "addressRegion": "FL",
-                  "postalCode": "32250",
-                  "addressCountry": "US"
-                }
+                "@type": "MedicalBusiness",
+                "@id": "https://coastaltherapy.net/#organization",
+                "name": "Coastal Pediatric Therapy Center",
+                "telephone": "(904) 372-4070",
+                "faxNumber": "(904) 372-4075",
+                "email": "info@coastaltherapy.net",
+                "url": "https://coastaltherapy.net",
+                "foundingDate": "1996",
+                "description": "Multidisciplinary pediatric therapy center providing Speech & Language, Occupational, and Physical Therapy in Jacksonville Beach and Mandarin, FL since 1996. Play-based, child-focused, one-on-one therapy.",
+                "sameAs": [
+                  "https://www.instagram.com/coastalpediatrictherapy/",
+                  "https://www.facebook.com/coastalpediatrictherapy"
+                ],
+                "medicalSpecialty": [
+                  "Speech-Language Pathology",
+                  "Occupational Therapy",
+                  "Physical Therapy"
+                ],
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Pediatric Therapy Services",
+                  "itemListElement": [
+                    { "@type": "Offer", "itemOffered": { "@type": "MedicalTherapy", "name": "Speech & Language Therapy" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "MedicalTherapy", "name": "Occupational Therapy" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "MedicalTherapy", "name": "Physical Therapy" } }
+                  ]
+                },
+                "location": [
+                  {
+                    "@type": "MedicalClinic",
+                    "name": "Coastal Pediatric Therapy Center — Jacksonville Beach",
+                    "telephone": "(904) 372-4070",
+                    "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": "2730 Isabella Blvd, Suite 10",
+                      "addressLocality": "Jacksonville Beach",
+                      "addressRegion": "FL",
+                      "postalCode": "32250",
+                      "addressCountry": "US"
+                    }
+                  },
+                  {
+                    "@type": "MedicalClinic",
+                    "name": "Coastal Pediatric Therapy Center — Mandarin",
+                    "telephone": "(904) 372-4070",
+                    "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": "6100 Greenland Rd, Suite 901",
+                      "addressLocality": "Jacksonville",
+                      "addressRegion": "FL",
+                      "postalCode": "32258",
+                      "addressCountry": "US"
+                    }
+                  }
+                ],
+                "openingHoursSpecification": [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "08:30",
+                    "closes": "17:30"
+                  }
+                ],
+                "areaServed": [
+                  "Jacksonville Beach, FL",
+                  "Jacksonville, FL",
+                  "Neptune Beach, FL",
+                  "Atlantic Beach, FL",
+                  "Ponte Vedra Beach, FL",
+                  "St. Johns County, FL",
+                  "Duval County, FL",
+                  "Northeast Florida"
+                ]
               },
               {
-                "@type": "Place",
-                "name": "Mandarin",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "6100 Greenland Rd, Suite 901",
-                  "addressLocality": "Jacksonville",
-                  "addressRegion": "FL",
-                  "postalCode": "32258",
-                  "addressCountry": "US"
-                }
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What services does Coastal Pediatric Therapy Center offer?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Coastal Pediatric Therapy Center offers Speech & Language Therapy, Occupational Therapy, and Physical Therapy for children of all ages. All therapy is play-based and provided one-on-one." }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Where is Coastal Pediatric Therapy Center located?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "We have two convenient locations: Jacksonville Beach (2730 Isabella Blvd, Suite 10) and Mandarin (6100 Greenland Rd, Suite 901, Jacksonville, FL 32258)." }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do I get my child started at Coastal Pediatric Therapy Center?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Fill out our New Patient Request Form online. Our staff will email you a new patient packet, handle your insurance verification, and contact you with available appointment times. Call (904) 372-4070 for help." }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does Coastal Pediatric Therapy Center accept insurance?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. We accept BCBS, Medica (MMSI), CMS Medicaid, Tricare Select, Tricare Prime, UMR, United Healthcare, Step Up For Students, DSAJ Scholarships, and SIS VPK funding." }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Does Coastal Pediatric Therapy Center offer telehealth?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer telehealth sessions in addition to in-clinic appointments at our Jacksonville Beach and Mandarin locations, and services at private schools." }
+                  }
+                ]
               }
-            ],
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "08:30",
-                "closes": "17:30"
-              }
-            ],
-            "areaServed": "Northeast Florida"
+            ]
           })
         }}
       />

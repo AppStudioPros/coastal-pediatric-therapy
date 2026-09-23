@@ -130,7 +130,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             disabled={loading}
             className="w-full bg-[#e8734a] text-white font-semibold py-3 rounded-lg hover:bg-[#d4623b] transition disabled:opacity-60"
           >
-            {loading ? "Opening patient form..." : "Continue to New Patient Form →"}
+            {loading ? "Loading..." : "Get Started →"}
           </button>
         </form>
 

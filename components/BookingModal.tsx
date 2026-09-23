@@ -8,8 +8,9 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
-  const [firstName, setFirstName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [preferredTime, setPreferredTime] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -22,18 +23,19 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       await fetch("/api/booking-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, phone, preferredTime }),
+        body: JSON.stringify({ fullName, phone, email, preferredTime }),
       });
     } catch {
-      // Best effort — still open the booking portal
+      // Best effort — still open the patient form
     }
     window.open(
       "https://oceanfriends.ai/reference/patient?centerId=NGFM-5LZ",
       "_blank"
     );
     setLoading(false);
-    setFirstName("");
+    setFullName("");
     setPhone("");
+    setEmail("");
     setPreferredTime("");
     onClose();
   }
@@ -44,7 +46,6 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div className="bg-white rounded-2xl max-w-md w-full shadow-xl p-8 relative">
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition"
@@ -54,24 +55,24 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         </button>
 
         <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">
-          Let&apos;s get your child scheduled
+          Let&apos;s get your child started
         </h2>
         <p className="text-gray-500 text-sm mb-6">
-          Share a few quick details to confirm your spot, then we&apos;ll send you straight to our booking calendar to choose your time.
+          Share a few quick details and we&apos;ll send you to the new patient form. We&apos;ll also have your info on hand to follow up personally if you have questions.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="bm-first-name">
-              First Name <span className="text-[#e8734a]">*</span>
+            <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="bm-full-name">
+              Full Name <span className="text-[#e8734a]">*</span>
             </label>
             <input
-              id="bm-first-name"
+              id="bm-full-name"
               type="text"
               required
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder="Your first name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              placeholder="Parent or guardian name"
               className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e7faa]"
             />
           </div>
@@ -87,6 +88,21 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="(904) 555-0000"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e7faa]"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-1" htmlFor="bm-email">
+              Email <span className="text-[#e8734a]">*</span>
+            </label>
+            <input
+              id="bm-email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@email.com"
               className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#1e7faa]"
             />
           </div>
@@ -114,12 +130,12 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             disabled={loading}
             className="w-full bg-[#e8734a] text-white font-semibold py-3 rounded-lg hover:bg-[#d4623b] transition disabled:opacity-60"
           >
-            {loading ? "Redirecting…" : "Continue to Booking Calendar →"}
+            {loading ? "Opening patient form..." : "Continue to New Patient Form →"}
           </button>
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-4">
-          Or call us:{" "}
+          Prefer to call?{" "}
           <a href="tel:9043724070" className="text-[#1e7faa] font-semibold hover:underline">
             (904) 372-4070
           </a>

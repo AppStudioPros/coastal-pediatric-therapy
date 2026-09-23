@@ -2,18 +2,48 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 
 const links = [
-  { href: "/services", label: "Services" },
-  { href: "/getting-started", label: "Getting Started" },
+  { href: "/pediatric-therapy-services", label: "Services" },
+  { href: "/new-patient-request-form", label: "Getting Started" },
   { href: "/insurance", label: "Insurance" },
   { href: "/about", label: "About" },
-  { href: "/resources", label: "Resources" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/parent-resources", label: "Resources" },
+  { href: "/coastal-therapy-blog", label: "Blog" },
+  { href: "/contact-us", label: "Contact" },
 ];
+
+function ContactIcon({
+  icon,
+  tooltip,
+  href,
+}: {
+  icon: React.ReactNode;
+  tooltip: React.ReactNode;
+  href: string;
+}) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div className="relative" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <a
+        href={href}
+        className="flex items-center justify-center w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 transition text-white"
+        aria-label={href}
+      >
+        {icon}
+      </a>
+      {hovered && (
+        <div className="absolute right-0 top-10 bg-white text-[#1e3a4a] rounded-lg shadow-lg py-2 px-3 text-xs whitespace-nowrap z-50 border border-gray-100">
+          <div className="absolute -top-1.5 right-2.5 w-3 h-3 bg-white border-l border-t border-gray-100 rotate-45" />
+          {tooltip}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -48,17 +78,33 @@ export default function Nav() {
           </button>
         </nav>
 
-        {/* Phone + mobile toggle */}
-        <div className="flex items-center gap-3">
-          <a href="tel:9043724070" className="hidden sm:flex lg:hidden items-center gap-1 text-sm font-semibold text-white/70 hover:text-white transition">
-            <Phone size={15} />
-            (904) 372-4070
-          </a>
-          <a href="tel:9043724070" className="hidden xl:flex items-center gap-1 text-sm font-semibold text-white/70 hover:text-white transition">
-            <Phone size={15} />
-            (904) 372-4070
-          </a>
-          <button className="lg:hidden text-white" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        {/* Contact icons + mobile toggle */}
+        <div className="flex items-center gap-2 ml-3">
+          {/* Phone icon */}
+          <ContactIcon
+            href="tel:9043724070"
+            icon={<Phone size={15} />}
+            tooltip={
+              <div>
+                <p className="font-semibold text-[#1AAFC9] mb-0.5">Call Us</p>
+                <a href="tel:9043724070" className="text-[#1e3a4a] font-bold hover:text-[#1AAFC9]">(904) 372-4070</a>
+                <p className="text-gray-400 mt-0.5">Mon–Fri 8:30 AM – 5:30 PM</p>
+              </div>
+            }
+          />
+          {/* Email icon */}
+          <ContactIcon
+            href="mailto:info@coastaltherapy.net"
+            icon={<Mail size={15} />}
+            tooltip={
+              <div>
+                <p className="font-semibold text-[#1AAFC9] mb-0.5">Email Us</p>
+                <a href="mailto:info@coastaltherapy.net" className="text-[#1e3a4a] font-bold hover:text-[#1AAFC9]">info@coastaltherapy.net</a>
+              </div>
+            }
+          />
+          {/* Mobile hamburger */}
+          <button className="lg:hidden text-white ml-1" onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -67,10 +113,16 @@ export default function Nav() {
       {/* Mobile menu */}
       {open && (
         <div className="lg:hidden bg-[#1499b0] px-4 pb-4">
-          <a href="tel:9043724070" className="flex items-center gap-2 py-3 text-sm font-semibold text-white/70 border-b border-white/20">
-            <Phone size={15} />
-            (904) 372-4070
-          </a>
+          <div className="flex items-center gap-4 py-3 border-b border-white/20">
+            <a href="tel:9043724070" className="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white transition">
+              <Phone size={14} />
+              (904) 372-4070
+            </a>
+            <a href="mailto:info@coastaltherapy.net" className="flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white transition">
+              <Mail size={14} />
+              info@coastaltherapy.net
+            </a>
+          </div>
           {links.map((l) => (
             <Link
               key={l.href}

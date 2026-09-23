@@ -39,6 +39,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/makeapayment`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
     { url: `${base}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
 
+    // Phase 4 pages
+    { url: `${base}/student-observation-volunteer-requests`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: `${base}/our-team`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.75 },
+
     // Blog index
     { url: `${base}/coastal-therapy-blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
 

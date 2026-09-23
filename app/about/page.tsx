@@ -1,6 +1,7 @@
 "use client";
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowRight, Heart, Users, MapPin, Star } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -49,12 +50,14 @@ const testimonials = [
 ];
 
 const teamMembers = [
-  { initials: "SL", role: "Speech-Language Pathologist" },
-  { initials: "OT", role: "Occupational Therapist" },
-  { initials: "PT", role: "Physical Therapist" },
-  { initials: "SL", role: "Speech-Language Pathologist" },
-  { initials: "OT", role: "Occupational Therapist" },
-  { initials: "CD", role: "Clinic Director" },
+  { name: "Tayler Spang", role: "Pediatric Physical Therapist", photo: "/images/team/tayler.jpg" },
+  { name: "Emily Peoples", role: "Pediatric Occupational Therapist", photo: "/images/team/emily.jpg" },
+  { name: "Danielle Tenny", role: "Occupational Therapist", photo: "/images/team/danielle.jpg" },
+  { name: "Mary Kate", role: "Occupational Therapist", photo: "/images/team/mary-kate.jpg" },
+  { name: "Elizabeth", role: "Pediatric Physical Therapist", photo: "/images/team/elizabeth.jpg" },
+  { name: "Janine King", role: "Pediatric Occupational Therapist", photo: "/images/team/janine.jpg" },
+  { name: "Kaylee Janusko", role: "Pediatric Physical Therapist", photo: "/images/team/kaylee.jpg" },
+  { name: "Rebecca Kinnaird", role: "Patient Services Coordinator", photo: "/images/team/rebecca.jpg" },
 ];
 
 const stats = [
@@ -140,22 +143,22 @@ export default function AboutPage() {
             </AnimatedSection>
             <StaggeredGrid className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
-                <div key={i} className={`card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
-                  <div className="w-20 h-20 rounded-full bg-gray-100 mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-gray-400 font-bold text-xl">{member.initials}</span>
+                <div key={i} className={`card-hover bg-white border border-[#B8E4F0] rounded-2xl overflow-hidden text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
+                  <div className="relative w-full h-52 bg-[#e8f4f8]">
+                    <Image
+                      src={member.photo}
+                      alt={`${member.name} — ${member.role} at Coastal Pediatric Therapy Center`}
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                    />
                   </div>
-                  <div className="h-4 bg-gray-100 rounded-full w-3/4 mx-auto mb-2 animate-pulse" />
-                  <p className="text-sm text-[#4a7a8a]">{member.role}</p>
+                  <div className="p-4">
+                    <p className="font-bold text-[#1e3a4a] text-sm mb-1">{member.name}</p>
+                    <p className="text-sm text-[#4a7a8a]">{member.role}</p>
+                  </div>
                 </div>
               ))}
             </StaggeredGrid>
-            <p className="text-center text-[#4a7a8a] text-sm mt-8">
-              Full team bios coming soon. Contact us at{" "}
-              <a href="mailto:info@coastaltherapy.net" className="text-[#24B5D0] hover:underline">
-                info@coastaltherapy.net
-              </a>{" "}
-              to learn about our staff.
-            </p>
           </div>
         </section>
       )}

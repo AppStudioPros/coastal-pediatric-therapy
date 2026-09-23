@@ -117,7 +117,7 @@ export default function Home() {
           <AnimatedSection direction="right" delay={0.15}>
             <div className="relative h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
+                src="/images/hero-kids.png"
                 alt="Child receiving pediatric therapy at Coastal Pediatric Therapy Center"
                 width={600}
                 height={500}
@@ -242,7 +242,7 @@ export default function Home() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80')", backgroundPosition: 'center 85%' }}
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')", backgroundPosition: 'center 60%' }}
         />
         {/* Dark blue overlay */}
         <div className="absolute inset-0 bg-[#1a3a4a]/85" />

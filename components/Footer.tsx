@@ -62,6 +62,10 @@ export default function Footer() {
               <Phone size={14} />
               (904) 372-4070
             </a>
+            <p className="inline-flex items-center gap-2 text-sm text-white/50">
+              <Phone size={14} className="opacity-0" />
+              Fax: (904) 372-4075
+            </p>
             <a href="mailto:info@coastaltherapy.net" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
               <Mail size={14} />
               info@coastaltherapy.net
@@ -105,9 +109,6 @@ export default function Footer() {
                 2730 Isabella Blvd, Suite 10<br />
                 Jacksonville Beach, FL 32250
               </p>
-              <p className="text-white/60 mt-1">(904) 372-4070</p>
-              <p className="text-white/60">Fax: (904) 372-4075</p>
-              <p className="text-white/60">info@coastaltherapy.net</p>
               <p className="text-white/50 text-xs mt-1">Mon–Fri 8:30am–5:30pm</p>
             </div>
             <div>
@@ -116,9 +117,6 @@ export default function Footer() {
                 6100 Greenland Rd, Suite 901<br />
                 Jacksonville, FL 32258
               </p>
-              <p className="text-white/60 mt-1">(904) 372-4070</p>
-              <p className="text-white/60">Fax: (904) 372-4075</p>
-              <p className="text-white/60">info@coastaltherapy.net</p>
               <p className="text-white/50 text-xs mt-1">Mon–Fri 8:30am–5:30pm</p>
             </div>
           </div>

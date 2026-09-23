@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { useState } from "react";
 
 const quickLinks = [
@@ -54,7 +54,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[#FFD940] hover:text-[#FFEB70] transition font-medium"
           >
-            <ExternalLink size={15} />
+            <Instagram size={15} />
             @coastalpediatrictherapy
           </a>
         </div>

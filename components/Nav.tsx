@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Instagram } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 
 const links = [
@@ -100,6 +100,17 @@ export default function Nav() {
               <div>
                 <p className="font-semibold text-[#1AAFC9] mb-0.5">Email Us</p>
                 <a href="mailto:info@coastaltherapy.net" className="text-[#1e3a4a] font-bold hover:text-[#1AAFC9]">info@coastaltherapy.net</a>
+              </div>
+            }
+          />
+          {/* Instagram icon */}
+          <ContactIcon
+            href="https://www.instagram.com/coastalpediatrictherapy/"
+            icon={<Instagram size={15} />}
+            tooltip={
+              <div>
+                <p className="font-semibold text-[#1AAFC9] mb-0.5">Instagram</p>
+                <a href="https://www.instagram.com/coastalpediatrictherapy/" target="_blank" rel="noopener noreferrer" className="text-[#1e3a4a] font-bold hover:text-[#1AAFC9]">@coastalpediatrictherapy</a>
               </div>
             }
           />

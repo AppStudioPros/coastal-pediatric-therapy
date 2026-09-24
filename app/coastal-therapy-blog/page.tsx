@@ -1,86 +1,15 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { createClient } from '@supabase/supabase-js'
 
 export const metadata: Metadata = {
   title: 'Coastal Therapy Blog | Pediatric Therapy Tips & Resources',
   description: 'Tips, resources, and insights on pediatric speech, occupational, and physical therapy from the team at Coastal Pediatric Therapy Center in Jacksonville Beach and Mandarin, FL.',
 }
 
-const posts = [
-  {
-    slug: 'speech-therapy-introducing-the-g-sound',
-    title: 'Speech Therapy: Introducing the G Sound',
-    date: 'May 24, 2023',
-    category: 'Speech Therapy',
-    featuredImage: '/images/blog/speech-g-sound.jpg',
-    excerpt: 'Replacing /d/ for /g/ is called phonological "fronting." Learn how our SLPs help children produce back sounds correctly.',
-  },
-  {
-    slug: '5-easy-ways-to-incorporate-sensory-play',
-    title: '5 Easy Ways to Incorporate Sensory Play',
-    date: 'April 25, 2023',
-    category: 'Occupational Therapy',
-    featuredImage: '/images/blog/sensory-play-1.jpeg',
-    excerpt: 'Sensory play builds nerve connections in the brain. Here are 5 easy, affordable ways to incorporate it at home.',
-  },
-  {
-    slug: 'physical-therapy-for-torticollis',
-    title: 'Physical Therapy for Torticollis',
-    date: 'March 28, 2023',
-    category: 'Physical Therapy',
-    featuredImage: '/images/blog/torticollis.jpg',
-    excerpt: 'Congenital Muscular Torticollis affects around 3% of babies. Learn how early physical therapy can correct it completely.',
-  },
-  {
-    slug: 'world-down-syndrome-day',
-    title: 'World Down Syndrome Day!',
-    date: 'March 21, 2023',
-    category: 'Community',
-    featuredImage: '/images/blog/down-syndrome.jpg',
-    excerpt: 'Every year on March 21st we celebrate World Down Syndrome Day to recognize the abilities of people with Down Syndrome.',
-  },
-  {
-    slug: 'sisters-4-sight-my-familys-journey-through-gene-replacement-therapy',
-    title: "Sisters 4 Sight: My Family's Journey Through Gene Replacement Therapy",
-    date: 'September 11, 2020',
-    category: 'Family Stories',
-    featuredImage: '/images/blog/sisters-4-sight.jpg',
-    excerpt: "One family's journey through rare vision conditions -- and why early intervention makes all the difference.",
-  },
-  {
-    slug: 'how-to-reduce-back-to-school-anxiety',
-    title: 'How to Reduce Back-to-School Anxiety',
-    date: 'September 11, 2020',
-    category: 'Parent Tips',
-    featuredImage: '/images/blog/back-to-school.jpg',
-    excerpt: 'Practical tips to help your child transition smoothly into the new school year and manage back-to-school anxiety.',
-  },
-  {
-    slug: 'common-myths-and-misconceptions-about-aac',
-    title: 'Common Myths and Misconceptions About AAC',
-    date: 'September 11, 2020',
-    category: 'Speech Therapy',
-    featuredImage: '/images/blog/aac.jpg',
-    excerpt: 'AAC does not hinder speech -- it helps. Busting the most common myths about Augmentative and Alternative Communication.',
-  },
-  {
-    slug: 'phonological-disorders-tan-we-do-play-a-dame',
-    title: 'Phonological Disorders: "Tan we do play a dame?"',
-    date: 'September 11, 2020',
-    category: 'Speech Therapy',
-    featuredImage: '/images/blog/phonological.jpg',
-    excerpt: 'Learn about phonological patterns like fronting, stopping, and final consonant deletion -- and how speech therapy helps.',
-  },
-  {
-    slug: 'is-it-ok-if-my-baby-always-holds-their-head-tilted-to-the-same-side',
-    title: 'Is It Ok if My Baby Always Holds Their Head Tilted to the Same Side?',
-    date: 'September 11, 2020',
-    category: 'Physical Therapy',
-    featuredImage: '/images/blog/head-tilt.jpg',
-    excerpt: 'Always looking one direction could be Torticollis. Learn the signs and how early physical therapy can help.',
-  },
-]
+export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 const categoryColors: Record<string, string> = {
   'Speech Therapy': '#1e7faa',
@@ -91,9 +20,51 @@ const categoryColors: Record<string, string> = {
   'Parent Tips': '#457b9d',
 }
 
-const [featured, ...rest] = posts
+async function getPosts() {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
 
-export default function BlogPage() {
+  const { data } = await supabase
+    .from('coastal_blog_posts')
+    .select('slug, title, category, feature_image, meta_description, published_at, hero_position')
+    .eq('status', 'published')
+    .order('published_at', { ascending: false })
+
+  return data ?? []
+}
+
+export default async function BlogPage() {
+  const posts = await getPosts()
+
+  // Fallback if no posts in DB yet
+  if (posts.length === 0) {
+    return (
+      <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
+        <section style={{ backgroundColor: '#1e7faa', color: '#fff', padding: '3rem 1.5rem' }}>
+          <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+            <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '0.5rem' }}>Coastal Therapy Blog</h1>
+            <p style={{ fontSize: '1.05rem', opacity: 0.9, maxWidth: '540px', lineHeight: 1.65 }}>
+              Tips, resources, and insights from our therapists in Jacksonville Beach and Mandarin, FL.
+            </p>
+          </div>
+        </section>
+        <section style={{ maxWidth: '960px', margin: '0 auto', padding: '2.5rem 1.5rem', textAlign: 'center' }}>
+          <p style={{ color: '#6b7280' }}>No posts published yet. Check back soon!</p>
+        </section>
+      </div>
+    )
+  }
+
+  const featured = posts[0]
+  const rest = posts.slice(1)
+
+  const formatDate = (d: string | null) => {
+    if (!d) return ''
+    return new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+  }
+
   return (
     <div style={{ backgroundColor: '#f8fafc', minHeight: '100vh' }}>
 
@@ -113,21 +84,27 @@ export default function BlogPage() {
         <Link href={`/coastal-therapy-blog/${featured.slug}`} style={{ textDecoration: 'none', display: 'block', marginBottom: '2rem' }}>
           <div style={{ backgroundColor: '#fff', borderRadius: '14px', border: '1px solid #e2e8f0', overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '280px' }}>
             <div style={{ position: 'relative', minHeight: '280px', backgroundColor: '#e8f4f8' }}>
-              <Image
-                src={featured.featuredImage!}
-                alt={featured.title}
-                fill
-                style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-              />
+              {featured.feature_image && (
+                <Image
+                  src={featured.feature_image}
+                  alt={featured.title}
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: featured.hero_position || 'center 20%' }}
+                />
+              )}
             </div>
             <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <span style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: categoryColors[featured.category] || '#1e7faa', marginBottom: '0.5rem', display: 'block' }}>
-                {featured.category}
-              </span>
+              {featured.category && (
+                <span style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: categoryColors[featured.category] || '#1e7faa', marginBottom: '0.5rem', display: 'block' }}>
+                  {featured.category}
+                </span>
+              )}
               <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#1e3a5f', lineHeight: 1.3, marginBottom: '0.75rem' }}>{featured.title}</h2>
-              <p style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: 1.7, marginBottom: '1rem' }}>{featured.excerpt}</p>
+              {featured.meta_description && (
+                <p style={{ fontSize: '0.95rem', color: '#4b5563', lineHeight: 1.7, marginBottom: '1rem' }}>{featured.meta_description}</p>
+              )}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontSize: '0.8rem', color: '#9ca3af' }}>{featured.date}</span>
+                <span style={{ fontSize: '0.8rem', color: '#9ca3af' }}>{formatDate(featured.published_at)}</span>
                 <span style={{ fontSize: '0.85rem', color: '#1e7faa', fontWeight: 700 }}>Read more &rsaquo;</span>
               </div>
             </div>
@@ -135,35 +112,41 @@ export default function BlogPage() {
         </Link>
 
         {/* Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
-          {rest.map(post => (
-            <Link key={post.slug} href={`/coastal-therapy-blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-              <div style={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                {/* Image */}
-                <div style={{ position: 'relative', height: '200px', backgroundColor: '#e8f4f8' }}>
-                  <Image
-                    src={post.featuredImage!}
-                    alt={post.title}
-                    fill
-                    style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-                  />
-                  <span style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', backgroundColor: categoryColors[post.category] || '#1e7faa', color: '#fff', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '3px 8px', borderRadius: '4px' }}>
-                    {post.category}
-                  </span>
-                </div>
-                {/* Text */}
-                <div style={{ padding: '1.25rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                  <h2 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e3a5f', lineHeight: 1.4, marginBottom: '0.6rem', flexGrow: 1 }}>{post.title}</h2>
-                  <p style={{ fontSize: '0.875rem', color: '#4b5563', lineHeight: 1.65, marginBottom: '1rem' }}>{post.excerpt}</p>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto' }}>
-                    <span style={{ fontSize: '0.75rem', color: '#9ca3af' }}>{post.date}</span>
-                    <span style={{ fontSize: '0.8rem', color: '#1e7faa', fontWeight: 700 }}>Read &rsaquo;</span>
+        {rest.length > 0 && (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            {rest.map(post => (
+              <Link key={post.slug} href={`/coastal-therapy-blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                <div style={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ position: 'relative', height: '200px', backgroundColor: '#e8f4f8' }}>
+                    {post.feature_image && (
+                      <Image
+                        src={post.feature_image}
+                        alt={post.title}
+                        fill
+                        style={{ objectFit: 'cover', objectPosition: post.hero_position || 'center 20%' }}
+                      />
+                    )}
+                    {post.category && (
+                      <span style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', backgroundColor: categoryColors[post.category] || '#1e7faa', color: '#fff', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '3px 8px', borderRadius: '4px' }}>
+                        {post.category}
+                      </span>
+                    )}
+                  </div>
+                  <div style={{ padding: '1.25rem', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                    <h2 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e3a5f', lineHeight: 1.4, marginBottom: '0.6rem', flexGrow: 1 }}>{post.title}</h2>
+                    {post.meta_description && (
+                      <p style={{ fontSize: '0.875rem', color: '#4b5563', lineHeight: 1.65, marginBottom: '1rem' }}>{post.meta_description}</p>
+                    )}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto' }}>
+                      <span style={{ fontSize: '0.75rem', color: '#9ca3af' }}>{formatDate(post.published_at)}</span>
+                      <span style={{ fontSize: '0.8rem', color: '#1e7faa', fontWeight: 700 }}>Read &rsaquo;</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   )

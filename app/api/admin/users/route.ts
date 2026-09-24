@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     email,
     options: {
       data: { display_name, role },
-      redirectTo: `${siteUrl}/admin/auth/callback?next=/admin/set-password`,
+      redirectTo: `${siteUrl}/admin/set-password`,
     },
   })
 

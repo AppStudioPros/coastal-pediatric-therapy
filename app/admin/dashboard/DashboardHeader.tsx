@@ -42,7 +42,7 @@ export default function DashboardHeader({ profile }: { profile: CoastalUserProfi
             <Tag size={13} />
             Categories
           </Link>
-          {profile.role === 'admin' && (
+          {['admin', 'super_admin'].includes(profile.role) && (
             <Link
               href="/admin/dashboard/users"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-blue-50"

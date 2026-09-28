@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { createBrowserClient } from '@supabase/ssr'
 import { Upload, X } from 'lucide-react'
 
 interface ImageUploaderProps {
@@ -16,36 +15,31 @@ export default function CoastalImageUploader({ label, value, onChange, optional 
   const [error, setError] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
-
   async function handleFile(file: File) {
     if (!file.type.startsWith('image/')) {
       setError('Please select an image file.')
       return
     }
 
-    // No size limit — any image size is allowed
     setError('')
     setUploading(true)
 
     try {
-      const ext = file.name.split('.').pop()
-      const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
+      const formData = new FormData()
+      formData.append('file', file)
 
-      const { error: uploadError } = await supabase.storage
-        .from('coastal-blog-images')
-        .upload(filename, file, { upsert: false })
+      const res = await fetch('/api/admin/upload', {
+        method: 'POST',
+        body: formData,
+      })
+      const json = await res.json()
 
-      if (uploadError) {
-        setError('Upload failed. Please try again.')
+      if (!res.ok) {
+        setError(json.error || 'Upload failed. Please try again.')
         return
       }
 
-      const { data } = supabase.storage.from('coastal-blog-images').getPublicUrl(filename)
-      onChange(data.publicUrl)
+      onChange(json.url)
     } catch {
       setError('Something went wrong. Please try again.')
     } finally {

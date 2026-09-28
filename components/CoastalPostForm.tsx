@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
+import CoastalFocalPointPicker from './CoastalFocalPointPicker'
 
 const CoastalTiptapEditor = dynamic(() => import('./CoastalTiptapEditor'), { ssr: false })
 const CoastalImageUploader = dynamic(() => import('./CoastalImageUploader'), { ssr: false })
@@ -297,18 +298,11 @@ export default function CoastalPostForm({ initialData, isEdit }: PostFormProps) 
             </div>
 
             {featureImage && (
-              <div>
-                <label className="block text-sm font-medium mb-1" style={{ color: '#1e3a5f' }}>Hero Position</label>
-                <input
-                  type="text"
-                  value={heroPosition}
-                  onChange={(e) => setHeroPosition(e.target.value)}
-                  className={inputClass}
-                  style={{ borderColor: '#d1e5ef' }}
-                  placeholder="50% 20%"
-                />
-                <p className="text-xs mt-1" style={{ color: '#aaa' }}>CSS object-position value (e.g. &quot;50% 20%&quot; or &quot;center top&quot;)</p>
-              </div>
+              <CoastalFocalPointPicker
+                value={heroPosition}
+                onChange={setHeroPosition}
+                previewUrl={featureImage}
+              />
             )}
 
             <div>

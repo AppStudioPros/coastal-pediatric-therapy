@@ -2,10 +2,10 @@ import { getCurrentProfile } from '@/lib/auth'
 import { createAdminClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 
-// GET /api/admin/users — list all users (admin only)
+// GET /api/admin/users — list all users (admin/super_admin only)
 export async function GET() {
   const profile = await getCurrentProfile()
-  if (!profile || profile.role !== 'admin') {
+  if (!profile || !['admin', 'super_admin'].includes(profile.role)) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
   }
 
@@ -29,7 +29,12 @@ export async function GET() {
     confirmed_at: authMap.get(p.id) ?? null,
   }))
 
-  return NextResponse.json(enriched)
+  // Non-super-admins cannot see super_admin accounts
+  const visible = profile.role === 'super_admin'
+    ? enriched
+    : enriched.filter((p) => p.role !== 'super_admin')
+
+  return NextResponse.json(visible)
 }
 
 // POST /api/admin/users — invite a new user (admin only)

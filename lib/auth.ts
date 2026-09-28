@@ -38,6 +38,6 @@ export async function requireAuth(): Promise<CoastalUserProfile> {
 /** Require admin role. Redirects to /admin/dashboard if not admin. */
 export async function requireAdmin(): Promise<CoastalUserProfile> {
   const profile = await requireAuth()
-  if (profile.role !== 'admin') redirect('/admin/dashboard')
+  if (!['admin', 'super_admin'].includes(profile.role)) redirect('/admin/dashboard')
   return profile
 }

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Trash2, UserPlus, Pencil, X, Check, MailCheck, KeyRound } from 'lucide-react'
 
-export type UserRole = 'admin' | 'editor'
+export type UserRole = 'admin' | 'editor' | 'super_admin'
 
 export interface UserProfile {
   id: string
@@ -17,6 +17,13 @@ export interface UserProfile {
 const ROLE_COLORS: Record<UserRole, string> = {
   admin: 'bg-blue-100 text-blue-800',
   editor: 'bg-gray-100 text-gray-700',
+  super_admin: 'bg-purple-100 text-purple-800',
+}
+
+const ROLE_LABELS: Record<UserRole, string> = {
+  admin: 'admin',
+  editor: 'editor',
+  super_admin: 'Super Admin',
 }
 
 export default function CoastalUsersManager({
@@ -183,18 +190,29 @@ function UserRow({
         </div>
 
         <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${ROLE_COLORS[user.role]}`}>
-          {user.role}
+          {ROLE_LABELS[user.role]}
         </span>
 
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <button onClick={onEdit} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors" title="Edit"><Pencil size={14} /></button>
-          {!isSelf && (
-            <button onClick={onDelete} className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors" title="Remove"><Trash2 size={14} /></button>
-          )}
-        </div>
+        {user.role !== 'super_admin' && (
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button onClick={onEdit} className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors" title="Edit"><Pencil size={14} /></button>
+            {!isSelf && (
+              <button onClick={onDelete} className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors" title="Remove"><Trash2 size={14} /></button>
+            )}
+          </div>
+        )}
       </div>
 
-      {!isSelf && (
+      {/* Action buttons — super_admin only gets reset password; others get full set */}
+      {user.role === 'super_admin' ? (
+        <div className="flex gap-2 mt-2 pl-[52px]">
+          {user.confirmed_at && (
+            <button onClick={onResetPassword} className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-gray-200 text-gray-500 hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+              <KeyRound size={11} /> Reset password
+            </button>
+          )}
+        </div>
+      ) : !isSelf && (
         <div className="flex gap-2 mt-2 pl-[52px]">
           {!user.confirmed_at && (
             <button onClick={onResendInvite} className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border border-gray-200 text-gray-500 hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 transition-colors">

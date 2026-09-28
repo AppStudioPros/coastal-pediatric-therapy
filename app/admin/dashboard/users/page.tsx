@@ -22,10 +22,10 @@ export default async function UsersPage() {
     authUsers.map((u) => [u.id, u.email_confirmed_at ?? u.confirmed_at ?? null])
   )
 
-  const enriched = (profiles ?? []).map((p) => ({
-    ...p,
-    confirmed_at: authMap.get(p.id) ?? null,
-  }))
+  const enriched = (profiles ?? [])
+    .map((p) => ({ ...p, confirmed_at: authMap.get(p.id) ?? null }))
+    // Non-super-admins cannot see super_admin accounts
+    .filter((p) => profile.role === 'super_admin' || p.role !== 'super_admin')
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#f0f7fb' }}>

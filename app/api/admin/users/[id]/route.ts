@@ -97,13 +97,13 @@ export async function POST(
   return NextResponse.json({ error: 'Unknown action.' }, { status: 400 })
 }
 
-// DELETE /api/admin/users/[id] — remove user entirely (admin only)
+// DELETE /api/admin/users/[id] — remove user entirely (admin only, cannot delete super_admin)
 export async function DELETE(
   _req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const profile = await getCurrentProfile()
-  if (!profile || profile.role !== 'admin') {
+  if (!profile || !['admin', 'super_admin'].includes(profile.role)) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
   }
 
@@ -114,8 +114,19 @@ export async function DELETE(
   }
 
   const supabase = createAdminClient()
-  const { error } = await supabase.auth.admin.deleteUser(id)
 
+  // Block deletion of super_admin accounts
+  const { data: target } = await supabase
+    .from('coastal_user_profiles')
+    .select('role')
+    .eq('id', id)
+    .single()
+
+  if (target?.role === 'super_admin') {
+    return NextResponse.json({ error: 'Cannot remove a super admin.' }, { status: 403 })
+  }
+
+  const { error } = await supabase.auth.admin.deleteUser(id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ success: true })
 }

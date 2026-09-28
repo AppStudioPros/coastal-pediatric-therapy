@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 
-export type UserRole = 'admin' | 'editor'
+export type UserRole = 'admin' | 'editor' | 'super_admin'
 
 export interface CoastalUserProfile {
   id: string

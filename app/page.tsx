@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import InsuranceChips from "@/components/InsuranceChips";
 import Image from "next/image";
 import {
   MessageCircle, Hand, Activity, ArrowRight, Star, Phone,
@@ -33,7 +34,7 @@ const testimonials = [
   },
 ];
 
-const insurance = ["BCBS", "Medica (MMSI)", "CMS Medicaid", "Tricare Select", "Tricare Prime", "UMR", "United", "Step Up For Students", "DSAJ Scholarships", "SIS VPK Funding"];
+
 
 const trustBar = [
   "Licensed & Certified Therapists",
@@ -221,13 +222,7 @@ export default function Home() {
             <p className="text-[#4a7a8a] mt-4 mb-8">We work with most major insurance providers. Contact us to verify your coverage.</p>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <div className="flex flex-wrap justify-center gap-3">
-              {insurance.map((plan) => (
-                <span key={plan} className="bg-white border border-[#B8E4F0] rounded-full px-4 py-1.5 text-sm text-[#1e3a4a]">
-                  {plan}
-                </span>
-              ))}
-            </div>
+            <InsuranceChips />
           </AnimatedSection>
           <div className="mt-8">
             <Link href="/insurance" className="text-[#24B5D0] font-semibold hover:underline">

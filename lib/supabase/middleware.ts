@@ -65,8 +65,8 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // Role check for /admin/dashboard/users — admin only
-  if (path.startsWith('/admin/dashboard/staff')) {
+  // Insurance and Staff — admin/super_admin only
+  if (path.startsWith('/admin/dashboard/insurance') || path.startsWith('/admin/dashboard/staff')) {
     const { data: profile } = await supabase
       .from('coastal_user_profiles')
       .select('role')

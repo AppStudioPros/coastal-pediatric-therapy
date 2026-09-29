@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 import { createAdminClient } from '@/lib/supabase/server'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
   try {
@@ -38,19 +35,33 @@ export async function POST(req: NextRequest) {
         <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Phone</td><td style="padding:8px 12px;">${phone}</td></tr>
         <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Position</td><td style="padding:8px 12px;">${position}</td></tr>
         <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Valid License</td><td style="padding:8px 12px;">${hasLicense}</td></tr>
-        ${resumeUrl ? `<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;"><a href="${resumeUrl}" style="color:#1e7faa;font-weight:bold;">Download Resume</a></td></tr>` : '<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;color:#9ca3af;">Not uploaded</td></tr>'}
+        ${resumeUrl
+          ? `<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;"><a href="${resumeUrl}" style="color:#1e7faa;font-weight:bold;">Download Resume</a></td></tr>`
+          : '<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;color:#9ca3af;">Not uploaded</td></tr>'}
       </table>
       <hr style="margin-top:32px;border:none;border-top:1px solid #e2e8f0;"/>
       <p style="font-size:12px;color:#9ca3af;">Submitted via coastaltherapy.net/careers</p>
     `
 
-    await resend.emails.send({
-      from: 'Coastal Therapy Careers <noreply@mail.coastaltherapy.net>',
-      to: 'apply@coastaltherapy.net',
-      replyTo: email,
-      subject: `New Application: ${position} — ${firstName} ${lastName}`,
-      html,
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Coastal Therapy Careers <noreply@mail.coastaltherapy.net>',
+        to: 'apply@coastaltherapy.net',
+        reply_to: email,
+        subject: `New Application: ${position} — ${firstName} ${lastName}`,
+        html,
+      }),
     })
+
+    if (!response.ok) {
+      const err = await response.text()
+      return NextResponse.json({ error: err }, { status: 500 })
+    }
 
     return NextResponse.json({ success: true })
   } catch (err) {

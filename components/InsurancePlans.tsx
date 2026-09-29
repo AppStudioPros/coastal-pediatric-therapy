@@ -1,30 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ShieldCheck } from 'lucide-react'
 
-export default function InsurancePlans({ limit }: { limit?: number }) {
-  const [plans, setPlans] = useState<{ id: string; name: string }[]>([])
+interface Plan { id: string; name: string }
 
-  useEffect(() => {
-    const url = new URL(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/coastal_insurance`)
-    url.searchParams.set('select', 'id,name')
-    url.searchParams.set('active', 'eq.true')
-    url.searchParams.set('order', 'display_order.asc')
-    if (limit) url.searchParams.set('limit', String(limit))
-
-    fetch(url.toString(), {
-      headers: {
-        apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
-      },
-    })
-      .then(r => r.json())
-      .then(data => { if (Array.isArray(data)) setPlans(data) })
-      .catch(() => {})
-  }, [limit])
-
+export default function InsurancePlans({ plans }: { plans: Plan[] }) {
   return (
     <motion.ul
       className="space-y-3"

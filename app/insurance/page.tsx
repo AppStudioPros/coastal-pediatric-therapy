@@ -2,13 +2,32 @@ import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import InsurancePlans from "@/components/InsurancePlans";
+import { createClient } from "@supabase/supabase-js";
 
 export const metadata: Metadata = {
   title: "Accepted Insurance Plans | Coastal Pediatric Therapy Center Jacksonville FL",
   description: "Coastal Pediatric Therapy Center accepts BCBS, Medicaid, Tricare, United, and more. We verify your insurance benefits before your first visit.",
 };
 
-export default function InsurancePage() {
+export const dynamic = "force-dynamic";
+export const revalidate = 60;
+
+async function getPlans() {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+  const { data } = await supabase
+    .from("coastal_insurance")
+    .select("id, name")
+    .eq("active", true)
+    .order("display_order", { ascending: true });
+  return data ?? [];
+}
+
+export default async function InsurancePage() {
+  const plans = await getPlans();
+
   return (
     <>
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
@@ -25,7 +44,7 @@ export default function InsurancePage() {
           <AnimatedSection direction="left">
             <div>
               <h2 className="text-2xl font-bold text-[#1e3a4a] mb-6">Accepted Insurance Plans</h2>
-              <InsurancePlans />
+              <InsurancePlans plans={plans} />
             </div>
           </AnimatedSection>
           <AnimatedSection direction="right" delay={0.15}>

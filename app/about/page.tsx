@@ -1,6 +1,6 @@
 "use client";
 import CTASection from "@/components/CTASection";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, Heart, Users, MapPin, Star } from "lucide-react";
 import FadeTabs from "@/components/FadeTabs";
@@ -49,16 +49,16 @@ const testimonials = [
   },
 ];
 
-const teamMembers = [
-  { name: "Tayler Spang", role: "Pediatric Physical Therapist", photo: "/images/team/tayler.jpg" },
-  { name: "Emily Peoples", role: "Pediatric Occupational Therapist", photo: "/images/team/emily.jpg" },
-  { name: "Danielle Tenny", role: "Occupational Therapist", photo: "/images/team/danielle.jpg" },
-  { name: "Mary Kate", role: "Occupational Therapist", photo: "/images/team/mary-kate.jpg" },
-  { name: "Elizabeth", role: "Pediatric Physical Therapist", photo: "/images/team/elizabeth.jpg" },
-  { name: "Janine King", role: "Pediatric Occupational Therapist", photo: "/images/team/janine.jpg" },
-  { name: "Kaylee Janusko", role: "Pediatric Physical Therapist", photo: "/images/team/kaylee.jpg" },
-  { name: "Rebecca Kinnaird", role: "Patient Services Coordinator", photo: "/images/team/rebecca.jpg" },
-];
+interface TeamMember {
+  id: string
+  name: string
+  role: string
+  photo_url: string | null
+  photo_focal_x: number | null
+  photo_focal_y: number | null
+  display_order: number
+  active: boolean
+}
 
 const stats = [
   { stat: "Since 1996", label: "Serving Northeast Florida" },
@@ -68,6 +68,17 @@ const stats = [
 
 export default function AboutPage() {
   const [active, setActive] = useState(0);
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([])
+
+  useEffect(() => {
+    fetch(
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/coastal_staff?select=id,name,role,photo_url,photo_focal_x,photo_focal_y,display_order,active&active=eq.true&order=display_order.asc`,
+      { headers: { apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}` } }
+    )
+      .then(r => r.json())
+      .then(data => { if (Array.isArray(data)) setTeamMembers(data) })
+      .catch(() => {})
+  }, [])
 
   return (
     <>
@@ -143,14 +154,18 @@ export default function AboutPage() {
             </AnimatedSection>
             <StaggeredGrid className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {teamMembers.map((member, i) => (
-                <div key={i} className={`card-hover bg-white border border-[#B8E4F0] rounded-2xl overflow-hidden text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
+                <div key={member.id} className={`card-hover bg-white border border-[#B8E4F0] rounded-2xl overflow-hidden text-center ${i % 2 === 1 ? 'border-t-4 border-t-[#AF29BE]' : ''}`}>
                   <div className="relative w-full h-64 bg-[#e8f4f8]">
-                    <Image
-                      src={member.photo}
-                      alt={`${member.name} — ${member.role} at Coastal Pediatric Therapy Center`}
-                      fill
-                      style={{ objectFit: 'cover', objectPosition: '50% 20%' }}
-                    />
+                    {member.photo_url ? (
+                      <Image
+                        src={member.photo_url}
+                        alt={`${member.name} — ${member.role} at Coastal Pediatric Therapy Center`}
+                        fill
+                        style={{ objectFit: 'cover', objectPosition: `${member.photo_focal_x ?? 50}% ${member.photo_focal_y ?? 20}%` }}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-[#9ca3af] text-5xl">👤</div>
+                    )}
                   </div>
                   <div className="p-4">
                     <p className="font-bold text-[#1e3a4a] text-sm mb-1">{member.name}</p>

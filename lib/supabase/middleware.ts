@@ -66,6 +66,19 @@ export async function updateSession(request: NextRequest) {
   }
 
   // Role check for /admin/dashboard/users — admin only
+  if (path.startsWith('/admin/dashboard/staff')) {
+    const { data: profile } = await supabase
+      .from('coastal_user_profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+    if (!profile || !['admin', 'editor', 'super_admin'].includes(profile.role)) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/admin/dashboard'
+      return NextResponse.redirect(url)
+    }
+  }
+
   if (path.startsWith('/admin/dashboard/users')) {
     const { data: profile } = await supabase
       .from('coastal_user_profiles')

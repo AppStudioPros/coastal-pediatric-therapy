@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { PenLine, Users, Tag, LogOut, Waves } from 'lucide-react'
+import { PenLine, Users, Tag, LogOut, Waves, UserCircle2 } from 'lucide-react'
 import type { CoastalUserProfile } from '@/lib/auth'
 
 export default function DashboardHeader({ profile }: { profile: CoastalUserProfile }) {
@@ -41,6 +41,14 @@ export default function DashboardHeader({ profile }: { profile: CoastalUserProfi
           >
             <Tag size={13} />
             Categories
+          </Link>
+          <Link
+            href="/admin/dashboard/staff"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:bg-blue-50"
+            style={{ color: '#6b7280' }}
+          >
+            <UserCircle2 size={13} />
+            Staff
           </Link>
           {['admin', 'super_admin'].includes(profile.role) && (
             <Link

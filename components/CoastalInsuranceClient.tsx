@@ -90,7 +90,7 @@ export default function CoastalInsuranceClient({ initialPlans }: { initialPlans:
 
       {/* Info banner */}
       <div style={{ background: '#f0f9ff', border: '1px solid #b8e4f0', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: NAVY }}>
-        <strong>Home page</strong> shows the first {Math.min(10, homePreview.length)} active plans &mdash; <strong>Insurance page</strong> shows all {active.length} active plans.
+        <strong>Home page</strong> shows the first 10 active plans &mdash; <strong>Insurance page</strong> shows all active plans.
         Drag rows to reorder. Toggle to show/hide a plan without deleting it.
       </div>
 

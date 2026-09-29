@@ -24,7 +24,7 @@ export default async function InsurancePage() {
           </p>
           <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#1e3a5f', marginBottom: '0.25rem' }}>Insurance Plans</h1>
           <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-            {plans?.length ?? 0} plan{(plans?.length ?? 0) === 1 ? '' : 's'} &mdash; first 10 show on the home page, all active plans show on the Insurance page
+            {plans?.length ?? 0} plan{(plans?.length ?? 0) === 1 ? '' : 's'}
           </p>
         </div>
         <CoastalInsuranceClient initialPlans={plans ?? []} />

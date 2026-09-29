@@ -40,8 +40,8 @@ export default function CoastalImageUploader({ label, value, onChange, optional 
       }
 
       onChange(json.url)
-    } catch {
-      setError('Something went wrong. Please try again.')
+    } catch (err) {
+      setError(`Upload error: ${err instanceof Error ? err.message : String(err)}`)
     } finally {
       setUploading(false)
     }

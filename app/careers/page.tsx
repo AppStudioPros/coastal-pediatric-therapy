@@ -43,23 +43,41 @@ export default function CareersPage() {
       {/* Open positions */}
       <section className="py-14 px-4 bg-[#f8fafc]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2 text-center">Open Positions</h2>
-          <p className="text-center text-[#4a7a8a] mb-10 text-sm">We accept applications for all clinical and administrative roles on an ongoing basis.</p>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2 text-center">Available Pediatric Therapy Positions</h2>
+          <p className="text-center text-[#4a7a8a] mb-10 text-sm">We are actively seeking passionate, skilled therapists to join our team.</p>
+          <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { role: 'Speech-Language Pathologist (SLP)', type: 'Clinical' },
-              { role: 'Occupational Therapist (OT)', type: 'Clinical' },
-              { role: 'Physical Therapist (PT)', type: 'Clinical' },
-              { role: 'SLP-A / COTA / PTA', type: 'Clinical Assistant' },
-              { role: 'Patient Services Coordinator', type: 'Administrative' },
-              { role: 'Student Volunteer / Clinical Placement', type: 'Volunteer' },
+              { role: 'Physical Therapist' },
+              { role: 'Occupational Therapist' },
+              { role: 'Speech & Language Pathologist' },
             ].map(p => (
-              <div key={p.role} className="bg-white border border-[#B8E4F0] rounded-xl px-5 py-4 flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-[#1e3a4a] text-sm">{p.role}</p>
-                  <p className="text-xs text-[#4a7a8a] mt-0.5">{p.type}</p>
-                </div>
-                <a href="#apply" className="text-xs font-bold text-[#24B5D0] hover:underline shrink-0 ml-4">Apply &rsaquo;</a>
+              <div key={p.role} className="bg-white border border-[#B8E4F0] rounded-xl px-5 py-5 text-center">
+                <p className="font-bold text-[#1e3a4a] mb-3">{p.role}</p>
+                <a href="#apply" className="inline-block text-xs font-bold text-white px-4 py-2 rounded-full" style={{ backgroundColor: '#24B5D0' }}>Apply Now</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Employee benefits */}
+      <section className="py-14 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2 text-center">Employee Benefits</h2>
+          <p className="text-center text-[#4a7a8a] mb-10 text-sm">We believe in recognizing and rewarding your dedication.</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              'Performance Bonuses',
+              'Paid Vacation Time',
+              'Continued Education Opportunities',
+              'Comprehensive Health Insurance',
+              'Dental & Vision Coverage',
+              'Flexible Schedules',
+              'IRA with Matching Contributions',
+            ].map(b => (
+              <div key={b} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-xl px-5 py-4 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: '#24B5D0' }} />
+                <p className="text-sm font-medium text-[#1e3a4a]">{b}</p>
               </div>
             ))}
           </div>

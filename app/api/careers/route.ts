@@ -8,16 +8,13 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData()
 
-    const firstName    = formData.get('firstName') as string
-    const lastName     = formData.get('lastName') as string
-    const email        = formData.get('email') as string
-    const phone        = formData.get('phone') as string
-    const position     = formData.get('position') as string
-    const licenseNum   = formData.get('licenseNum') as string
-    const experience   = formData.get('experience') as string
-    const heardFrom    = formData.get('heardFrom') as string
-    const coverLetter  = formData.get('coverLetter') as string
-    const resumeFile   = formData.get('resume') as File | null
+    const firstName  = formData.get('firstName') as string
+    const lastName   = formData.get('lastName') as string
+    const email      = formData.get('email') as string
+    const phone      = formData.get('phone') as string
+    const position   = formData.get('position') as string
+    const hasLicense = formData.get('hasLicense') as string
+    const resumeFile = formData.get('resume') as File | null
 
     let resumeUrl = ''
     if (resumeFile && resumeFile.size > 0) {
@@ -40,12 +37,9 @@ export async function POST(req: NextRequest) {
         <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Email</td><td style="padding:8px 12px;"><a href="mailto:${email}">${email}</a></td></tr>
         <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Phone</td><td style="padding:8px 12px;">${phone}</td></tr>
         <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Position</td><td style="padding:8px 12px;">${position}</td></tr>
-        <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">License / Cert #</td><td style="padding:8px 12px;">${licenseNum || 'Not provided'}</td></tr>
-        <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Experience</td><td style="padding:8px 12px;">${experience}</td></tr>
-        <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">How they heard</td><td style="padding:8px 12px;">${heardFrom}</td></tr>
-        ${resumeUrl ? `<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;"><a href="${resumeUrl}">Download Resume</a></td></tr>` : ''}
+        <tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Valid License</td><td style="padding:8px 12px;">${hasLicense}</td></tr>
+        ${resumeUrl ? `<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;"><a href="${resumeUrl}" style="color:#1e7faa;font-weight:bold;">Download Resume</a></td></tr>` : '<tr><td style="padding:8px 12px;background:#f0f9ff;font-weight:bold;">Resume</td><td style="padding:8px 12px;color:#9ca3af;">Not uploaded</td></tr>'}
       </table>
-      ${coverLetter ? `<h3 style="color:#1e3a5f;margin-top:24px;">Cover Letter / Additional Info</h3><p style="font-size:14px;line-height:1.7;color:#374151;">${coverLetter.replace(/\n/g, '<br>')}</p>` : ''}
       <hr style="margin-top:32px;border:none;border-top:1px solid #e2e8f0;"/>
       <p style="font-size:12px;color:#9ca3af;">Submitted via coastaltherapy.net/careers</p>
     `

@@ -288,7 +288,7 @@ export default function CoastalStaffClient({ initialStaff }: { initialStaff: Sta
                 {form.photo_url ? (
                   <div>
                     {/* Focal point picker */}
-                    <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', height: '160px', cursor: 'crosshair', border: '1.5px solid #d1e5ef', marginBottom: '0.5rem' }}
+                    <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden', aspectRatio: '304/256', cursor: 'crosshair', border: '1.5px solid #d1e5ef', marginBottom: '0.5rem' }}
                       onClick={e => {
                         const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect()
                         const x = Math.round(((e.clientX - rect.left) / rect.width) * 100)

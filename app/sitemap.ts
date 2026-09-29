@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/physician-resources`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${base}/insurance`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/careers`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.65 },
     { url: `${base}/reviews`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/career`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.65 },
     { url: `${base}/makeapayment`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },

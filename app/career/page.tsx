@@ -1,111 +1,99 @@
-import CTASection from "@/components/CTASection";
-import type { Metadata } from "next";
-import { Briefcase, Mail } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
-import StaggeredGrid from "@/components/StaggeredGrid";
+import type { Metadata } from 'next'
+import CareersForm from './CareersForm'
+import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
-  title: "Careers | Coastal Pediatric Therapy Center",
-  description: "Join the Coastal Pediatric Therapy Center team in Jacksonville, FL. We're always looking for compassionate, skilled Speech-Language Pathologists, Occupational Therapists, and Physical Therapists.",
-};
-
-const values = [
-  {
-    title: "Child-Centered Care",
-    desc: "Every decision we make starts with the child. We create an environment where kids feel safe, seen, and motivated.",
-  },
-  {
-    title: "Collaborative Team",
-    desc: "Our SLPs, OTs, and PTs work together: sharing knowledge, consulting on complex cases, and celebrating wins as a team.",
-  },
-  {
-    title: "Clinical Excellence",
-    desc: "We invest in our therapists through continuing education, mentorship, and access to evidence-based resources.",
-  },
-];
+  title: 'Careers | Coastal Pediatric Therapy Center Jacksonville FL',
+  description: 'Join the team at Coastal Pediatric Therapy Center. We are looking for passionate speech-language pathologists, occupational therapists, physical therapists, and support staff in Jacksonville Beach and Mandarin, FL.',
+}
 
 export default function CareersPage() {
   return (
     <>
+      {/* Hero */}
       <section className="bg-[#EAF6FB] py-14 px-4 text-center">
-        <AnimatedSection>
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-[#1e3a4a] mb-2">Join Our Team</h1>
-            <div className="w-12 h-1 bg-[#AF29BE] rounded-full mx-auto mb-4" />
-            <p className="text-lg text-[#4a7a8a]">
-              We&apos;re always looking for passionate, skilled therapists who want to make a lasting difference in children&apos;s lives.
-            </p>
-          </div>
-        </AnimatedSection>
-      </section>
-
-      <section className="py-14 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <AnimatedSection>
-            <h2 className="text-2xl font-bold text-[#1e3a4a] mb-4">Why Work at Coastal?</h2>
-            <p className="text-[#4a7a8a] leading-relaxed mb-8">
-              Since 1996, Coastal Pediatric Therapy Center has built a reputation for clinical excellence and a workplace culture where therapists thrive. We&apos;re a small, close-knit team that genuinely supports each other. Happy therapists create better outcomes for the children and families we serve.
-            </p>
-          </AnimatedSection>
-
-          <StaggeredGrid className="grid md:grid-cols-3 gap-5 mb-12">
-            {values.map(({ title, desc }, vi) => (
-              <div key={title} className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6">
-                <div className="w-10 h-10 rounded-full bg-[#EAF6FB] flex items-center justify-center mb-4">
-                  </div>
-                <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
-                <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </StaggeredGrid>
-
-          {/* Open positions */}
-          <AnimatedSection delay={0.2}>
-            <div className="card-hover bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-8 text-center">
-              <Briefcase size={36} className="text-gray-300 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#1e3a4a] mb-2">No Open Positions Right Now</h3>
-              <p className="text-[#4a7a8a] text-sm max-w-md mx-auto mb-6">
-                We don&apos;t have any open roles at this time, but we&apos;re always happy to hear from talented therapists. Send us your resume and we&apos;ll keep you in mind for future opportunities.
-              </p>
-              <a
-                href="mailto:info@coastaltherapy.net?subject=Career%20Inquiry%20-%20Coastal%20Pediatric%20Therapy"
-                className="cta-blue-2 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A9EC0] transition"
-              >
-                <Mail size={16} />
-                Send Your Resume
-              </a>
-              <p className="text-xs text-gray-400 mt-3">info@coastaltherapy.net</p>
-            </div>
-          </AnimatedSection>
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-[#1e3a4a] mb-4">Join Our Team</h1>
+          <p className="text-lg text-[#4a7a8a] leading-relaxed">
+            At Coastal Pediatric Therapy Center, we believe every child deserves the best possible care.
+            If you are passionate about pediatric therapy and want to work somewhere that genuinely invests in its clinicians, we would love to hear from you.
+          </p>
         </div>
       </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "JobPosting",
-            "hiringOrganization": {
-              "@type": "MedicalBusiness",
-              "name": "Coastal Pediatric Therapy Center",
-              "url": "https://coastaltherapy.net",
-              "telephone": "(904) 372-4070"
-            },
-            "description": "Coastal Pediatric Therapy Center is a pediatric therapy practice in Jacksonville, FL hiring Speech-Language Pathologists, Occupational Therapists, and Physical Therapists.",
-            "jobLocation": {
-              "@type": "Place",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Jacksonville",
-                "addressRegion": "FL",
-                "addressCountry": "US"
-              }
-            }
-          })
-        }}
-      />
+      {/* Why work here */}
+      <section className="py-14 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-8 text-center">Why Coastal Pediatric?</h2>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { title: 'Collaborative Team', body: 'Our SLPs, OTs, and PTs work side by side. Cross-discipline collaboration is part of how we do things here, not an afterthought.' },
+              { title: 'Whole-Child Focus', body: 'We treat the child, not just the diagnosis. You will have time to build real relationships and see real progress.' },
+              { title: 'Two Locations', body: 'Jacksonville Beach and Mandarin. Both fully equipped, both surrounded by a team that actually supports each other.' },
+            ].map(c => (
+              <div key={c.title} className="bg-[#EAF6FB] rounded-xl p-6 border border-[#B8E4F0]">
+                <h3 className="font-bold text-[#1e3a4a] mb-2">{c.title}</h3>
+                <p className="text-sm text-[#4a7a8a] leading-relaxed">{c.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open positions */}
+      <section className="py-14 px-4 bg-[#f8fafc]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2 text-center">Available Pediatric Therapy Positions</h2>
+          <p className="text-center text-[#4a7a8a] mb-10 text-sm">We are actively seeking passionate, skilled therapists to join our team.</p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { role: 'Physical Therapist' },
+              { role: 'Occupational Therapist' },
+              { role: 'Speech & Language Pathologist' },
+            ].map(p => (
+              <div key={p.role} className="bg-white border border-[#B8E4F0] rounded-xl px-5 py-5 text-center">
+                <p className="font-bold text-[#1e3a4a] mb-3">{p.role}</p>
+                <a href="#apply" className="inline-block text-xs font-bold text-white px-4 py-2 rounded-full" style={{ backgroundColor: '#24B5D0' }}>Apply Now</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Employee benefits */}
+      <section className="py-14 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2 text-center">Employee Benefits</h2>
+          <p className="text-center text-[#4a7a8a] mb-10 text-sm">We believe in recognizing and rewarding your dedication.</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              'Performance Bonuses',
+              'Paid Vacation Time',
+              'Continued Education Opportunities',
+              'Comprehensive Health Insurance',
+              'Dental & Vision Coverage',
+              'Flexible Schedules',
+              'IRA with Matching Contributions',
+            ].map(b => (
+              <div key={b} className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-xl px-5 py-4 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: '#24B5D0' }} />
+                <p className="text-sm font-medium text-[#1e3a4a]">{b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Application form */}
+      <section id="apply" className="py-16 px-4 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#1e3a4a] mb-2">Submit Your Application</h2>
+          <p className="text-[#4a7a8a] text-sm mb-8">Fill out the form below and our team will be in touch. Applications go directly to our hiring manager.</p>
+          <CareersForm />
+        </div>
+      </section>
+
       <CTASection />
     </>
-  );
+  )
 }

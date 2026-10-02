@@ -1,35 +1,36 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { createAdminClient } from '@/lib/supabase/server'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Meet Our Team | Coastal Pediatric Therapy Center',
   description: 'Meet the compassionate, highly skilled therapists at Coastal Pediatric Therapy Center in Jacksonville Beach and Mandarin, FL. Speech, Occupational, and Physical Therapists dedicated to helping children thrive.',
 }
 
-const team = [
-  { name: 'Tayler Spang', role: 'Pediatric Physical Therapist', photo: '/images/team/tayler.jpg', initials: 'TS' },
-  { name: 'Emily Peoples', role: 'Pediatric Occupational Therapist', photo: '/images/team/emily.jpg', initials: 'EP' },
-  { name: 'Danielle Tenny', role: 'Occupational Therapist', photo: '/images/team/danielle.jpg', initials: 'DT' },
-  { name: 'Mary Kate', role: 'Occupational Therapist', photo: '/images/team/mary-kate.jpg', initials: 'MK' },
-  { name: 'Elizabeth', role: 'Pediatric Physical Therapist', photo: '/images/team/elizabeth.jpg', initials: 'E' },
-  { name: 'Janine King', role: 'Pediatric Occupational Therapist', photo: '/images/team/janine.jpg', initials: 'JK' },
-  { name: 'Kaylee Janusko', role: 'Pediatric Physical Therapist', photo: '/images/team/kaylee.jpg', initials: 'KJ' },
-  { name: 'Rebecca Kinnaird', role: 'Patient Services Coordinator', photo: '/images/team/rebecca.jpg', initials: 'RK' },
-]
+export default async function OurTeamPage() {
+  const supabase = createAdminClient()
+  const { data: team } = await supabase
+    .from('coastal_staff')
+    .select('id, name, role, photo_url, photo_focal_x, photo_focal_y, display_order')
+    .eq('active', true)
+    .order('display_order', { ascending: true })
 
-export default function OurTeamPage() {
+  const hasStaff = team && team.length > 0
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'MedicalOrganization',
     name: 'Coastal Pediatric Therapy Center',
     url: 'https://coastaltherapy.net',
-    employee: team.map(m => ({
+    employee: hasStaff ? team.map((m: { name: string; role: string }) => ({
       '@type': 'Person',
       name: m.name,
       jobTitle: m.role,
       worksFor: { '@type': 'MedicalOrganization', name: 'Coastal Pediatric Therapy Center' },
-    })),
+    })) : [],
   }
 
   return (
@@ -67,24 +68,43 @@ export default function OurTeamPage() {
 
         {/* Team grid */}
         <section style={{ maxWidth: '860px', margin: '0 auto', padding: '2.5rem 1.5rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: '1.5rem' }}>
-            {team.map((member) => (
-              <div key={member.name} style={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden', textAlign: 'center' }}>
-                <div style={{ position: 'relative', height: '220px', backgroundColor: '#e8f4f8' }}>
-                  <Image
-                    src={member.photo}
-                    alt={`${member.name} — ${member.role} at Coastal Pediatric Therapy Center`}
-                    fill
-                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
-                  />
+          {hasStaff ? (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: '1.5rem' }}>
+              {team.map((member: { id: string; name: string; role: string; photo_url: string | null; photo_focal_x?: number | null; photo_focal_y?: number | null }) => (
+                <div key={member.id} style={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden', textAlign: 'center' }}>
+                  <div style={{ position: 'relative', height: '220px', backgroundColor: '#e8f4f8' }}>
+                    {member.photo_url ? (
+                      <Image
+                        src={member.photo_url}
+                        alt={`${member.name} — ${member.role} at Coastal Pediatric Therapy Center`}
+                        fill
+                        style={{ objectFit: 'cover', objectPosition: `${member.photo_focal_x ?? 50}% ${member.photo_focal_y ?? 20}%` }}
+                      />
+                    ) : (
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', fontSize: '2rem', fontWeight: 800, color: '#1e7faa' }}>
+                        {member.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                      </div>
+                    )}
+                  </div>
+                  <div style={{ padding: '1rem 0.75rem' }}>
+                    <h2 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e3a5f', marginBottom: '0.25rem' }}>{member.name}</h2>
+                    <p style={{ fontSize: '0.8rem', color: '#1e7faa', fontWeight: 600, margin: 0 }}>{member.role}</p>
+                  </div>
                 </div>
-                <div style={{ padding: '1rem 0.75rem' }}>
-                  <h2 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1e3a5f', marginBottom: '0.25rem' }}>{member.name}</h2>
-                  <p style={{ fontSize: '0.8rem', color: '#1e7faa', fontWeight: 600, margin: 0 }}>{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '4rem 1.5rem', backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌊</div>
+              <h2 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#1e3a5f', marginBottom: '0.5rem' }}>Team Profiles Coming Soon</h2>
+              <p style={{ color: '#6b7280', fontSize: '0.95rem', maxWidth: '420px', margin: '0 auto', lineHeight: 1.7 }}>
+                We are updating our team page. In the meantime, feel free to reach out and we will be happy to answer any questions about our therapists and staff.
+              </p>
+              <a href="tel:9043724070" style={{ display: 'inline-block', marginTop: '1.5rem', padding: '0.7rem 1.75rem', backgroundColor: '#1e7faa', color: '#fff', fontWeight: 700, borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem' }}>
+                Call (904) 372-4070
+              </a>
+            </div>
+          )}
         </section>
 
         {/* Mission blurb */}

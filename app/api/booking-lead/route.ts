@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const BLOCKED_DOMAINS = ['vasdirect.com', 'vasdirect.net', 'vasdirect.org'];
+
 export async function POST(req: NextRequest) {
   try {
     const { fullName, phone, email, preferredTime } = await req.json();
+
+    if (email) {
+      const domain = email.split('@')[1]?.toLowerCase() ?? '';
+      if (BLOCKED_DOMAINS.some((blocked) => domain === blocked || domain.endsWith(`.${blocked}`))) {
+        return NextResponse.json({ ok: true });
+      }
+    }
 
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e3a4a;">

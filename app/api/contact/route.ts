@@ -1,8 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Blocked domains — silent discard (they see success, we never receive it)
+const BLOCKED_DOMAINS = ['vasdirect.com', 'vasdirect.net', 'vasdirect.org'];
+
 export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, message, smsConsent } = await req.json();
+
+    // Domain blocklist check
+    if (email) {
+      const domain = email.split('@')[1]?.toLowerCase() ?? '';
+      if (BLOCKED_DOMAINS.some((blocked) => domain === blocked || domain.endsWith(`.${blocked}`))) {
+        return NextResponse.json({ ok: true }); // Silent discard
+      }
+    }
 
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px;">

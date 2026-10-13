@@ -9,6 +9,7 @@ export default function ContactForm() {
     phone: "",
     message: "",
     smsConsent: false,
+    website: "", // honeypot — must stay empty
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -135,6 +136,18 @@ export default function ContactForm() {
       >
         {status === "sending" ? "Sending..." : <>Send Message <ArrowRight size={16} /></>}
       </button>
+
+      {/* Honeypot — hidden from real users, bots fill it in */}
+      <input
+        type="text"
+        name="website"
+        value={formData.website}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+      />
 
       <p className="text-xs text-[#4a7a8a] text-center">Or call us directly at (904) 372-4070</p>
     </form>

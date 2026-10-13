@@ -4,7 +4,12 @@ const BLOCKED_DOMAINS = ['vasdirect.com', 'vasdirect.net', 'vasdirect.org'];
 
 export async function POST(req: NextRequest) {
   try {
-    const { fullName, phone, email, preferredTime } = await req.json();
+    const { fullName, phone, email, preferredTime, website } = await req.json();
+
+    // Honeypot check
+    if (website) {
+      return NextResponse.json({ ok: true });
+    }
 
     if (email) {
       const domain = email.split('@')[1]?.toLowerCase() ?? '';

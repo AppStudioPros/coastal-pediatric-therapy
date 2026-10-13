@@ -12,6 +12,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [preferredTime, setPreferredTime] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [loading, setLoading] = useState(false);
 
   if (!isOpen) return null;
@@ -23,7 +24,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       await fetch("/api/booking-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, phone, email, preferredTime }),
+        body: JSON.stringify({ fullName, phone, email, preferredTime, website: honeypot }),
       });
     } catch {
       // Best effort — still open the patient form
@@ -124,6 +125,18 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <option value="Flexible">Flexible</option>
             </select>
           </div>
+
+          {/* Honeypot */}
+          <input
+            type="text"
+            name="website"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+          />
 
           <button
             type="submit"

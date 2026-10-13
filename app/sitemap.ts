@@ -22,6 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/new-patient-request-form`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/contact-us`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
     { url: `${base}/locations`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/locations/jacksonville-beach`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/locations/mandarin`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
 
     // Milestone pages — HIGH priority (driving rankings)
     { url: `${base}/speech-and-language-milestones`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },

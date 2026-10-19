@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { Phone, Mail, Printer } from "lucide-react";
-import TricycleIcon from "@/components/TricycleIcon";
 function InstagramIcon({ size = 15 }: { size?: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +55,7 @@ export default function Footer() {
             <p className="font-light text-white/80 text-sm">Therapy Center</p>
           </div>
           <p className="text-white/60 text-sm leading-relaxed mb-5">
-            Play-based Speech, Occupational, and <span className="inline-flex items-center gap-1"><TricycleIcon size={13} className="text-white/60" />Physical Therapy</span> for children in Northeast Florida since 1996.
+            Play-based Speech, Occupational, and Physical Therapy for children in Northeast Florida since 1996.
           </p>
           <div className="flex flex-col gap-2 mb-4">
             <a href="tel:9043724070" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">

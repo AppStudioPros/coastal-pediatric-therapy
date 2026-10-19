@@ -4,6 +4,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import { BookingProvider } from "@/contexts/BookingContext";
 
 const nunito = Nunito({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           <main>{children}</main>
           <Footer />
+          <AccessibilityWidget />
         </BookingProvider>
         <Analytics />
       </body>

@@ -5,6 +5,7 @@ import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } 
 import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
+import TricycleIcon from "@/components/TricycleIcon";
 
 export const dynamic = "force-static";
 
@@ -182,7 +183,10 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-10 items-start">
               {/* Left: content */}
               <div>
-                <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5">{tab.title}</h2>
+                <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5 flex items-center gap-2">
+                  {tab.title === 'Physical Therapy' && <TricycleIcon size={28} className="text-[#24B5D0] shrink-0" />}
+                  {tab.title}
+                </h2>
                 {tab.paragraphs.map((p, i) => (
                   <p key={i} className="text-[#4a7a8a] leading-relaxed mb-4">{p}</p>
                 ))}

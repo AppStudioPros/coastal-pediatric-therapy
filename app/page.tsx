@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
+import TricycleIcon from "@/components/TricycleIcon";
 import StaggeredGrid from "@/components/StaggeredGrid";
 
 const services = [
@@ -159,7 +160,10 @@ export default function Home() {
             {services.map(({ icon: Icon, title, desc }, i) => (
               <Link key={title} href="/services" className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition flex flex-col h-full">
                 <Icon size={28} className={`${i % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} mb-3`} />
-                <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
+                <h3 className="font-bold text-[#1e3a4a] mb-2 flex items-center gap-1.5">
+                  {title === 'Physical Therapy' && <TricycleIcon size={16} className="text-[#24B5D0] shrink-0" />}
+                  {title}
+                </h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed flex-1">{desc}</p>
               </Link>
             ))}

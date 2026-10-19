@@ -64,7 +64,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
   const ActiveIcon = activeTab?.icon;
 
   return (
-    <div className="relative overflow-hidden md:overflow-visible">
+    <div className="relative overflow-visible">
 
       {/* Mobile dropdown — hidden on md+ */}
       <div className="md:hidden relative">

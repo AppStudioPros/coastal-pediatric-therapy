@@ -37,10 +37,10 @@ const testimonials = [
 
 
 const trustBar = [
-  "Licensed & Certified Therapists",
-  "Play-Based Approach",
-  "HIPAA Compliant Practice",
-  "Individualized Treatment Plans",
+  { label: "Licensed & Certified Therapists", href: "/about" },
+  { label: "Play-Based Approach", href: "/services" },
+  { label: "HIPAA Compliant Practice", href: "/privacy-policy" },
+  { label: "Individualized Treatment Plans", href: "/services" },
 ];
 
 const trustChips = ["2 Locations", "Since 1996", "Most Insurance Accepted", "Telehealth Available"];
@@ -133,11 +133,15 @@ export default function Home() {
       {/* Trust bar */}
       <AnimatedSection>
         <section className="bg-[#EAF6FB] py-6 px-4">
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            {trustBar.map((label) => (
-              <div key={label} className="text-center">
-                <p className="font-bold text-sm gold-underline text-[#AF29BE] transition-colors duration-300 hover:text-[#1e3a4a] cursor-default">{label}</p>
-              </div>
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+            {trustBar.map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="text-center block px-4 py-3 rounded-full border-2 border-[#AF29BE] text-[#AF29BE] font-bold text-sm hover:bg-[#AF29BE] hover:text-white transition-all duration-200 leading-tight"
+              >
+                {label}
+              </Link>
             ))}
           </div>
         </section>

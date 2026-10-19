@@ -164,9 +164,9 @@ export default function Home() {
           <StaggeredGrid className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
             {services.map(({ icon: Icon, title, desc }, i) => (
               <Link key={title} href="/services" className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition flex flex-col h-full">
-                <Icon size={31} className="mb-3" color={i % 2 === 1 ? '#AF29BE' : '#24B5D0'} />
+                <Icon size={34} className="mb-3" color={i % 2 === 1 ? '#AF29BE' : '#24B5D0'} />
                 <h3 className="font-bold text-[#1e3a4a] mb-2 flex items-center gap-1.5">
-                  {title === 'Physical Therapy' && <TricycleIcon size={16} color="#24B5D0" className="shrink-0" />}
+                  {title === 'Physical Therapy' && <TricycleIcon size={18} color="#24B5D0" className="shrink-0" />}
                   {title}
                 </h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed flex-1">{desc}</p>

@@ -297,7 +297,7 @@ export default function ResourcesPage() {
           <ul className="space-y-2">
             {group.skills.map((skill) => (
               <li key={skill} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                <CheckCircle size={15} className="text-[#24B5D0] mt-0.5 shrink-0" />
+                <CheckCircle size={17} className="text-[#24B5D0] mt-0.5 shrink-0" />
                 {skill}
               </li>
             ))}
@@ -368,7 +368,7 @@ export default function ResourcesPage() {
                     <ul className="space-y-2">
                       {sys.signs.map((sign) => (
                         <li key={sign} className="flex items-start gap-3 text-sm text-[#4a7a8a]">
-                          <CheckCircle size={15} className="text-[#53A0DA] mt-0.5 shrink-0" />
+                          <CheckCircle size={17} className="text-[#53A0DA] mt-0.5 shrink-0" />
                           {sign}
                         </li>
                       ))}
@@ -387,7 +387,7 @@ export default function ResourcesPage() {
               <div className="bg-[#EAF6FB] rounded-2xl p-8 max-w-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                    <GraduationCap size={20} className="text-[#24B5D0]" />
+                    <GraduationCap size={22} className="text-[#24B5D0]" />
                   </div>
                   <h3 className="font-bold text-[#1e3a4a]">Contact Our Clinic</h3>
                 </div>

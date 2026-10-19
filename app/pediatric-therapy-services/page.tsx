@@ -189,7 +189,7 @@ export default function ServicesPage() {
               {/* Left: content */}
               <div>
                 <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5 flex items-center gap-2">
-                  {tab.title === 'Physical Therapy' && <TricycleIcon size={31} color="#24B5D0" className="shrink-0" />}
+                  {tab.title === 'Physical Therapy' && <TricycleIcon size={34} color="#24B5D0" className="shrink-0" />}
                   {tab.title}
                 </h2>
                 {tab.paragraphs.map((p, i) => (

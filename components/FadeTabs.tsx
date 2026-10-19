@@ -74,7 +74,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
           aria-label="Select section"
         >
           <span className="flex items-center gap-2">
-            {ActiveIcon && <ActiveIcon size={16} color="#24B5D0" />}
+            {ActiveIcon && <ActiveIcon size={18} color="#24B5D0" />}
             {activeTab?.label}
           </span>
           <ChevronDown size={16} className={`text-[#24B5D0] flex-shrink-0 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -93,7 +93,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
                     isActive ? "bg-[#EAF6FB] text-[#24B5D0]" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
                   }`}
                 >
-                  {Icon && <Icon size={16} color={isActive ? '#24B5D0' : '#4a7a8a'} />}
+                  {Icon && <Icon size={18} color={isActive ? '#24B5D0' : '#4a7a8a'} />}
                   {tab.label}
                 </button>
               );
@@ -173,7 +173,7 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
                     : "text-[#4a7a8a] hover:bg-[#EAF6FB] hover:text-[#24B5D0]"
                 }`}
               >
-                {Icon && <Icon size={16} color={isActive ? '#ffffff' : isPurple ? '#AF29BE' : '#24B5D0'} />}
+                {Icon && <Icon size={18} color={isActive ? '#ffffff' : isPurple ? '#AF29BE' : '#24B5D0'} />}
                 {tab.label}
               </button>
             );

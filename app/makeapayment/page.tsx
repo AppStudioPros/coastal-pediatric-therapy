@@ -78,7 +78,7 @@ export default function MakeAPaymentPage() {
                   className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#EAF6FB] flex items-center justify-center mb-4">
-                    <Icon size={20} className="text-[#24B5D0]" />
+                    <Icon size={22} className="text-[#24B5D0]" />
                   </div>
                   <h4 className="font-bold text-[#1e3a4a] text-lg mb-2">{opt.title}</h4>
                   <p className="text-sm text-[#4a7a8a] leading-relaxed">{opt.desc}</p>

@@ -93,13 +93,9 @@ export default function GettingStartedPage() {
               <h2 className="text-2xl font-bold text-[#1e3a4a] text-center mb-10 gold-underline">How It Works</h2>
             </AnimatedSection>
             <div className="space-y-6 mt-10">
-              {steps.map(({ number, title, desc }, si) => (
+              {steps.map(({ title, desc }, si) => (
                 <AnimatedSection key={title} delay={si * 0.1}>
-                  <div className="relative flex gap-6 items-start card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 overflow-hidden">
-                    {/* Decorative large number */}
-                    <span className={`absolute right-4 top-1/2 -translate-y-1/2 text-7xl font-black select-none pointer-events-none leading-none ${si % 2 === 0 ? 'text-[#AF29BE]/20' : 'text-[#B8E4F0]'}`}>
-                      {number}
-                    </span>
+                  <div className={`relative flex gap-6 items-start card-hover border border-[#B8E4F0] rounded-2xl p-6 overflow-hidden ${si % 2 === 0 ? 'bg-white' : 'bg-[#EAF6FB]'}`}>
                     <div className="relative z-10">
                       <h3 className="font-bold text-[#1e3a4a] mb-2">{title}</h3>
                       <p className="text-[#4a7a8a] text-sm leading-relaxed">{desc}</p>

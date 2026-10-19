@@ -133,14 +133,10 @@ export default function Home() {
       {/* Trust bar */}
       <AnimatedSection>
         <section className="bg-[#EAF6FB] py-6 px-4">
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
             {trustBar.map(({ label, href }) => (
-              <Link
-                key={label}
-                href={href}
-                className="text-center block px-4 py-3 rounded-full border-2 border-[#AF29BE] text-[#AF29BE] font-bold text-sm hover:bg-[#AF29BE] hover:text-white transition-all duration-200 leading-tight"
-              >
-                {label}
+              <Link key={label} href={href} className="text-center block group">
+                <p className="font-bold text-sm gold-underline text-[#AF29BE] transition-colors duration-300 group-hover:text-[#1e3a4a]">{label}</p>
               </Link>
             ))}
           </div>

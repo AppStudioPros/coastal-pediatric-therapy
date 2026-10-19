@@ -106,7 +106,7 @@ export default function Footer() {
             <div>
               <p className="font-semibold text-white/90 mb-1">Jacksonville Beach</p>
               <p className="text-white/60 leading-relaxed">
-                2730 Isabella Blvd, Suite 10<br />
+                2730 Isabella Blvd, STE 10<br />
                 Jacksonville Beach, FL 32250
               </p>
               <p className="text-white/50 text-xs mt-1">Mon–Fri 8:30am–5:30pm</p>
@@ -114,7 +114,7 @@ export default function Footer() {
             <div>
               <p className="font-semibold text-white/90 mb-1">Mandarin</p>
               <p className="text-white/60 leading-relaxed">
-                6100 Greenland Rd, Suite 901<br />
+                6100 Greenland Rd, STE 901<br />
                 Jacksonville, FL 32258
               </p>
               <p className="text-white/50 text-xs mt-1">Mon–Fri 8:30am–5:30pm</p>
@@ -192,7 +192,7 @@ export default function Footer() {
                 "name": "Jacksonville Beach",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "2730 Isabella Blvd, Suite 10",
+                  "streetAddress": "2730 Isabella Blvd, STE 10",
                   "addressLocality": "Jacksonville Beach",
                   "addressRegion": "FL",
                   "postalCode": "32250",
@@ -204,7 +204,7 @@ export default function Footer() {
                 "name": "Mandarin",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "6100 Greenland Rd, Suite 901",
+                  "streetAddress": "6100 Greenland Rd, STE 901",
                   "addressLocality": "Jacksonville",
                   "addressRegion": "FL",
                   "postalCode": "32258",

@@ -192,15 +192,15 @@ export default function AboutPage() {
               {[
                 {
                   name: "Jacksonville Beach",
-                  address: "2730 Isabella Blvd, Suite 10",
+                  address: "2730 Isabella Blvd, STE 10",
                   city: "Jacksonville Beach, FL 32250",
-                  mapLink: "https://maps.google.com/?q=2730+Isabella+Blvd+Suite+10+Jacksonville+Beach+FL+32250",
+                  mapLink: "https://maps.google.com/?q=2730+Isabella+Blvd+STE+10+Jacksonville+Beach+FL+32250",
                 },
                 {
                   name: "Mandarin",
-                  address: "6100 Greenland Rd, Suite 901",
+                  address: "6100 Greenland Rd, STE 901",
                   city: "Jacksonville, FL 32258",
-                  mapLink: "https://maps.google.com/?q=6100+Greenland+Rd+Suite+901+Jacksonville+FL+32258",
+                  mapLink: "https://maps.google.com/?q=6100+Greenland+Rd+STE+901+Jacksonville+FL+32258",
                 },
               ].map((loc, li) => (
                 <AnimatedSection key={loc.name} direction={li === 0 ? "left" : "right"} delay={li * 0.1}>
@@ -280,7 +280,7 @@ export default function AboutPage() {
                 "name": "Jacksonville Beach",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "2730 Isabella Blvd, Suite 10",
+                  "streetAddress": "2730 Isabella Blvd, STE 10",
                   "addressLocality": "Jacksonville Beach",
                   "addressRegion": "FL",
                   "postalCode": "32250",
@@ -292,7 +292,7 @@ export default function AboutPage() {
                 "name": "Mandarin",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "6100 Greenland Rd, Suite 901",
+                  "streetAddress": "6100 Greenland Rd, STE 901",
                   "addressLocality": "Jacksonville",
                   "addressRegion": "FL",
                   "postalCode": "32258",

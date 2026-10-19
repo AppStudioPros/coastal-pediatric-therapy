@@ -5,7 +5,7 @@ import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Mandarin Pediatric Therapy | Coastal Pediatric Therapy Center Jacksonville FL",
-  description: "Coastal Pediatric Therapy Center's Mandarin location offers Speech, Occupational, and Physical Therapy for children at 6100 Greenland Rd, Suite 901. Serving Mandarin, Southside, Fleming Island, and surrounding Jacksonville communities.",
+  description: "Coastal Pediatric Therapy Center's Mandarin location offers Speech, Occupational, and Physical Therapy for children at 6100 Greenland Rd, STE 901. Serving Mandarin, Southside, Fleming Island, and surrounding Jacksonville communities.",
 };
 
 const schema = {
@@ -17,7 +17,7 @@ const schema = {
   description: "Multidisciplinary pediatric therapy clinic in Mandarin, Jacksonville FL offering Speech & Language Therapy, Occupational Therapy, and Physical Therapy for children since 1996.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "6100 Greenland Road, Suite 901",
+    streetAddress: "6100 Greenland Rd, STE 901",
     addressLocality: "Jacksonville",
     addressRegion: "FL",
     postalCode: "32258",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Where is the Coastal Pediatric Therapy Center Mandarin location?",
-      acceptedAnswer: { "@type": "Answer", text: "Our Mandarin clinic is at 6100 Greenland Road, Suite 901, Jacksonville, FL 32258. We serve families in Mandarin, Southside Jacksonville, Fleming Island, St. Johns County, and surrounding areas." },
+      acceptedAnswer: { "@type": "Answer", text: "Our Mandarin clinic is at 6100 Greenland Rd, STE 901, Jacksonville, FL 32258. We serve families in Mandarin, Southside Jacksonville, Fleming Island, St. Johns County, and surrounding areas." },
     },
     {
       "@type": "Question",
@@ -53,7 +53,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Is there a pediatric therapy clinic near Mandarin Jacksonville?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes — Coastal Pediatric Therapy Center has a location in Mandarin at 6100 Greenland Rd, Suite 901, Jacksonville FL 32258. We provide Speech, OT, and PT for children and have served the Jacksonville community since 1996." },
+      acceptedAnswer: { "@type": "Answer", text: "Yes — Coastal Pediatric Therapy Center has a location in Mandarin at 6100 Greenland Rd, STE 901, Jacksonville FL 32258. We provide Speech, OT, and PT for children and have served the Jacksonville community since 1996." },
     },
     {
       "@type": "Question",
@@ -110,7 +110,7 @@ export default function MandarinPage() {
             <h2 className="text-2xl font-bold text-[#1e3a4a] mb-5">Find Us</h2>
             <div className="bg-[#EAF6FB] rounded-2xl p-6 mb-5">
               <p className="font-bold text-[#1e3a4a] mb-1">Address</p>
-              <p className="text-[#4a7a8a]">6100 Greenland Road, Suite 901<br />Jacksonville, FL 32258</p>
+              <p className="text-[#4a7a8a]">6100 Greenland Rd, STE 901<br />Jacksonville, FL 32258</p>
             </div>
             <div className="bg-[#EAF6FB] rounded-2xl p-6 mb-5">
               <p className="font-bold text-[#1e3a4a] mb-1">Phone</p>
@@ -122,7 +122,7 @@ export default function MandarinPage() {
               <p className="text-[#4a7a8a] text-sm">Office: Monday–Friday, 8:30 AM – 5:30 PM</p>
               <p className="text-[#4a7a8a] text-sm">Appointments: Monday–Friday, 8:00 AM – 6:30 PM</p>
             </div>
-            <a href="https://maps.google.com/?q=6100+Greenland+Road+Suite+901+Jacksonville+FL+32258" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-[#3d82b8] font-semibold underline underline-offset-4">
+            <a href="https://maps.google.com/?q=6100+Greenland+Rd+STE+901+Jacksonville+FL+32258" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-[#3d82b8] font-semibold underline underline-offset-4">
               Get Directions →
             </a>
           </AnimatedSection>

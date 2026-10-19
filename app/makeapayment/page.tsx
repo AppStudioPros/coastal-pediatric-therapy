@@ -15,7 +15,7 @@ const otherOptions = [
   {
     icon: MailIcon,
     title: "Pay by Mail",
-    desc: 'Mail a check payable to "Coastal Pediatric Therapy Center" to: 2730 Isabella Blvd, Suite 10, Jacksonville Beach, FL 32250.',
+    desc: 'Mail a check payable to "Coastal Pediatric Therapy Center" to: 2730 Isabella Blvd, STE 10, Jacksonville Beach, FL 32250.',
   },
 ];
 

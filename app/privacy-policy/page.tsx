@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="mt-3 bg-[#EAF6FB] rounded-xl p-4 text-sm">
                 <p className="font-semibold text-[#1e3a4a]">Coastal Pediatric Therapy Center</p>
-                <p>2730 Isabella Blvd, Suite 10, Jacksonville Beach, FL 32250</p>
+                <p>2730 Isabella Blvd, STE 10, Jacksonville Beach, FL 32250</p>
                 <p>Phone: (904) 372-4070</p>
                 <p>Email: info@coastaltherapy.net</p>
               </div>

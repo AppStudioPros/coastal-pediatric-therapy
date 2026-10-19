@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const locations = [
   {
     name: "Jacksonville Beach",
-    address: "2730 Isabella Blvd, Suite 10",
+    address: "2730 Isabella Blvd, STE 10",
     city: "Jacksonville Beach, FL 32250",
     phone: "(904) 372-4070",
     fax: "(904) 372-4075",
@@ -19,7 +19,7 @@ const locations = [
   },
   {
     name: "Mandarin",
-    address: "6100 Greenland Rd, Suite 901",
+    address: "6100 Greenland Rd, STE 901",
     city: "Jacksonville, FL 32258",
     phone: "(904) 372-4070",
     fax: "(904) 372-4075",

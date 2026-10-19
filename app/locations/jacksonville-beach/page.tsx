@@ -5,7 +5,7 @@ import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Jacksonville Beach Pediatric Therapy | Coastal Pediatric Therapy Center",
-  description: "Coastal Pediatric Therapy Center's Jacksonville Beach location offers Speech, Occupational, and Physical Therapy for children at 2730 Isabella Blvd, Suite 10. Serving Jacksonville Beach, Neptune Beach, Atlantic Beach, and Ponte Vedra.",
+  description: "Coastal Pediatric Therapy Center's Jacksonville Beach location offers Speech, Occupational, and Physical Therapy for children at 2730 Isabella Blvd, STE 10. Serving Jacksonville Beach, Neptune Beach, Atlantic Beach, and Ponte Vedra.",
 };
 
 const schema = {
@@ -17,7 +17,7 @@ const schema = {
   description: "Multidisciplinary pediatric therapy clinic in Jacksonville Beach, FL offering Speech & Language Therapy, Occupational Therapy, and Physical Therapy for children since 1996.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2730 Isabella Blvd, Suite 10",
+    streetAddress: "2730 Isabella Blvd, STE 10",
     addressLocality: "Jacksonville Beach",
     addressRegion: "FL",
     postalCode: "32250",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Where is Coastal Pediatric Therapy Center's Jacksonville Beach location?",
-      acceptedAnswer: { "@type": "Answer", text: "Our Jacksonville Beach clinic is at 2730 Isabella Blvd, Suite 10, Jacksonville Beach, FL 32250. We serve Jacksonville Beach, Neptune Beach, Atlantic Beach, Ponte Vedra, and surrounding areas." },
+      acceptedAnswer: { "@type": "Answer", text: "Our Jacksonville Beach clinic is at 2730 Isabella Blvd, STE 10, Jacksonville Beach, FL 32250. We serve Jacksonville Beach, Neptune Beach, Atlantic Beach, Ponte Vedra, and surrounding areas." },
     },
     {
       "@type": "Question",
@@ -110,7 +110,7 @@ export default function JaxBeachPage() {
             <h2 className="text-2xl font-bold text-[#1e3a4a] mb-5">Find Us</h2>
             <div className="bg-[#EAF6FB] rounded-2xl p-6 mb-5">
               <p className="font-bold text-[#1e3a4a] mb-1">Address</p>
-              <p className="text-[#4a7a8a]">2730 Isabella Blvd, Suite 10<br />Jacksonville Beach, FL 32250</p>
+              <p className="text-[#4a7a8a]">2730 Isabella Blvd, STE 10<br />Jacksonville Beach, FL 32250</p>
             </div>
             <div className="bg-[#EAF6FB] rounded-2xl p-6 mb-5">
               <p className="font-bold text-[#1e3a4a] mb-1">Phone</p>
@@ -122,7 +122,7 @@ export default function JaxBeachPage() {
               <p className="text-[#4a7a8a] text-sm">Office: Monday–Friday, 8:30 AM – 5:30 PM</p>
               <p className="text-[#4a7a8a] text-sm">Appointments: Monday–Friday, 8:00 AM – 6:30 PM</p>
             </div>
-            <a href="https://maps.google.com/?q=2730+Isabella+Blvd+Suite+10+Jacksonville+Beach+FL+32250" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-[#3d82b8] font-semibold underline underline-offset-4">
+            <a href="https://maps.google.com/?q=2730+Isabella+Blvd+STE+10+Jacksonville+Beach+FL+32250" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-[#3d82b8] font-semibold underline underline-offset-4">
               Get Directions →
             </a>
           </AnimatedSection>

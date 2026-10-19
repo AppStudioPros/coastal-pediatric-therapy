@@ -305,7 +305,7 @@ export default function Home() {
                     "telephone": "(904) 372-4070",
                     "address": {
                       "@type": "PostalAddress",
-                      "streetAddress": "2730 Isabella Blvd, Suite 10",
+                      "streetAddress": "2730 Isabella Blvd, STE 10",
                       "addressLocality": "Jacksonville Beach",
                       "addressRegion": "FL",
                       "postalCode": "32250",
@@ -318,7 +318,7 @@ export default function Home() {
                     "telephone": "(904) 372-4070",
                     "address": {
                       "@type": "PostalAddress",
-                      "streetAddress": "6100 Greenland Rd, Suite 901",
+                      "streetAddress": "6100 Greenland Rd, STE 901",
                       "addressLocality": "Jacksonville",
                       "addressRegion": "FL",
                       "postalCode": "32258",
@@ -356,7 +356,7 @@ export default function Home() {
                   {
                     "@type": "Question",
                     "name": "Where is Coastal Pediatric Therapy Center located?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "We have two convenient locations: Jacksonville Beach (2730 Isabella Blvd, Suite 10) and Mandarin (6100 Greenland Rd, Suite 901, Jacksonville, FL 32258)." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "We have two convenient locations: Jacksonville Beach (2730 Isabella Blvd, STE 10) and Mandarin (6100 Greenland Rd, STE 901, Jacksonville, FL 32258)." }
                   },
                   {
                     "@type": "Question",

@@ -209,9 +209,9 @@ export default function GettingStartedPage() {
               <div className="grid md:grid-cols-2 gap-5 mb-8">
                 <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5">
                   <h4 className="font-bold text-[#1e3a4a] mb-2">Jacksonville Beach</h4>
-                  <p className="text-sm text-[#4a7a8a]">2730 Isabella Blvd, Suite 10<br />Jacksonville Beach, FL 32250</p>
+                  <p className="text-sm text-[#4a7a8a]">2730 Isabella Blvd, STE 10<br />Jacksonville Beach, FL 32250</p>
                   <a
-                    href="https://maps.google.com/?q=2730+Isabella+Blvd+Suite+10+Jacksonville+Beach+FL+32250"
+                    href="https://maps.google.com/?q=2730+Isabella+Blvd+STE+10+Jacksonville+Beach+FL+32250"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 mt-3 text-sm text-[#24B5D0] font-semibold hover:underline"
@@ -221,9 +221,9 @@ export default function GettingStartedPage() {
                 </div>
                 <div className="bg-[#EAF6FB] border border-[#B8E4F0] rounded-2xl p-5">
                   <h4 className="font-bold text-[#1e3a4a] mb-2">Mandarin</h4>
-                  <p className="text-sm text-[#4a7a8a]">6100 Greenland Rd, Suite 901<br />Jacksonville, FL 32258</p>
+                  <p className="text-sm text-[#4a7a8a]">6100 Greenland Rd, STE 901<br />Jacksonville, FL 32258</p>
                   <a
-                    href="https://maps.google.com/?q=6100+Greenland+Rd+Suite+901+Jacksonville+FL+32258"
+                    href="https://maps.google.com/?q=6100+Greenland+Rd+STE+901+Jacksonville+FL+32258"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 mt-3 text-sm text-[#24B5D0] font-semibold hover:underline"

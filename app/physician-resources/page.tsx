@@ -249,7 +249,7 @@ export default function PhysicianResourcesPage() {
                 "name": "Jacksonville Beach",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "2730 Isabella Blvd, Suite 10",
+                  "streetAddress": "2730 Isabella Blvd, STE 10",
                   "addressLocality": "Jacksonville Beach",
                   "addressRegion": "FL",
                   "postalCode": "32250",
@@ -261,7 +261,7 @@ export default function PhysicianResourcesPage() {
                 "name": "Mandarin",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "6100 Greenland Rd, Suite 901",
+                  "streetAddress": "6100 Greenland Rd, STE 901",
                   "addressLocality": "Jacksonville",
                   "addressRegion": "FL",
                   "postalCode": "32258",

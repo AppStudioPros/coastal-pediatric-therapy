@@ -4,6 +4,9 @@ import { useState } from "react";
 import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } from "lucide-react";
 import TricycleIcon from "@/components/TricycleIcon";
 import StudentCapIcon from "@/components/StudentCapIcon";
+import SensoryIcon from "@/components/SensoryIcon";
+import FeedingIcon from "@/components/FeedingIcon";
+import ReadingIcon from "@/components/ReadingIcon";
 import ChatHeartIcon from "@/components/ChatHeartIcon";
 import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
@@ -81,7 +84,7 @@ const tabs = [
   {
     id: "sensory",
     label: "Sensory Integration",
-    icon: Brain,
+    icon: SensoryIcon,
     title: "Sensory Integration Therapy",
     paragraphs: [
       "Sensory Integration Therapy helps children who are over- or under-responsive to sensory information from their environment. Many children struggle with sounds, textures, movement, or touch in ways that interfere with learning, behavior, and daily activities. Our therapists specialize in addressing these challenges at the root.",
@@ -103,7 +106,7 @@ const tabs = [
   {
     id: "feeding",
     label: "Feeding Therapy",
-    icon: Utensils,
+    icon: FeedingIcon,
     title: "Feeding Therapy",
     paragraphs: [
       "Feeding difficulties in children can cause significant stress for the whole family. Our feeding therapists (speech-language pathologists and occupational therapists working together) to address the sensory, motor, and behavioral components of eating, helping children expand their diet and develop positive relationships with food.",
@@ -125,7 +128,7 @@ const tabs = [
   {
     id: "reading",
     label: "Reading Intervention",
-    icon: BookOpen,
+    icon: ReadingIcon,
     title: "Reading Intervention",
     paragraphs: [
       "Reading is foundational to academic success, and many children with language or learning challenges need targeted support to develop strong literacy skills. Our reading intervention services are delivered by speech-language pathologists who specialize in the language underpinnings of reading and spelling.",

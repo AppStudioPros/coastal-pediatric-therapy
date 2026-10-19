@@ -9,6 +9,9 @@ import {
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
 import StudentCapIcon from "@/components/StudentCapIcon";
+import SensoryIcon from "@/components/SensoryIcon";
+import FeedingIcon from "@/components/FeedingIcon";
+import ReadingIcon from "@/components/ReadingIcon";
 import ChatHeartIcon from "@/components/ChatHeartIcon";
 import TricycleIcon from "@/components/TricycleIcon";
 import StaggeredGrid from "@/components/StaggeredGrid";
@@ -17,9 +20,9 @@ const services = [
   { icon: ChatHeartIcon, title: "Speech & Language Therapy", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
   { icon: StudentCapIcon, title: "Occupational Therapy", desc: "Building fine motor skills, sensory processing, self-care, and school readiness so children can thrive in everyday life." },
   { icon: Activity, title: "Physical Therapy", desc: "Improving strength, balance, coordination, and gross motor development to help children move and play with confidence." },
-  { icon: Brain, title: "Sensory Integration", desc: "Helping children who are over- or under-responsive to sensory information engage more comfortably with their environment." },
-  { icon: Utensils, title: "Feeding Therapy", desc: "Addressing sensory, motor, and behavioral components of eating to help children expand their diet and enjoy mealtimes." },
-  { icon: BookOpen, title: "Reading Intervention", desc: "Structured literacy support for children with dyslexia, language-based learning disabilities, or reading challenges." },
+  { icon: SensoryIcon, title: "Sensory Integration", desc: "Helping children who are over- or under-responsive to sensory information engage more comfortably with their environment." },
+  { icon: FeedingIcon, title: "Feeding Therapy", desc: "Addressing sensory, motor, and behavioral components of eating to help children expand their diet and enjoy mealtimes." },
+  { icon: ReadingIcon, title: "Reading Intervention", desc: "Structured literacy support for children with dyslexia, language-based learning disabilities, or reading challenges." },
 ];
 
 const testimonials = [

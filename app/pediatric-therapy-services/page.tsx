@@ -3,6 +3,7 @@ import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } from "lucide-react";
 import TricycleIcon from "@/components/TricycleIcon";
+import StudentCapIcon from "@/components/StudentCapIcon";
 import ChatHeartIcon from "@/components/ChatHeartIcon";
 import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
@@ -36,7 +37,7 @@ const tabs = [
   {
     id: "ot",
     label: "Occupational Therapy",
-    icon: Hand,
+    icon: StudentCapIcon,
     title: "Occupational Therapy",
     paragraphs: [
       "Our occupational therapists help children develop the skills they need to participate fully in school, home, and play. We specialize in sensory processing, fine motor development, self-care, handwriting, and emotional regulation. We build the foundational skills children need to thrive in everyday life.",
@@ -185,7 +186,7 @@ export default function ServicesPage() {
               {/* Left: content */}
               <div>
                 <h2 className="text-3xl font-bold text-[#1e3a4a] mb-5 flex items-center gap-2">
-                  {tab.title === 'Physical Therapy' && <TricycleIcon size={28} color="#24B5D0" className="shrink-0" />}
+                  {tab.title === 'Physical Therapy' && <TricycleIcon size={31} color="#24B5D0" className="shrink-0" />}
                   {tab.title}
                 </h2>
                 {tab.paragraphs.map((p, i) => (

@@ -8,13 +8,14 @@ import {
 } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
+import StudentCapIcon from "@/components/StudentCapIcon";
 import ChatHeartIcon from "@/components/ChatHeartIcon";
 import TricycleIcon from "@/components/TricycleIcon";
 import StaggeredGrid from "@/components/StaggeredGrid";
 
 const services = [
   { icon: ChatHeartIcon, title: "Speech & Language Therapy", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
-  { icon: Hand, title: "Occupational Therapy", desc: "Building fine motor skills, sensory processing, self-care, and school readiness so children can thrive in everyday life." },
+  { icon: StudentCapIcon, title: "Occupational Therapy", desc: "Building fine motor skills, sensory processing, self-care, and school readiness so children can thrive in everyday life." },
   { icon: Activity, title: "Physical Therapy", desc: "Improving strength, balance, coordination, and gross motor development to help children move and play with confidence." },
   { icon: Brain, title: "Sensory Integration", desc: "Helping children who are over- or under-responsive to sensory information engage more comfortably with their environment." },
   { icon: Utensils, title: "Feeding Therapy", desc: "Addressing sensory, motor, and behavioral components of eating to help children expand their diet and enjoy mealtimes." },
@@ -160,9 +161,9 @@ export default function Home() {
           <StaggeredGrid className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
             {services.map(({ icon: Icon, title, desc }, i) => (
               <Link key={title} href="/services" className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition flex flex-col h-full">
-                <Icon size={28} className="mb-3" color={i % 2 === 1 ? '#AF29BE' : '#24B5D0'} />
+                <Icon size={31} className="mb-3" color={i % 2 === 1 ? '#AF29BE' : '#24B5D0'} />
                 <h3 className="font-bold text-[#1e3a4a] mb-2 flex items-center gap-1.5">
-                  {title === 'Physical Therapy' && <TricycleIcon size={16} className="text-[#24B5D0] shrink-0" />}
+                  {title === 'Physical Therapy' && <TricycleIcon size={16} color="#24B5D0" className="shrink-0" />}
                   {title}
                 </h3>
                 <p className="text-[#4a7a8a] text-sm leading-relaxed flex-1">{desc}</p>

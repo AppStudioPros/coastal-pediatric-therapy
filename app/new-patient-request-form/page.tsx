@@ -28,7 +28,7 @@ const steps = [
   {
     number: "03",
     title: "We Handle the Insurance",
-    desc: "Our team contacts your child's pediatrician for a prescription (if required) and verifies your insurance benefits before your first visit. We clearly explain your coverage so there are no surprises at the front desk.",
+    desc: "Our team contacts your child's pediatrician for a prescription and verifies your insurance benefits before your first visit. We clearly explain your coverage so there are no surprises at the front desk.",
   },
   {
     number: "04",

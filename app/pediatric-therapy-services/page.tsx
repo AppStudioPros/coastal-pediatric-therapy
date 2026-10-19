@@ -2,10 +2,10 @@
 import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } from "lucide-react";
+import TricycleIcon from "@/components/TricycleIcon";
 import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
-import TricycleIcon from "@/components/TricycleIcon";
 
 export const dynamic = "force-static";
 
@@ -57,7 +57,7 @@ const tabs = [
   {
     id: "pt",
     label: "Physical Therapy",
-    icon: Activity,
+    icon: TricycleIcon,
     title: "Physical Therapy",
     paragraphs: [
       "Our physical therapists focus on gross motor development, strength, balance, and coordination. We help children with conditions ranging from developmental delays and hypotonia to orthopedic injuries and neurological conditions, getting them moving, playing, and building confidence.",

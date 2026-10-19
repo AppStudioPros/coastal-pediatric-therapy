@@ -79,6 +79,9 @@ export default function Home() {
           {/* Left: text */}
           <AnimatedSection direction="left">
             <div className="max-w-lg">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#1e3a4a] mb-1">
+                Coastal Pediatric Therapy Center
+              </h2>
               <p className="text-[#53A0DA] font-semibold text-sm uppercase tracking-widest mb-4">
                 Serving Northeast Florida Since 1996
               </p>

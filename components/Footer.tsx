@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Printer } from "lucide-react";
 function InstagramIcon({ size = 15 }: { size?: number }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -20,7 +20,7 @@ const quickLinks = [
   ["About", "/about"],
   ["Resources", "/resources"],
   ["Physician Resources", "/physician-resources"],
-  ["Make a Payment", "/make-a-payment"],
+
   ["Blog", "/blog"],
   ["Careers", "/careers"],
   ["Contact", "/contact"],
@@ -62,10 +62,10 @@ export default function Footer() {
               <Phone size={14} />
               (904) 372-4070
             </a>
-            <p className="inline-flex items-center gap-2 text-sm text-white/50">
-              <Phone size={14} className="opacity-0" />
+            <a href="tel:9043724075" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
+              <Printer size={14} />
               Fax: (904) 372-4075
-            </p>
+            </a>
             <a href="mailto:info@coastaltherapy.net" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition">
               <Mail size={14} />
               info@coastaltherapy.net

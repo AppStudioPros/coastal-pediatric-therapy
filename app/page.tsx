@@ -160,7 +160,7 @@ export default function Home() {
           <StaggeredGrid className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
             {services.map(({ icon: Icon, title, desc }, i) => (
               <Link key={title} href="/services" className="card-hover bg-white border border-[#B8E4F0] rounded-2xl p-6 hover:shadow-md transition flex flex-col h-full">
-                <Icon size={28} className={`${i % 2 === 1 ? 'text-[#AF29BE]' : 'text-[#24B5D0]'} mb-3`} />
+                <Icon size={28} className="mb-3" color={i % 2 === 1 ? '#AF29BE' : '#24B5D0'} />
                 <h3 className="font-bold text-[#1e3a4a] mb-2 flex items-center gap-1.5">
                   {title === 'Physical Therapy' && <TricycleIcon size={16} className="text-[#24B5D0] shrink-0" />}
                   {title}

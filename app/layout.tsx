@@ -5,6 +5,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
+import ChatWidget from "@/components/ChatWidget";
 import { BookingProvider } from "@/contexts/BookingContext";
 
 const nunito = Nunito({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
           <AccessibilityWidget />
+          <ChatWidget />
         </BookingProvider>
         <Analytics />
       </body>

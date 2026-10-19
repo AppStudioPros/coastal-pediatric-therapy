@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { useDragScroll } from "@/hooks/useDragScroll";
 
 interface Tab {
@@ -59,8 +59,51 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
     }
   };
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const activeTab = tabs[active];
+  const ActiveIcon = activeTab?.icon;
+
   return (
     <div className="relative overflow-hidden md:overflow-visible">
+
+      {/* Mobile dropdown — hidden on md+ */}
+      <div className="md:hidden relative">
+        <button
+          onClick={() => setDropdownOpen(o => !o)}
+          className="w-full flex items-center justify-between gap-2 px-4 py-3 rounded-full bg-[#EAF6FB] border border-[#B8E4F0] text-sm font-semibold text-[#1e3a4a]"
+          aria-label="Select section"
+        >
+          <span className="flex items-center gap-2">
+            {ActiveIcon && <ActiveIcon size={14} />}
+            {activeTab?.label}
+          </span>
+          <ChevronDown size={16} className={`text-[#24B5D0] flex-shrink-0 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+        </button>
+        {/* Dropdown list */}
+        {dropdownOpen && (
+          <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B8E4F0] rounded-2xl shadow-lg z-20 overflow-hidden">
+            {tabs.map((tab, i) => {
+              const Icon = tab.icon;
+              const isActive = active === i;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => { onChange(i); setDropdownOpen(false); }}
+                  className={`w-full flex items-center gap-2 px-4 py-3 text-sm font-semibold transition-colors text-left border-b border-[#EAF6FB] last:border-0 ${
+                    isActive ? "bg-[#EAF6FB] text-[#24B5D0]" : "text-[#4a7a8a] hover:bg-[#EAF6FB]"
+                  }`}
+                >
+                  {Icon && <Icon size={14} />}
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* Desktop pill tabs — hidden on mobile */}
+      <div className="hidden md:block">
 
       {/* Left fade — mobile only, hover-scroll enabled */}
       {needsScroll && showLeft && (
@@ -137,6 +180,8 @@ export default function FadeTabs({ tabs, active, onChange }: Props) {
           })}
         </div>
       </div>
+
+      </div>{/* end desktop pill tabs */}
     </div>
   );
 }

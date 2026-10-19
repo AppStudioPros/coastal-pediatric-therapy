@@ -3,6 +3,7 @@ import CTASection from "@/components/CTASection";
 import { useState } from "react";
 import { ArrowRight, MessageCircle, Hand, Activity, Brain, Utensils, BookOpen } from "lucide-react";
 import TricycleIcon from "@/components/TricycleIcon";
+import ChatHeartIcon from "@/components/ChatHeartIcon";
 import FadeTabs from "@/components/FadeTabs";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -13,7 +14,7 @@ const tabs = [
   {
     id: "speech",
     label: "Speech & Language",
-    icon: MessageCircle,
+    icon: ChatHeartIcon,
     title: "Speech & Language Therapy",
     paragraphs: [
       "Our speech-language pathologists work with children who have challenges with articulation, language development, fluency, voice, and social communication. Every child deserves to be heard, and our team is dedicated to helping each one find their voice through individualized, play-based treatment.",

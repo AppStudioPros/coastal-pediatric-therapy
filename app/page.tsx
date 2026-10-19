@@ -8,11 +8,12 @@ import {
 } from "lucide-react";
 import { useBooking } from "@/contexts/BookingContext";
 import AnimatedSection from "@/components/AnimatedSection";
+import ChatHeartIcon from "@/components/ChatHeartIcon";
 import TricycleIcon from "@/components/TricycleIcon";
 import StaggeredGrid from "@/components/StaggeredGrid";
 
 const services = [
-  { icon: MessageCircle, title: "Speech & Language Therapy", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
+  { icon: ChatHeartIcon, title: "Speech & Language Therapy", desc: "Helping children develop communication skills, articulation, fluency, and language comprehension through engaging, play-based techniques." },
   { icon: Hand, title: "Occupational Therapy", desc: "Building fine motor skills, sensory processing, self-care, and school readiness so children can thrive in everyday life." },
   { icon: Activity, title: "Physical Therapy", desc: "Improving strength, balance, coordination, and gross motor development to help children move and play with confidence." },
   { icon: Brain, title: "Sensory Integration", desc: "Helping children who are over- or under-responsive to sensory information engage more comfortably with their environment." },

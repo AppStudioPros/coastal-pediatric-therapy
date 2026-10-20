@@ -108,7 +108,7 @@ export default function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3" style={{ zIndex: 10000 }}>
       {open && (
         <div
           className="flex flex-col rounded-2xl shadow-2xl overflow-hidden"

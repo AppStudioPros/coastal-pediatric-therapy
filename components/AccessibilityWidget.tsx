@@ -105,7 +105,7 @@ export default function AccessibilityWidget() {
         aria-expanded={open}
         title="Accessibility Options"
         style={{
-          position: 'fixed', bottom: 100, right: 24, zIndex: 9998,
+          position: 'fixed', bottom: 24, right: 88, zIndex: 9998,
           width: 40, height: 40, borderRadius: '50%',
           background: 'transparent', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0,
@@ -125,7 +125,7 @@ export default function AccessibilityWidget() {
           aria-label="Accessibility settings"
           aria-modal="true"
           style={{
-            position: 'fixed', bottom: 156, right: 24, zIndex: 9997,
+            position: 'fixed', bottom: 88, right: 88, zIndex: 9997,
             width: 300, background: '#0e4a5c',
             border: '1px solid rgba(36,181,208,0.35)',
             borderRadius: 10, boxShadow: '0 12px 40px rgba(0,0,0,0.45)',

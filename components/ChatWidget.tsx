@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { X, Send, ChevronDown } from 'lucide-react'
+import { useWidget } from '@/contexts/WidgetContext'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
@@ -17,7 +18,8 @@ const FORM_URL = '/new-patient-request-form'
 
 export default function ChatWidget() {
   const pathname = usePathname()
-  const [open, setOpen] = useState(false)
+  const { openPanel, toggle } = useWidget()
+  const open = openPanel === 'chat'
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -134,7 +136,7 @@ export default function ChatWidget() {
                     Clear
                   </button>
                 )}
-                <button onClick={() => setOpen(false)} className="p-1 rounded hover:bg-white/10 transition-colors">
+                <button onClick={() => toggle('chat')} className="p-1 rounded hover:bg-white/10 transition-colors">
                   <ChevronDown size={18} color="rgba(255,255,255,0.7)" />
                 </button>
               </div>
@@ -249,7 +251,7 @@ export default function ChatWidget() {
 
       {/* Floating button */}
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={() => toggle('chat')}
         className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 active:scale-95"
         style={{ background: 'radial-gradient(circle at 35% 30%, #3ab5d0, #1e3a4a 60%)', border: '1px solid rgba(255,255,255,0.15)', boxShadow: '0 4px 20px rgba(36,181,208,0.4)' }}
         aria-label="Chat with us"

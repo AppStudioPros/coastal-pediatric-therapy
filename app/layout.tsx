@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import ChatWidget from "@/components/ChatWidget";
 import { BookingProvider } from "@/contexts/BookingContext";
+import { WidgetProvider } from "@/contexts/WidgetContext";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -26,8 +27,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Nav />
           <main>{children}</main>
           <Footer />
-          <AccessibilityWidget />
-          <ChatWidget />
+          <WidgetProvider>
+            <AccessibilityWidget />
+            <ChatWidget />
+          </WidgetProvider>
         </BookingProvider>
         <Analytics />
       </body>

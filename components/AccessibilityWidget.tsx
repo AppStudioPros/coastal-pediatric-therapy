@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { X, Type, Contrast, Eye, RotateCcw } from 'lucide-react'
+import { useWidget } from '@/contexts/WidgetContext'
 
 function A11yIcon({ size = 28 }: { size?: number }) {
   return (
@@ -42,7 +43,8 @@ const DEFAULT: A11ySettings = { fontSize: 1, contrast: 'normal', underlineLinks:
 
 export default function AccessibilityWidget() {
   const pathname = usePathname()
-  const [open, setOpen] = useState(false)
+  const { openPanel, toggle } = useWidget()
+  const open = openPanel === 'accessibility'
   const [settings, setSettings] = useState<A11ySettings>(DEFAULT)
 
   if (pathname?.startsWith('/admin')) return null
@@ -100,7 +102,7 @@ export default function AccessibilityWidget() {
 
       {/* Floating button — sits above chat orb */}
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => toggle('accessibility')}
         aria-label="Accessibility options"
         aria-expanded={open}
         title="Accessibility Options"
@@ -142,7 +144,7 @@ export default function AccessibilityWidget() {
               <button onClick={reset} title="Reset all" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', padding: 4 }}>
                 <RotateCcw size={14} />
               </button>
-              <button onClick={() => setOpen(false)} aria-label="Close" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', padding: 4 }}>
+              <button onClick={() => toggle('accessibility')} aria-label="Close" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', cursor: 'pointer', padding: 4 }}>
                 <X size={16} />
               </button>
             </div>

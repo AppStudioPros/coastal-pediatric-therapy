@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
 
   const resume = formData.get('resume')
   if (typeof resume === 'string') {
-    return NextResponse.json({ error: 'Please select a r�sum� file.' }, { status: 400 })
+    return NextResponse.json({ error: 'Please select a resume file.' }, { status: 400 })
   }
 
   if (resume) {
@@ -55,8 +55,8 @@ export async function POST(req: NextRequest) {
         upsert: false,
       })
       if (error) {
-        console.error('Careers r�sum� upload failed')
-        return NextResponse.json({ error: 'Could not upload your r�sum�. Please try again.' }, { status: 500 })
+        console.error('Careers resume upload failed')
+        return NextResponse.json({ error: 'Could not upload your resume. Please try again.' }, { status: 500 })
       }
 
       resumeUrl = storage.getPublicUrl(data.path, { download: true }).data.publicUrl

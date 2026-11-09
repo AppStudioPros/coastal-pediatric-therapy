@@ -16,9 +16,9 @@ export function getResumeType(filename: string) {
 export function validateResume(file: File) {
   const { contentType } = getResumeType(file.name)
   if (!contentType || (file.type && file.type !== 'application/octet-stream' && file.type !== contentType)) {
-    return 'Please select a PDF, DOC, or DOCX r�sum�.'
+    return 'Please select a PDF, DOC, or DOCX resume.'
   }
-  if (file.size === 0) return 'The r�sum� file is empty. Please select another file.'
-  if (file.size > RESUME_MAX_MB * 1_000_000) return `Your r�sum� must be ${RESUME_MAX_MB} MB or smaller.`
+  if (file.size === 0) return 'The resume file is empty. Please select another file.'
+  if (file.size > RESUME_MAX_MB * 1_000_000) return `Your resume must be ${RESUME_MAX_MB} MB or smaller.`
   return ''
 }

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { Upload, X, CheckCircle } from 'lucide-react'
+import { RESUME_ACCEPT, RESUME_MAX_MB, validateResume } from './resume'
 
 const BLUE = '#1e7faa'
 const NAVY = '#1e3a5f'
@@ -31,6 +32,13 @@ export default function CareersForm() {
       setError('Email addresses do not match.')
       return
     }
+    if (resume) {
+      const resumeError = validateResume(resume)
+      if (resumeError) {
+        setError(resumeError)
+        return
+      }
+    }
     setSubmitting(true)
     setError('')
     try {
@@ -39,8 +47,8 @@ export default function CareersForm() {
       if (resume) fd.append('resume', resume)
 
       const res = await fetch('/api/careers', { method: 'POST', body: fd })
-      const json = await res.json()
-      if (!res.ok) throw new Error(json.error || 'Submission failed')
+      const json = await res.json().catch(() => null)
+      if (!res.ok || !json?.success) throw new Error(json?.error || 'Could not submit your application. Please try again.')
       setSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
@@ -134,11 +142,11 @@ export default function CareersForm() {
       {/* Resume */}
       <div>
         <label className="block text-xs font-bold uppercase tracking-wide mb-1.5" style={{ color: NAVY }}>Upload Your Resume</label>
-        <p className="text-xs mb-2" style={{ color: '#9ca3af' }}>Accepted file types: PDF, DOC, DOCX — Max 25 MB</p>
+        <p className="text-xs mb-2" style={{ color: '#9ca3af' }}>Accepted file types: PDF, DOC, DOCX - Max {RESUME_MAX_MB} MB</p>
         {resume ? (
           <div className="flex items-center gap-3 border rounded-lg px-4 py-3" style={{ borderColor: BLUE, backgroundColor: '#f0f9ff' }}>
             <span className="text-sm flex-1" style={{ color: NAVY }}>{resume.name}</span>
-            <button type="button" onClick={() => { setResume(null); if (fileRef.current) fileRef.current.value = '' }} style={{ color: '#e53e3e', background: 'none', border: 'none', cursor: 'pointer', padding: '2px' }}>
+            <button type="button" onClick={() => { setResume(null); setError(''); if (fileRef.current) fileRef.current.value = '' }} style={{ color: '#e53e3e', background: 'none', border: 'none', cursor: 'pointer', padding: '2px' }}>
               <X size={16} />
             </button>
           </div>
@@ -146,8 +154,14 @@ export default function CareersForm() {
           <label className="flex flex-col items-center justify-center h-24 border-2 border-dashed rounded-lg cursor-pointer transition-colors hover:bg-blue-50/30" style={{ borderColor: '#d1e5ef' }}>
             <Upload size={18} style={{ color: BLUE, marginBottom: '4px' }} />
             <span className="text-sm" style={{ color: NAVY }}>Click to upload your resume</span>
-            <input ref={fileRef} type="file" accept=".pdf,.doc,.docx" className="hidden"
-              onChange={e => { const f = e.target.files?.[0]; if (f) setResume(f) }} />
+            <input ref={fileRef} type="file" accept={RESUME_ACCEPT} className="hidden"
+              onChange={e => {
+                const file = e.target.files?.[0]
+                if (file) {
+                  setResume(file)
+                  setError(validateResume(file))
+                }
+              }} />
           </label>
         )}
       </div>

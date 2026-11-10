@@ -398,7 +398,7 @@ export default function ResourcesPage() {
                   All student observers and volunteers are required to complete a background check and agree to our HIPAA and confidentiality policies before beginning any observation or clinical hours.
                 </p>
                 <a
-                  href="mailto:info@coastaltherapy.net?subject=Student%20Observation%20Request"
+                  href="mailto:students@coastaltherapy.net?subject=Student%20Observation%20Request"
                   className="cta-blue-4 inline-flex items-center gap-2 bg-[#24B5D0] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1A9EC0] transition"
                 >
                   Email Us Your Request

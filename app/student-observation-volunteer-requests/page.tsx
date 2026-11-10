@@ -136,7 +136,7 @@ export default function StudentObservationPage() {
               Reach out to our team to express your interest. We&apos;d love to have you join us in making a difference in children&apos;s lives.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="mailto:info@coastaltherapy.net" style={{ padding: '0.75rem 2rem', backgroundColor: '#1e7faa', color: '#fff', fontWeight: 700, borderRadius: '6px', textDecoration: 'none' }}>
+              <a href="mailto:students@coastaltherapy.net" style={{ padding: '0.75rem 2rem', backgroundColor: '#1e7faa', color: '#fff', fontWeight: 700, borderRadius: '6px', textDecoration: 'none' }}>
                 Email Us
               </a>
               <a href="tel:9043724070" style={{ padding: '0.75rem 2rem', border: '2px solid #1e7faa', color: '#1e7faa', fontWeight: 700, borderRadius: '6px', textDecoration: 'none' }}>

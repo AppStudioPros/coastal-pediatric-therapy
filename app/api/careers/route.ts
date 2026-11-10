@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: 'Coastal Therapy Careers <noreply@mail.coastaltherapy.net>',
-        to: 'apply@coastaltherapy.net',
+        to: 'jobs@coastaltherapy.net',
         reply_to: email,
         subject: `New Application: ${position} - ${firstName} ${lastName}`,
         html,
